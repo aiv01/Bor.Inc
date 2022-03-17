@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4608414803401982}
   - component: {fileID: 33233038261898124}
   - component: {fileID: 23802326389826052}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4986697949944908}
   m_RootOrder: 2
@@ -52,7 +51,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -94,7 +92,7 @@ GameObject:
   - component: {fileID: 4468780436445526}
   - component: {fileID: 33101732788523036}
   - component: {fileID: 23473438293438768}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: FloorPanel2x1_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +109,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.999996, y: -0.059136245, z: 1.9999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4527400258723888}
   m_RootOrder: 0
@@ -135,7 +132,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -177,7 +173,7 @@ GameObject:
   - component: {fileID: 4263552102489176}
   - component: {fileID: 33447784142038724}
   - component: {fileID: 23645626082458742}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +190,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4893137120165082}
   m_RootOrder: 1
@@ -218,7 +213,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -260,7 +254,7 @@ GameObject:
   - component: {fileID: 4666758397800384}
   - component: {fileID: 33122265799348562}
   - component: {fileID: 23405311110544388}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +271,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4499377212441210}
   m_RootOrder: 1
@@ -301,7 +294,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -343,7 +335,7 @@ GameObject:
   - component: {fileID: 4788976953665010}
   - component: {fileID: 33539407962746984}
   - component: {fileID: 23045595594048024}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +352,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4985842938477968}
   m_RootOrder: 2
@@ -384,7 +375,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -426,7 +416,7 @@ GameObject:
   - component: {fileID: 4274611343635676}
   - component: {fileID: 33367556463889916}
   - component: {fileID: 23265960377662368}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +433,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4893137120165082}
   m_RootOrder: 2
@@ -467,7 +456,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -509,7 +497,7 @@ GameObject:
   - component: {fileID: 4200238047920462}
   - component: {fileID: 33948174787932110}
   - component: {fileID: 23687293000277624}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +514,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4782218905896800}
   m_RootOrder: 1
@@ -550,7 +537,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -591,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4527400258723888}
   - component: {fileID: 205600753000889266}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: FloorPanel2x1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +594,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071058, z: -0, w: 0.7071078}
   m_LocalPosition: {x: 2, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4468780436445526}
   - {fileID: 4746714873427712}
@@ -649,7 +634,7 @@ GameObject:
   - component: {fileID: 4098541964347308}
   - component: {fileID: 33740668908066990}
   - component: {fileID: 23542111887766806}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +651,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4985842938477968}
   m_RootOrder: 1
@@ -690,7 +674,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -731,7 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4217908642515496}
   - component: {fileID: 65068707315057744}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: PlatformTall4x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +731,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4375069042746604}
   - {fileID: 4007874796507168}
@@ -789,7 +771,7 @@ GameObject:
   - component: {fileID: 4985842938477968}
   - component: {fileID: 205643693999917780}
   - component: {fileID: 64607533653538968}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +788,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4630434383323908}
   - {fileID: 4098541964347308}
@@ -866,7 +847,7 @@ GameObject:
   - component: {fileID: 4280292804826820}
   - component: {fileID: 33347240174351628}
   - component: {fileID: 23220132796733786}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +864,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4256998694627356}
   m_RootOrder: 0
@@ -907,7 +887,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -949,7 +928,7 @@ GameObject:
   - component: {fileID: 4986697949944908}
   - component: {fileID: 205267580441241040}
   - component: {fileID: 64341919297468718}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +945,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.70711, z: -0, w: -0.7071036}
   m_LocalPosition: {x: -2, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4898938267145872}
   - {fileID: 4779301947056092}
@@ -1026,7 +1004,7 @@ GameObject:
   - component: {fileID: 4182752415879526}
   - component: {fileID: 33958329363135906}
   - component: {fileID: 23426177621823712}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: FloorPanel2x1_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1021,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4076655213572720}
   m_RootOrder: 1
@@ -1067,7 +1044,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1109,7 +1085,7 @@ GameObject:
   - component: {fileID: 4375069042746604}
   - component: {fileID: 205042467580708654}
   - component: {fileID: 64068988094348136}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1102,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4339919165793668}
   - {fileID: 4108767661465760}
@@ -1185,7 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076655213572720}
   - component: {fileID: 205045709215065728}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: FloorPanel2x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1177,6 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
   m_LocalPosition: {x: -2, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4415011803319298}
   - {fileID: 4182752415879526}
@@ -1243,7 +1217,7 @@ GameObject:
   - component: {fileID: 4499377212441210}
   - component: {fileID: 205881631014308770}
   - component: {fileID: 64349420693881378}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1234,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
   m_LocalPosition: {x: -2, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4645999293047036}
   - {fileID: 4666758397800384}
@@ -1320,7 +1293,7 @@ GameObject:
   - component: {fileID: 4630434383323908}
   - component: {fileID: 33755925451836128}
   - component: {fileID: 23275583143531000}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1310,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4985842938477968}
   m_RootOrder: 0
@@ -1361,7 +1333,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1403,7 +1374,7 @@ GameObject:
   - component: {fileID: 4264897583889098}
   - component: {fileID: 33070738842888320}
   - component: {fileID: 23491787752840540}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1420,7 +1391,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4341378540840202}
   m_RootOrder: 0
@@ -1444,7 +1414,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1486,7 +1455,7 @@ GameObject:
   - component: {fileID: 4893137120165082}
   - component: {fileID: 205033731146763298}
   - component: {fileID: 64788425626865728}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1503,7 +1472,6 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: -2, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4169371721939910}
   - {fileID: 4263552102489176}
@@ -1563,7 +1531,7 @@ GameObject:
   - component: {fileID: 4779301947056092}
   - component: {fileID: 33966311460795624}
   - component: {fileID: 23456970651493026}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1548,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4986697949944908}
   m_RootOrder: 1
@@ -1604,7 +1571,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1646,7 +1612,7 @@ GameObject:
   - component: {fileID: 4007874796507168}
   - component: {fileID: 205871496865812288}
   - component: {fileID: 64377558444738542}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1629,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4619583017417134}
   - {fileID: 4835603266425758}
@@ -1723,7 +1688,7 @@ GameObject:
   - component: {fileID: 4339919165793668}
   - component: {fileID: 33679914002083954}
   - component: {fileID: 23025950718911222}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1740,7 +1705,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4375069042746604}
   m_RootOrder: 0
@@ -1764,7 +1728,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1806,7 +1769,7 @@ GameObject:
   - component: {fileID: 4689889259140670}
   - component: {fileID: 33756553812088574}
   - component: {fileID: 23623077492605908}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1823,7 +1786,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4256998694627356}
   m_RootOrder: 1
@@ -1847,7 +1809,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1889,7 +1850,7 @@ GameObject:
   - component: {fileID: 4347460980107740}
   - component: {fileID: 33486441745589886}
   - component: {fileID: 23919322889108808}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1906,7 +1867,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4782218905896800}
   m_RootOrder: 2
@@ -1930,7 +1890,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1972,7 +1931,7 @@ GameObject:
   - component: {fileID: 4705049543568720}
   - component: {fileID: 33150924954681020}
   - component: {fileID: 23997256818048952}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,7 +1948,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4782218905896800}
   m_RootOrder: 0
@@ -2013,7 +1971,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2055,7 +2012,7 @@ GameObject:
   - component: {fileID: 4835603266425758}
   - component: {fileID: 33777925876873198}
   - component: {fileID: 23598778044531268}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,7 +2029,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4007874796507168}
   m_RootOrder: 1
@@ -2096,7 +2052,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2138,7 +2093,7 @@ GameObject:
   - component: {fileID: 4898938267145872}
   - component: {fileID: 33255567208672074}
   - component: {fileID: 23945215781050142}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,7 +2110,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4986697949944908}
   m_RootOrder: 0
@@ -2179,7 +2133,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2221,7 +2174,7 @@ GameObject:
   - component: {fileID: 4169371721939910}
   - component: {fileID: 33955916680305716}
   - component: {fileID: 23069176124725640}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,7 +2191,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4893137120165082}
   m_RootOrder: 0
@@ -2262,7 +2214,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2304,7 +2255,7 @@ GameObject:
   - component: {fileID: 4746714873427712}
   - component: {fileID: 33051940429060978}
   - component: {fileID: 23660714959977262}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: FloorPanel2x1_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2321,7 +2272,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4527400258723888}
   m_RootOrder: 1
@@ -2345,7 +2295,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2387,7 +2336,7 @@ GameObject:
   - component: {fileID: 4440854229041514}
   - component: {fileID: 33667421612243834}
   - component: {fileID: 23261734522477744}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2404,7 +2353,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4256998694627356}
   m_RootOrder: 2
@@ -2428,7 +2376,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2470,7 +2417,7 @@ GameObject:
   - component: {fileID: 4415011803319298}
   - component: {fileID: 33947714682800410}
   - component: {fileID: 23623121967687108}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: FloorPanel2x1_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2487,7 +2434,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.999996, y: -0.059136245, z: 1.9999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4076655213572720}
   m_RootOrder: 0
@@ -2511,7 +2457,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2553,7 +2498,7 @@ GameObject:
   - component: {fileID: 4782218905896800}
   - component: {fileID: 205250664072199044}
   - component: {fileID: 64471786619575132}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallShort01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2570,7 +2515,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
   m_LocalPosition: {x: 2, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4705049543568720}
   - {fileID: 4200238047920462}
@@ -2630,7 +2574,7 @@ GameObject:
   - component: {fileID: 4556678601285880}
   - component: {fileID: 33204948767306632}
   - component: {fileID: 23579067155360246}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2647,7 +2591,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4007874796507168}
   m_RootOrder: 2
@@ -2671,7 +2614,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2713,7 +2655,7 @@ GameObject:
   - component: {fileID: 4215377194098566}
   - component: {fileID: 33967027656298174}
   - component: {fileID: 23654440268511792}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2730,7 +2672,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4499377212441210}
   m_RootOrder: 2
@@ -2754,7 +2695,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2796,7 +2736,7 @@ GameObject:
   - component: {fileID: 4108767661465760}
   - component: {fileID: 33873828969598012}
   - component: {fileID: 23198060800174954}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2813,7 +2753,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4375069042746604}
   m_RootOrder: 1
@@ -2837,7 +2776,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2879,7 +2817,7 @@ GameObject:
   - component: {fileID: 4156608896048792}
   - component: {fileID: 33136602085322242}
   - component: {fileID: 23670529594971138}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2896,7 +2834,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4341378540840202}
   m_RootOrder: 2
@@ -2920,7 +2857,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2962,7 +2898,7 @@ GameObject:
   - component: {fileID: 4380289542246150}
   - component: {fileID: 33280937101157680}
   - component: {fileID: 23685182495524902}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2979,7 +2915,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4343777486429876}
   m_RootOrder: 0
@@ -3003,7 +2938,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3045,7 +2979,7 @@ GameObject:
   - component: {fileID: 4256998694627356}
   - component: {fileID: 205950968260101734}
   - component: {fileID: 64710001282127490}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3062,7 +2996,6 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4280292804826820}
   - {fileID: 4689889259140670}
@@ -3122,7 +3055,7 @@ GameObject:
   - component: {fileID: 4577816991507788}
   - component: {fileID: 33491271717087448}
   - component: {fileID: 23663826227801032}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3139,7 +3072,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4343777486429876}
   m_RootOrder: 1
@@ -3163,7 +3095,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3205,7 +3136,7 @@ GameObject:
   - component: {fileID: 4170079759590300}
   - component: {fileID: 33832158431251152}
   - component: {fileID: 23916022985301792}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3222,7 +3153,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4341378540840202}
   m_RootOrder: 1
@@ -3246,7 +3176,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3288,7 +3217,7 @@ GameObject:
   - component: {fileID: 4341378540840202}
   - component: {fileID: 205218322990487936}
   - component: {fileID: 64210496398844080}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3305,7 +3234,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: -2, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4264897583889098}
   - {fileID: 4170079759590300}
@@ -3365,7 +3293,7 @@ GameObject:
   - component: {fileID: 4358516166302318}
   - component: {fileID: 33561873222607700}
   - component: {fileID: 23432603115997832}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3382,7 +3310,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4375069042746604}
   m_RootOrder: 2
@@ -3406,7 +3333,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3448,7 +3374,7 @@ GameObject:
   - component: {fileID: 4645999293047036}
   - component: {fileID: 33375122995285398}
   - component: {fileID: 23802627279619922}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3465,7 +3391,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4499377212441210}
   m_RootOrder: 0
@@ -3489,7 +3414,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3531,7 +3455,7 @@ GameObject:
   - component: {fileID: 4667591829328756}
   - component: {fileID: 33867399718354584}
   - component: {fileID: 23499164122007176}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3548,7 +3472,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4343777486429876}
   m_RootOrder: 2
@@ -3572,7 +3495,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3614,7 +3536,7 @@ GameObject:
   - component: {fileID: 4619583017417134}
   - component: {fileID: 33610002980521690}
   - component: {fileID: 23138199249629402}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallLong01_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3631,7 +3553,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4007874796507168}
   m_RootOrder: 0
@@ -3655,7 +3576,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3697,7 +3617,7 @@ GameObject:
   - component: {fileID: 4343777486429876}
   - component: {fileID: 205415988644307592}
   - component: {fileID: 64852507984869696}
-  m_Layer: 16
+  m_Layer: 3
   m_Name: WallTallCorner01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3714,7 +3634,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071099, z: -0, w: -0.7071037}
   m_LocalPosition: {x: 2, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4380289542246150}
   - {fileID: 4577816991507788}
