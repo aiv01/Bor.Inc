@@ -7,46 +7,30 @@ public class ExplorerController : MonoBehaviour
     [SerializeField]float speed;
     private Vector3 moveDirection;
     Vector3 forward, right;
-    //private CharacterController cc;
+    private CharacterController cc;
     //private Animator anim;
 
 
 
     void Start()
     {
-        //cc = GetComponent<CharacterController>();
+        cc = GetComponent<CharacterController>();
         //anim = GetComponent<Animator>();
-        forward = Camera.main.transform.forward;
-        forward.y = 0;
-        forward = Vector3.Normalize(forward);
-        right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
     }
 
     // Update is called once per frame
     void Update()
-    {
-       
-        Move();
-        //Movement();
+    { 
+        Movement();
     }
 
-    //void Movement()
-    //{
-    //    float horizontal = Input.GetAxis("Horizontal");
-    //    float vertical = Input.GetAxis("Vertical");
-    //    moveDirection = new Vector3(horizontal, 0, vertical);
-    //    cc.Move(moveDirection * speed * Time.deltaTime);
-    //}
-
-    private void Move()
+    void Movement()
     {
-        //Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 rightMovement = right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
-        Vector3 upMovement = forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
-
-        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-        transform.forward = heading;
-        transform.position += rightMovement;
-        transform.position += upMovement;
+        float horizontal = Input.GetAxis("Horizontal") ;
+        float vertical = Input.GetAxis("Vertical");
+        moveDirection = vertical * (Vector3.forward + Vector3.right).normalized+ horizontal * (-Vector3.forward + Vector3.right).normalized;
+        if(moveDirection.sqrMagnitude > 0)
+        transform.LookAt(transform.position + moveDirection, Vector3.up);
+        cc.Move(moveDirection.normalized * speed * Time.deltaTime);
     }
 }

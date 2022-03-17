@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] Vector3 offset;
+    [SerializeField] float scaler;
     [SerializeField][Range(0,1)] float speed = 0.8f;
     void Start()
     {
@@ -14,7 +15,7 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, speed);
+        transform.position = Vector3.Lerp(transform.position, target.transform.position + offset.normalized *scaler, speed);
         transform.LookAt(target.transform);
     }
 }
