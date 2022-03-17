@@ -12,15 +12,14 @@ public class ExplorerController : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
-
-    //private Animator anim;
+    private Animator anim;
 
 
 
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,5 +44,24 @@ public class ExplorerController : MonoBehaviour
         cc.Move(moveDirection.normalized * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
+        if(moveDirection == Vector3.zero)
+        {
+            Idle();
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
+    }
+
+
+    void Idle()
+    {
+        anim.SetFloat("Speed", 0);
+    }
+
+    void Attack()
+    {
+        anim.SetTrigger("Attack");
     }
 }
