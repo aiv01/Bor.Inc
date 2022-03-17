@@ -167,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3689224812215806210, guid: 13209e2f059719b40bb1d476efc4441a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3689224812215806213, guid: 13209e2f059719b40bb1d476efc4441a, type: 3}
       propertyPath: m_RootOrder
@@ -462,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 2.165619
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -516,6 +516,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  isGrounded: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  gravity: -9.8
 --- !u!143 &1558492864
 CharacterController:
   m_ObjectHideFlags: 0
@@ -546,7 +551,7 @@ GameObject:
   - component: {fileID: 2063296167}
   - component: {fileID: 2063296166}
   - component: {fileID: 2063296165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

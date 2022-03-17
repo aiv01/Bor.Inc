@@ -6,8 +6,13 @@ public class ExplorerController : MonoBehaviour
 {
     [SerializeField]float speed;
     private Vector3 moveDirection;
-    Vector3 forward, right;
+    private Vector3 offset;
+    private Vector3 velocity;
     private CharacterController cc;
+    [SerializeField] private bool isGrounded;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float gravity;
+
     //private Animator anim;
 
 
@@ -26,11 +31,19 @@ public class ExplorerController : MonoBehaviour
 
     void Movement()
     {
+        RaycastHit hit = new RaycastHit();
+        isGrounded = Physics.Raycast(transform.position + offset, -transform.up, out hit, 1f, groundMask);
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
         float horizontal = Input.GetAxis("Horizontal") ;
         float vertical = Input.GetAxis("Vertical");
         moveDirection = vertical * (Vector3.forward + Vector3.right).normalized+ horizontal * (-Vector3.forward + Vector3.right).normalized;
         if(moveDirection.sqrMagnitude > 0)
         transform.LookAt(transform.position + moveDirection, Vector3.up);
         cc.Move(moveDirection.normalized * speed * Time.deltaTime);
+        velocity.y += gravity * Time.deltaTime;
+        cc.Move(velocity * Time.deltaTime);
     }
 }
