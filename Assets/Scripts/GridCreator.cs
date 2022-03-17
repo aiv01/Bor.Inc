@@ -22,7 +22,7 @@ public class GridCreator : MonoBehaviour
         }
         CreateGrid();
         //Write();
-        Draw();
+        if(image) Draw();
         GetComponent<PlatformSpawner>().Grid = grid;
     }
 
