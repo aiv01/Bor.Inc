@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject target;
     [SerializeField] Vector3 offset;
+    [SerializeField][Range(0,1)] float speed = 0.8f;
     void Start()
     {
         
@@ -13,6 +14,7 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.position = player.transform.position + offset;
+        transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, speed);
+        transform.LookAt(target.transform);
     }
 }
