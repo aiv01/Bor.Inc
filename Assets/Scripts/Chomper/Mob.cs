@@ -12,6 +12,8 @@ public class Mob : MonoBehaviour
     [SerializeField] protected float damage;
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackDistance;
+    [SerializeField] GameObject ragdol;
+
     protected Animator animator;
     protected NavMeshAgent navMesh;
     public Transform target;
@@ -31,6 +33,8 @@ public class Mob : MonoBehaviour
 
     private void Die() {
         if (damage > 0) animator.SetTrigger("Death");
+        //ragdol.SetActive(true);
+        gameObject.SetActive(false);
         //gameObject.SetActive(false);
     }
 }

@@ -22,7 +22,7 @@ public class AttackArea : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("Zaccagnato");
+            other.GetComponent<Mob>().TakeDamage(1);
         }
     }
 

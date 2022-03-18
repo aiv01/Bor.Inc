@@ -81,7 +81,7 @@ public class ExplorerController : MonoBehaviour
 
     void Idle()
     {
-        anim.SetFloat("RandomIdle", Random.Range(0,3));
+        anim.SetInteger("RandomIdle", Random.Range(0,3));
     }
 
     void Attack()

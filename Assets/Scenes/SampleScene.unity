@@ -196,11 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b25ccad9f4174bb48dfa4a41f2f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 0
+  MaxHp: 4
   speed: 3
   damage: 0
   viewDistance: 50
-  attackDistance: 1
+  attackDistance: 2
+  ragdol: {fileID: 0}
   target: {fileID: 1558492865}
 --- !u!114 &209095069
 MonoBehaviour:
