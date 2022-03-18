@@ -55,7 +55,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: InputDetected
     m_Type: 4
@@ -1633,6 +1633,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: MeleeAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: TimeoutToIdle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -2549,7 +2552,7 @@ AnimatorStateMachine:
     m_Position: {x: -120, y: 0, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107901932556721024}
-    m_Position: {x: 480, y: 240, z: 0}
+    m_Position: {x: 440, y: 250, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107516587743271850}
     m_Position: {x: 480, y: 0, z: 0}

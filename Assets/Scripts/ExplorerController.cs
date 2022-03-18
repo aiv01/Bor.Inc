@@ -5,6 +5,9 @@ using UnityEngine;
 public class ExplorerController : MonoBehaviour 
     {
     [SerializeField]float speed;
+    private float stateTime;
+    private float timerRandomIdle;
+    private float currentRT;
     private Vector3 moveDirection;
     private Vector3 offset;
     private Vector3 velocity;
@@ -21,6 +24,7 @@ public class ExplorerController : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        timerRandomIdle = 10f;
     }
 
     // Update is called once per frame
@@ -38,34 +42,59 @@ public class ExplorerController : MonoBehaviour
             velocity.y = -2f;
             //anim.SetBool("Grounded", true);
         }
-        float horizontal = Input.GetAxis("Horizontal") ;
-        float vertical = Input.GetAxis("Vertical");
-        moveDirection = vertical * (Vector3.forward + Vector3.right).normalized+ horizontal * (-Vector3.forward + Vector3.right).normalized;
-        if(moveDirection.sqrMagnitude > 0)
-        transform.LookAt(transform.position + moveDirection, Vector3.up);
+        InputMove();
+        if (moveDirection.sqrMagnitude > 0)
+        {
+            transform.LookAt(transform.position + moveDirection, Vector3.up);
+            InputDetected();
+        }
         cc.Move(moveDirection.normalized * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
+        stateTime += Time.deltaTime;
         if(moveDirection == Vector3.zero)
         {
             Idle();
         }
         if (Input.GetMouseButtonDown(0))
         {
+            InputDetected();
             Attack();
+           
         }
-        
+        currentRT += Time.deltaTime;
+        if(currentRT >= timerRandomIdle)
+        {
+            anim.SetBool("InputDetected", false);
+            anim.SetTrigger("TimeoutToldle");
+        }
     }
 
 
+    void InputMove()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        moveDirection = vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized;
+        
+    }
+
     void Idle()
     {
-        anim.SetFloat("Speed", 0);
+        anim.SetFloat("RandomIdle", Random.Range(0,3));
     }
 
     void Attack()
     {
         anim.SetTrigger("MeleeAttack");
+        anim.SetFloat("StateTime", stateTime);
+        stateTime = 0;
+    }
+
+    void InputDetected()
+    {
+        anim.SetBool("InputDetected", true);
+        currentRT = 0;
     }
 
     public void MeleeAttackStart(int throwing = 0)
@@ -81,5 +110,8 @@ public class ExplorerController : MonoBehaviour
         //m_InAttack = false;
         weaponColl.enabled = false;
     }
+    void onClik()
+    {
 
+    }
 }
