@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplorerController : MonoBehaviour
-{
+public class ExplorerController : MonoBehaviour 
+    {
     [SerializeField]float speed;
     private Vector3 moveDirection;
     private Vector3 offset;
@@ -64,4 +64,5 @@ public class ExplorerController : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     }
+    
 }
