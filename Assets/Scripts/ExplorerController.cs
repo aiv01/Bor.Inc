@@ -9,6 +9,7 @@ public class ExplorerController : MonoBehaviour
     private Vector3 offset;
     private Vector3 velocity;
     private CharacterController cc;
+    [SerializeField] Collider weaponColl;
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
@@ -35,6 +36,7 @@ public class ExplorerController : MonoBehaviour
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            //anim.SetBool("Grounded", true);
         }
         float horizontal = Input.GetAxis("Horizontal") ;
         float vertical = Input.GetAxis("Vertical");
@@ -52,6 +54,7 @@ public class ExplorerController : MonoBehaviour
         {
             Attack();
         }
+        
     }
 
 
@@ -62,7 +65,21 @@ public class ExplorerController : MonoBehaviour
 
     void Attack()
     {
-        anim.SetTrigger("Attack");
+        anim.SetTrigger("MeleeAttack");
     }
-    
+
+    public void MeleeAttackStart(int throwing = 0)
+    {
+        //meleeWeapon.BeginAttack(throwing != 0);
+        //m_InAttack = true;
+        weaponColl.enabled = true;
+    }
+
+    public void MeleeAttackEnd()
+    {
+        //meleeWeapon.EndAttack();
+        //m_InAttack = false;
+        weaponColl.enabled = false;
+    }
+
 }
