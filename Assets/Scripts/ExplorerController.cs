@@ -17,6 +17,7 @@ public class ExplorerController : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
+    [SerializeField] private Transform bulletPos;
     private Animator anim;
 
 
@@ -64,17 +65,22 @@ public class ExplorerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            if (!EventSystem.current.IsPointerOverGameObject()) {
-                RaycastHit raycastHit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if(Physics.Raycast(ray, out raycastHit, 50, 3)) {
+            //if (!EventSystem.current.IsPointerOverGameObject())
+            //{
+            //    RaycastHit raycastHit;
+            //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //    if (Physics.Raycast(ray, out raycastHit, 50, 3))
+            //    {
 
-                }
-            }
-
+            //    }
+            //}
             InputDetected();
             Attack();
-           
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            InputDetected();
+            Fire();
         }
         currentRT += Time.deltaTime;
         if(currentRT >= timerRandomIdle)
@@ -115,6 +121,20 @@ public class ExplorerController : MonoBehaviour
     void Locomotion()
     {
         anim.SetFloat("ForwardSpeed", speed);
+    }
+
+    void Fire()
+    {
+        RaycastHit mouseHit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out mouseHit, 50);
+        transform.LookAt(mouseHit.point);
+        GameObject bullet = BulletMgr.instance.GetBullet();
+        if(bullet != null)
+        {
+            bullet.transform.position = bulletPos.position;
+            bullet.SetActive(true);
+        }
     }
 
     public void MeleeAttackStart(int throwing = 0)
