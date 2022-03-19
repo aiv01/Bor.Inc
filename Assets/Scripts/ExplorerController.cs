@@ -68,6 +68,10 @@ public class ExplorerController : MonoBehaviour {
                     //if(raycastHit.transform.gameObject.layer == groundMask) {
                     if ((raycastHit.point - transform.position).sqrMagnitude > 5)
                         navMesh.destination = raycastHit.point;
+                    else {
+                        Attack();
+                        transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
+                    }
                 }
                 if ((raycastHit.point - transform.position).sqrMagnitude < 5 &&
                     (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) {
@@ -93,8 +97,8 @@ public class ExplorerController : MonoBehaviour {
     void InputMove() {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        moveDirection = vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized;
-
+        moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
+        navMesh.destination = transform.position + moveDirection;
     }
 
     void Idle() {

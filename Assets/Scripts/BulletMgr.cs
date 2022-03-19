@@ -20,7 +20,7 @@ public class BulletMgr : MonoBehaviour
     {
         for(int i = 0; i < maxBullet; i++)
         {
-            GameObject obj = Instantiate(bulletPref);
+            GameObject obj = Instantiate(bulletPref, transform);
             obj.SetActive(false);
             nbullets.Add(obj);
         }
