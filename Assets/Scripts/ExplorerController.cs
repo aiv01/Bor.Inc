@@ -67,6 +67,7 @@ public class ExplorerController : MonoBehaviour
         {
             Locomotion();
         }
+        anim.SetFloat("ForwardSpeed", navMesh.velocity.magnitude);
         if (Input.GetMouseButton(0))
         {
             RaycastHit raycastHit;
@@ -76,9 +77,12 @@ public class ExplorerController : MonoBehaviour
                 //if(raycastHit.transform.gameObject.layer == groundMask) {
                     if((raycastHit.point - transform.position).sqrMagnitude > 5)
                         navMesh.destination = raycastHit.point;
+                        
                 }
-                if((attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) {
+                if((raycastHit.point - transform.position).sqrMagnitude < 5 && 
+                    (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) {
                     Attack();
+                    transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
                 }
 
                 
