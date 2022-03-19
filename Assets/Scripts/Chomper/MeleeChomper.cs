@@ -13,6 +13,7 @@ public class MeleeChomper : Mob
             animator.SetBool("InPursuit", true);
             pursuit = true;
             navMesh.destination = target.position;
+            
         } else if(pursuit){
             pursuit = false;
             animator.SetBool("InPursuit", false);
