@@ -56,6 +56,10 @@ public class ExplorerController : MonoBehaviour
         {
             Idle();
         }
+        if(moveDirection != Vector3.zero)
+        {
+            Locomotion();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             InputDetected();
@@ -82,6 +86,7 @@ public class ExplorerController : MonoBehaviour
     void Idle()
     {
         anim.SetInteger("RandomIdle", Random.Range(0,3));
+        anim.SetFloat("ForwardSpeed", 0);
     }
 
     void Attack()
@@ -97,6 +102,11 @@ public class ExplorerController : MonoBehaviour
         currentRT = 0;
     }
 
+    void Locomotion()
+    {
+        anim.SetFloat("ForwardSpeed", speed);
+    }
+
     public void MeleeAttackStart(int throwing = 0)
     {
         //meleeWeapon.BeginAttack(throwing != 0);
@@ -109,9 +119,5 @@ public class ExplorerController : MonoBehaviour
         //meleeWeapon.EndAttack();
         //m_InAttack = false;
         weaponColl.enabled = false;
-    }
-    void onClik()
-    {
-
     }
 }
