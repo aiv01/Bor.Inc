@@ -43,6 +43,7 @@ public class ExplorerController : MonoBehaviour
             //anim.SetBool("Grounded", true);
         }
         InputMove();
+        
         if (moveDirection.sqrMagnitude > 0)
         {
             transform.LookAt(transform.position + moveDirection, Vector3.up);
