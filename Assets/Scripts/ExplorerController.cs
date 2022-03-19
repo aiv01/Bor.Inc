@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ExplorerController : MonoBehaviour 
     {
@@ -59,6 +60,14 @@ public class ExplorerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
+            if (!EventSystem.current.IsPointerOverGameObject()) {
+                RaycastHit raycastHit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if(Physics.Raycast(ray, out raycastHit, 50, 3)) {
+
+                }
+            }
+
             InputDetected();
             Attack();
            
