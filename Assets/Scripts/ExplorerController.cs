@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 public class ExplorerController : MonoBehaviour 
     {
@@ -12,19 +13,23 @@ public class ExplorerController : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 offset;
     private Vector3 velocity;
-    private CharacterController cc;
+    //private CharacterController cc;
     [SerializeField] Collider weaponColl;
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask attackableMask;
     [SerializeField] private float gravity;
     private Animator anim;
+    protected NavMeshAgent navMesh;
 
 
 
     void Start()
     {
-        cc = GetComponent<CharacterController>();
+        //cc = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        navMesh = GetComponent<NavMeshAgent>();
+        navMesh.destination = transform.position;
         timerRandomIdle = 10f;
     }
 
@@ -50,9 +55,9 @@ public class ExplorerController : MonoBehaviour
             transform.LookAt(transform.position + moveDirection, Vector3.up);
             InputDetected();
         }
-        cc.Move(moveDirection.normalized * speed * Time.deltaTime);
+        //cc.Move(moveDirection.normalized * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
-        cc.Move(velocity * Time.deltaTime);
+        //cc.Move(velocity * Time.deltaTime);
         stateTime += Time.deltaTime;
         if(moveDirection == Vector3.zero)
         {
@@ -62,25 +67,32 @@ public class ExplorerController : MonoBehaviour
         {
             Locomotion();
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            if (!EventSystem.current.IsPointerOverGameObject()) {
-                RaycastHit raycastHit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if(Physics.Raycast(ray, out raycastHit, 50, 3)) {
-
+            RaycastHit raycastHit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out raycastHit, 50)) {
+                if((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) { 
+                //if(raycastHit.transform.gameObject.layer == groundMask) {
+                    if((raycastHit.point - transform.position).sqrMagnitude > 5)
+                        navMesh.destination = raycastHit.point;
                 }
+                if((attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) {
+                    Attack();
+                }
+
+                
             }
 
             InputDetected();
-            Attack();
+            //Attack();
            
         }
         currentRT += Time.deltaTime;
         if(currentRT >= timerRandomIdle)
         {
             anim.SetBool("InputDetected", false);
-            anim.SetTrigger("TimeoutToldle");
+            anim.SetTrigger("TimeoutToIdle");
         }
     }
 
