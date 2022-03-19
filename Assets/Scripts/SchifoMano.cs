@@ -16,7 +16,4 @@ public class SchifoMano : MonoBehaviour
         transform.position = playerHand.transform.position;
         transform.rotation = playerHand.transform.rotation;
     }
-
-
-    
 }
