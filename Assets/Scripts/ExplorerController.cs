@@ -18,6 +18,7 @@ public class ExplorerController : MonoBehaviour {
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask attackableMask;
     [SerializeField] private float gravity;
+    [SerializeField] private Transform bulletPos;
     private Animator anim;
     protected NavMeshAgent navMesh;
 
@@ -80,14 +81,17 @@ public class ExplorerController : MonoBehaviour {
                     //}
                     
                 }
-                
-
-
+               
             }
-
+            
             InputDetected();
             //Attack();
 
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            InputDetected();
+            Fire();
         }
         currentRT += Time.deltaTime;
         if (currentRT >= timerRandomIdle) {
@@ -114,6 +118,20 @@ public class ExplorerController : MonoBehaviour {
         anim.SetTrigger("MeleeAttack");
         anim.SetFloat("StateTime", stateTime);
         stateTime = 0;
+    }
+
+    void Fire()
+    {
+        RaycastHit mouseHit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out mouseHit, 50);
+        transform.LookAt(mouseHit.point);
+        GameObject bullet = BulletMgr.instance.GetBullet();
+        if (bullet != null)
+        {
+            bullet.transform.position = bulletPos.position;
+            bullet.SetActive(true);
+        }
     }
 
     void InputDetected() {
