@@ -199,9 +199,9 @@ MonoBehaviour:
   MaxHp: 4
   speed: 3
   damage: 0
-  viewDistance: 50
+  viewDistance: 7
   attackDistance: 2
-  ragdol: {fileID: 0}
+  distanceFromBase: 2
   target: {fileID: 1558492865}
 --- !u!114 &209095069
 MonoBehaviour:
