@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2508ab37537cf324f8d0c62299032e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMult: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -13780,6 +13781,10 @@ PrefabInstance:
       propertyPath: bulletPos
       value: 
       objectReference: {fileID: 1212648858}
+    - target: {fileID: 8120268519526649194, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: weaponArea
+      value: 
+      objectReference: {fileID: 718448867}
     - target: {fileID: 8120268519526649194, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: weaponColl
       value: 

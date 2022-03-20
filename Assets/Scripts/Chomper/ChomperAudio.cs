@@ -12,12 +12,7 @@ public class ChomperAudio : MonoBehaviour
     public void PlayStep() {
 
     }
-    public void AttackBegin() {
-
-    }
-    public void AttackEnd() {
-
-    }
+    
     public void Grunt() {
 
     }

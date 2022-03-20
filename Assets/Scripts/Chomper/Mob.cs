@@ -25,6 +25,7 @@ public class Mob : MonoBehaviour
         navMesh.speed = speed;
         currentHp = MaxHp;
         animator.SetBool("Grounded", true);
+        animator.SetBool("NearBase", true);
         spawnPos = transform.position;
     }
     public void TakeDamage(float damage, float knockBack = 0) {

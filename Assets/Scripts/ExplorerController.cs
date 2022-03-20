@@ -13,7 +13,7 @@ public class ExplorerController : MonoBehaviour {
     private Vector3 offset;
     private Vector3 velocity;
     //private CharacterController cc;
-    [SerializeField] Collider weaponColl;
+    [SerializeField] AttackArea weaponArea;
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask attackableMask;
@@ -21,7 +21,7 @@ public class ExplorerController : MonoBehaviour {
     private Animator anim;
     protected NavMeshAgent navMesh;
 
-
+    [HideInInspector] public float damageMult;
 
     void Start() {
         //cc = GetComponent<CharacterController>();
@@ -64,6 +64,12 @@ public class ExplorerController : MonoBehaviour {
             RaycastHit raycastHit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out raycastHit, 50)) {
+                if (Input.GetMouseButtonDown(0) && (raycastHit.point - transform.position).sqrMagnitude < 5 
+                //|| (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
+                ){
+                    Attack();
+                    transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
+                } else
                 if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) {
                     //if(raycastHit.transform.gameObject.layer == groundMask) {
                     if ((raycastHit.point - transform.position).sqrMagnitude > 5)
@@ -72,13 +78,9 @@ public class ExplorerController : MonoBehaviour {
                     //    Attack();
                     //    transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
                     //}
+                    
                 }
-                if (Input.GetMouseButtonDown(0) && (raycastHit.point - transform.position).sqrMagnitude < 5 
-                    //|| (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
-                    ){
-                    Attack();
-                    transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
-                }
+                
 
 
             }
@@ -99,7 +101,7 @@ public class ExplorerController : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-        navMesh.destination = transform.position + moveDirection;
+        if(moveDirection.sqrMagnitude > 0) navMesh.destination = transform.position + moveDirection;
     }
 
     void Idle() {
@@ -108,6 +110,7 @@ public class ExplorerController : MonoBehaviour {
     }
 
     void Attack() {
+        navMesh.destination = transform.position;
         anim.SetTrigger("MeleeAttack");
         anim.SetFloat("StateTime", stateTime);
         stateTime = 0;
@@ -125,12 +128,14 @@ public class ExplorerController : MonoBehaviour {
     public void MeleeAttackStart(int throwing = 0) {
         //meleeWeapon.BeginAttack(throwing != 0);
         //m_InAttack = true;
-        weaponColl.enabled = true;
+        weaponArea.damageMult = damageMult;
+        weaponArea.AttackStart();
     }
 
     public void MeleeAttackEnd() {
         //meleeWeapon.EndAttack();
         //m_InAttack = false;
-        weaponColl.enabled = false;
+        weaponArea.AttackEnd();
+        
     }
 }

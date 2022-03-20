@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     Collider coll;
+    /*[HideInInspector]*/ public float damageMult;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,17 @@ public class AttackArea : MonoBehaviour
     {
         
     }
-
+    public void AttackStart() {
+        coll.enabled = true;
+    }
+    public void AttackEnd() {
+        coll.enabled = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Mob>().TakeDamage(1);
+            other.GetComponent<Mob>().TakeDamage(1 * damageMult);
         }
     }
 

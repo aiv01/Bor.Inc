@@ -33,4 +33,12 @@ public class MeleeChomper : Mob
         }
 
     }
+
+
+    public void AttackBegin() {
+
+    }
+    public void AttackEnd() {
+
+    }
 }
