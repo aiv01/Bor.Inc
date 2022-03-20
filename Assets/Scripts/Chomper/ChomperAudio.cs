@@ -18,6 +18,9 @@ public class ChomperAudio : MonoBehaviour
     public void AttackEnd() {
 
     }
+    public void Grunt() {
+
+    }
     // Update is called once per frame
     void Update()
     {

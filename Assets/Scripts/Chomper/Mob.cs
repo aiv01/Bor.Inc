@@ -8,11 +8,13 @@ public class Mob : MonoBehaviour
 {
     [SerializeField] protected float MaxHp;
     protected float currentHp;
-    [SerializeField] protected float speed;
+    [SerializeField] public float speed;
     [SerializeField] protected float damage;
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackDistance;
-    [SerializeField] GameObject ragdol;
+    //[SerializeField] GameObject ragdol;
+    [SerializeField] protected float distanceFromBase;
+    protected Vector3 spawnPos;
 
     protected Animator animator;
     protected NavMeshAgent navMesh;
@@ -23,8 +25,9 @@ public class Mob : MonoBehaviour
         navMesh.speed = speed;
         currentHp = MaxHp;
         animator.SetBool("Grounded", true);
+        spawnPos = transform.position;
     }
-    public void TakeDamage(float damage) {
+    public void TakeDamage(float damage, float knockBack = 0) {
         currentHp -= damage;
         if (damage > 0) { animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1); }
