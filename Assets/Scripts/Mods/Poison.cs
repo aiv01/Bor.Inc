@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Poison : Mod
 {
-    
+    [SerializeField] Status eff = Status.poison;
+    private void Awake() {
+        effect = eff;
+    }
 
 }

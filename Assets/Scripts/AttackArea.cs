@@ -27,12 +27,19 @@ public class AttackArea : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        float knockback = 0;
+        Status effect = Status.none;
         foreach (Mod mod in modSlots.mod) {
-            if(mod.atachTo == AtachTo.staff) 
+            effect = mod.effect;
+            if(mod.atachTo == AtachTo.staff) {
+                if(knockback < mod.knokback) {
+                    knockback = mod.knokback;
+                }
+            }
         }
         if (other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Mob>().TakeDamage(1 * damageMult);
+            other.GetComponent<Mob>().TakeDamage(1 * damageMult, knockback, effect);
         }
     }
 
