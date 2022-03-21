@@ -7,7 +7,7 @@ public class BulletMgr : MonoBehaviour
     public static BulletMgr instance;
     private List<GameObject> nbullets = new List<GameObject>();
     private int maxBullet = 50;
-    [SerializeField] private GameObject bulletPref;
+    [SerializeField] private Bullet bulletPref;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class BulletMgr : MonoBehaviour
     {
         for(int i = 0; i < maxBullet; i++)
         {
-            GameObject obj = Instantiate(bulletPref, transform);
+            GameObject obj = Instantiate(bulletPref.gameObject, transform);
             obj.SetActive(false);
             nbullets.Add(obj);
         }

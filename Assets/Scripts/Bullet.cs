@@ -7,16 +7,15 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed;
     private float timer = 10f;
     private float currentTimer;
-    void Start()
+    void OnEnable()
     {
         currentTimer = 0;
     }
-
     // Update is called once per frame
     void Update()
     {
         currentTimer += Time.deltaTime;
-        transform.position = (gameObject.transform.position + new Vector3(0,0, speed)).normalized * Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
         if(currentTimer >= timer)
         {
             this.gameObject.SetActive(false);

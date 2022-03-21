@@ -125,11 +125,12 @@ public class ExplorerController : MonoBehaviour {
         RaycastHit mouseHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out mouseHit, 50);
-        transform.LookAt(mouseHit.point);
+        transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z), Vector3.up);
         GameObject bullet = BulletMgr.instance.GetBullet();
         if (bullet != null)
         {
             bullet.transform.position = bulletPos.position;
+            bullet.transform.LookAt(new Vector3(mouseHit.point.x, bulletPos.position.y, mouseHit.point.z));
             bullet.SetActive(true);
         }
     }
