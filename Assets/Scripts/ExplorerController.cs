@@ -71,9 +71,9 @@ public class ExplorerController : MonoBehaviour {
                     Attack();
                     transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
                 } else
-                if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0) {
+                if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && (raycastHit.point - transform.position).sqrMagnitude > 5) {
                     //if(raycastHit.transform.gameObject.layer == groundMask) {
-                    if ((raycastHit.point - transform.position).sqrMagnitude > 5)
+                    
                         navMesh.destination = raycastHit.point;
                     //else {
                     //    Attack();

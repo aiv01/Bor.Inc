@@ -6,7 +6,8 @@ public class RangedSpitter : Mob
 {
     bool pursuit;
     bool retreat;
-    private void Update() {
+    override public void Update() {
+        base.Update();
         if (!target) return;
         if ((-transform.position + target.position).sqrMagnitude <= viewDistance * viewDistance) {
             animator.SetTrigger("Spotted");
