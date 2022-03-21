@@ -21,7 +21,6 @@ public class ExplorerController : MonoBehaviour {
     [SerializeField] private Transform bulletPos;
     private Animator anim;
     protected NavMeshAgent navMesh;
-    protected ModSlots modSlots;
     [HideInInspector] public float damageMult;
 
     void Start() {
@@ -30,7 +29,6 @@ public class ExplorerController : MonoBehaviour {
         navMesh = GetComponent<NavMeshAgent>();
         navMesh.destination = transform.position;
         timerRandomIdle = 10f;
-        modSlots.GetComponent<ModSlots>();
     }
 
     // Update is called once per frame

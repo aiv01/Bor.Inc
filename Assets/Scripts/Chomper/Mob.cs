@@ -21,12 +21,13 @@ public class Mob : MonoBehaviour
     protected Vector3 spawnPos;
 
     protected Status currentStatus = Status.none;
+    private float timeToCure;
 
     protected Animator animator;
     protected NavMeshAgent navMesh;
     public Transform target;
 
-    public int statusHit;
+    //public int statusHit;
 
     private void Awake() {
         navMesh = GetComponent<NavMeshAgent>();
@@ -39,12 +40,16 @@ public class Mob : MonoBehaviour
     }
 
     virtual public void Update() {
-
+        if(timeToCure > 0) {
+            timeToCure -= Time.deltaTime;
+        } else {
+            currentStatus = Status.none;
+        }
         switch (currentStatus) {
             case Status.none:
                 break;
             case Status.poison:
-
+                
                 break;
             default:
                 break;
@@ -52,8 +57,12 @@ public class Mob : MonoBehaviour
     }
 
 
-    public void TakeDamage(float damage, float knockBack = 0, Status effect = Status.none) {
+    public void TakeDamage(float damage, float knockBack = 0, Status effect = Status.none, float cureTime = 0) {
         currentHp -= damage;
+        if(currentStatus != effect) {
+            currentStatus = effect;
+            timeToCure = cureTime;
+        }
         if (damage > 0) { animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1); }
         if (currentHp <= 0) Die();
