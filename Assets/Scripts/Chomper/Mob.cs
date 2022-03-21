@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum Status {
+    none, poison
+}
+
 public class Mob : MonoBehaviour
 {
     [SerializeField] protected float MaxHp;
@@ -16,9 +20,12 @@ public class Mob : MonoBehaviour
     [SerializeField] protected float distanceFromBase;
     protected Vector3 spawnPos;
 
+    protected Status currentStatus = Status.none;
+
     protected Animator animator;
     protected NavMeshAgent navMesh;
     public Transform target;
+
     private void Awake() {
         navMesh = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -28,6 +35,20 @@ public class Mob : MonoBehaviour
         animator.SetBool("NearBase", true);
         spawnPos = transform.position;
     }
+
+    virtual public void Update() {
+        switch (currentStatus) {
+            case Status.none:
+                break;
+            case Status.poison:
+
+                break;
+            default:
+                break;
+        }
+    }
+
+
     public void TakeDamage(float damage, float knockBack = 0) {
         currentHp -= damage;
         if (damage > 0) { animator.SetTrigger("Hit");
