@@ -26,6 +26,8 @@ public class Mob : MonoBehaviour
     protected NavMeshAgent navMesh;
     public Transform target;
 
+    public int statusHit;
+
     private void Awake() {
         navMesh = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -37,6 +39,7 @@ public class Mob : MonoBehaviour
     }
 
     virtual public void Update() {
+
         switch (currentStatus) {
             case Status.none:
                 break;
@@ -49,7 +52,7 @@ public class Mob : MonoBehaviour
     }
 
 
-    public void TakeDamage(float damage, float knockBack = 0) {
+    public void TakeDamage(float damage, float knockBack = 0, Status effect = Status.none) {
         currentHp -= damage;
         if (damage > 0) { animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1); }
