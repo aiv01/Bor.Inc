@@ -29,8 +29,10 @@ public class AttackArea : MonoBehaviour
     {
         float knockback = 0;
         float cureTime = 0;
+        float dps = 0;
         Status effect = Status.none;
         foreach (Mod mod in modSlots.mod) {
+            if (mod == null) continue;
             if(mod.atachTo == AtachTo.staff) {
                 if(knockback < mod.knokback) {
                     knockback = mod.knokback;
@@ -38,10 +40,11 @@ public class AttackArea : MonoBehaviour
                 }
                 effect = mod.effect;
                 cureTime = mod.timeToCure;
+                dps = mod.damagePerSec;
             }
             
-            
         }
+        StatusStatic.dps = dps;
         if (other.gameObject.tag == "Enemy")
         {
             other.GetComponent<Mob>().TakeDamage(1 * damageMult, knockback, effect, cureTime);

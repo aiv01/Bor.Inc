@@ -8,7 +8,6 @@ public class MeleeChomper : Mob
     bool pursuit;
     bool retreat;
     override public void Update() {
-        base.Update();
         if (!target) return;
         if((-transform.position + target.position).sqrMagnitude <= viewDistance * viewDistance) {
             animator.SetTrigger("Spotted");
@@ -33,6 +32,7 @@ public class MeleeChomper : Mob
             animator.SetBool("NearBase", false);
         }
 
+        base.Update();
     }
 
 

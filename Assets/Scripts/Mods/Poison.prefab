@@ -43,9 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4995fc1ba42e4d449699a450a6a8dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: 0
+  effect: 1
   damagePerSec: 1
-  timeToCure: 3
+  timeToCure: 10
   knokback: 0
   atachTo: 0
-  eff: 1

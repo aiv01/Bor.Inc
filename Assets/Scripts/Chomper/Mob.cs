@@ -11,7 +11,7 @@ public enum Status {
 public class Mob : MonoBehaviour
 {
     [SerializeField] protected float MaxHp;
-    protected float currentHp;
+    [SerializeField] protected float currentHp;
     [SerializeField] public float speed;
     [SerializeField] protected float damage;
     [SerializeField] protected float viewDistance;
@@ -49,7 +49,7 @@ public class Mob : MonoBehaviour
             case Status.none:
                 break;
             case Status.poison:
-                
+                TakeDamage(StatusStatic.dps * Time.deltaTime);
                 break;
             default:
                 break;
@@ -58,18 +58,23 @@ public class Mob : MonoBehaviour
 
 
     public void TakeDamage(float damage, float knockBack = 0, Status effect = Status.none, float cureTime = 0) {
-        currentHp -= damage;
+        
         if(currentStatus != effect) {
             currentStatus = effect;
             timeToCure = cureTime;
         }
         if (damage > 0) { animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1); }
+        TakeDamage(damage);
+    }
+    private void TakeDamage(float damage) {
+        currentHp -= damage;
         if (currentHp <= 0) Die();
     }
 
     private void Die() {
         if (damage > 0) animator.SetTrigger("Death");
+        navMesh.enabled = false;
         //ragdol.SetActive(true);
         gameObject.SetActive(false);
         //gameObject.SetActive(false);

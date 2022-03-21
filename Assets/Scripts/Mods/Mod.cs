@@ -7,7 +7,7 @@ public enum AtachTo {
 }
 public class Mod : MonoBehaviour
 {
-    [HideInInspector] public Status effect = Status.none;
+    public Status effect = Status.none;
     public float damagePerSec = 1;
     //public float hits = 5;
     public float timeToCure = 3;
