@@ -8,6 +8,8 @@ public class ExplorerController : BaseController {
     private float stateTime;
     private float timerRandomIdle;
     private float currentRT;
+    private float timerShootAnim;
+    private float currentTimerShootAnim;
     private Vector3 moveDirection;
     //private CharacterController cc;
     [SerializeField] AttackArea weaponArea;
@@ -26,6 +28,7 @@ public class ExplorerController : BaseController {
         
         
         timerRandomIdle = 10f;
+        timerShootAnim = 1;
     }
 
     // Update is called once per frame
@@ -72,11 +75,18 @@ public class ExplorerController : BaseController {
         {
             InputDetected();
             Fire();
+
         }
         currentRT += Time.deltaTime;
         if (currentRT >= timerRandomIdle) {
             anim.SetBool("InputDetected", false);
             anim.SetTrigger("TimeoutToIdle");
+        }
+        
+        if(currentTimerShootAnim < timerShootAnim)
+        {
+            currentTimerShootAnim += Time.deltaTime;
+            anim.SetFloat("TimeToEndShoot", currentTimerShootAnim);
         }
     }
 
@@ -120,13 +130,7 @@ public class ExplorerController : BaseController {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out mouseHit, 50);
         transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z), Vector3.up);
-        GameObject bullet = BulletMgr.instance.GetBullet();
-        if (bullet != null)
-        {
-            bullet.transform.position = bulletPos.position;
-            bullet.transform.LookAt(new Vector3(mouseHit.point.x, bulletPos.position.y, mouseHit.point.z));
-            bullet.SetActive(true);
-        }
+        anim.SetTrigger("ShootAttack");
     }
 
     void InputDetected() {
@@ -150,5 +154,18 @@ public class ExplorerController : BaseController {
         //m_InAttack = false;
         weaponArea.AttackEnd();
         
+    }
+
+    public void ShootStart()
+    {
+        currentTimerShootAnim = 0;
+        GameObject bullet = BulletMgr.instance.GetBullet();
+        if (bullet != null)
+        {
+            bullet.transform.position = bulletPos.position;//sono fortissimo 
+            bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+            bullet.SetActive(true);
+            bullet.GetComponent<Bullet>().Shoot(this, "Enemy");
+        }
     }
 }
