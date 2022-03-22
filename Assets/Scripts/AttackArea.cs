@@ -8,6 +8,7 @@ public class AttackArea : MonoBehaviour
     /*[HideInInspector]*/ public float damageMult;
     // Start is called before the first frame update
     [SerializeField] ModSlots modSlots;
+    [SerializeField] string tag;
     void Start()
     {
         coll= GetComponent<Collider>();
@@ -27,7 +28,7 @@ public class AttackArea : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == tag)
         {
             BaseController bc = other.GetComponent<BaseController>();
             bc.TakeDamage(1 * damageMult);

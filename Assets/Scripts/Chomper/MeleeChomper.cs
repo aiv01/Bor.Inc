@@ -7,6 +7,7 @@ public class MeleeChomper : Mob
     [SerializeField] Transform ellen;
     bool pursuit;
     bool retreat;
+    [SerializeField]AttackArea attackArea;
     override public void Update() {
         if((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance) {
             animator.SetTrigger("Spotted");
@@ -37,9 +38,9 @@ public class MeleeChomper : Mob
 
 
     public void AttackBegin() {
-
+        attackArea.AttackStart();
     }
     public void AttackEnd() {
-
+        attackArea.AttackStart();
     }
 }

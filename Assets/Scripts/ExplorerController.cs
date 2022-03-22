@@ -9,14 +9,11 @@ public class ExplorerController : BaseController {
     private float timerRandomIdle;
     private float currentRT;
     private Vector3 moveDirection;
-    private Vector3 offset;
-    private Vector3 velocity;
     //private CharacterController cc;
     [SerializeField] AttackArea weaponArea;
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask attackableMask;
-    [SerializeField] private float gravity;
     [SerializeField] private Transform bulletPos;
     private Animator anim;
     
