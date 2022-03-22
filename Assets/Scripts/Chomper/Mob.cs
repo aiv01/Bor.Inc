@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Mob : BaseController
 {
@@ -40,12 +36,12 @@ public class Mob : BaseController
         //}
     }
 
-    override public void TakeDamage(float damage) {
+    override public void TakeDamage(float damage, BaseController creker) {
         if (damage > 0) {
             animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1);
         }
-        base.TakeDamage(damage);
+        base.TakeDamage(damage, creker);
     }
 
 

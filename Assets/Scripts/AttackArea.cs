@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     Collider coll;
+    BaseController controller;
     /*[HideInInspector]*/ public float damageMult;
     // Start is called before the first frame update
     [SerializeField] ModSlots modSlots;
@@ -12,6 +13,7 @@ public class AttackArea : MonoBehaviour
     void Start()
     {
         coll= GetComponent<Collider>();
+        controller = GetComponentInParent<BaseController>();
         coll.enabled = false;
     }
 
@@ -31,7 +33,7 @@ public class AttackArea : MonoBehaviour
         if (other.gameObject.tag == tag)
         {
             BaseController bc = other.GetComponent<BaseController>();
-            bc.TakeDamage(1 * damageMult);
+            bc.TakeDamage(1 * damageMult,controller);
             modSlots.Attack(AtachTo.staff, bc);
 
             

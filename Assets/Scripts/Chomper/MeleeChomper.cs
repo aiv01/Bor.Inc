@@ -41,6 +41,6 @@ public class MeleeChomper : Mob
         attackArea.AttackStart();
     }
     public void AttackEnd() {
-        attackArea.AttackStart();
+        attackArea.AttackEnd();
     }
 }

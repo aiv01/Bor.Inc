@@ -101,6 +101,19 @@ public class ExplorerController : BaseController {
         stateTime = 0;
     }
 
+    override public void TakeDamage(float damage, BaseController attacker)
+    {
+        Vector3 forwardPlayer = transform.forward;
+        Vector3 positionFromPlayer = (attacker.transform.position - transform.position);
+        Vector2 pippo = new Vector2(positionFromPlayer.x, positionFromPlayer.z).normalized;
+        Quaternion anglePlayer = Quaternion.FromToRotation(forwardPlayer, pippo);
+        pippo = anglePlayer * Vector3.forward;
+        anim.SetTrigger("Hurt");
+        anim.SetFloat("HurtFromX", pippo.x);
+        anim.SetFloat("HurtFromY", pippo.y);
+        base.TakeDamage(damage, attacker);
+    }
+
     void Fire()
     {
         RaycastHit mouseHit;
