@@ -631,7 +631,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: ef55d1093a664e447940f6fade733a6d, type: 3}
     m_Threshold: 0.85714287
-    m_Position: {x: 0, y: -1}
+    m_Position: {x: 0.01, y: -1.02}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: LateralSpeed
@@ -2554,7 +2554,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102412307839315152}
-    m_Position: {x: 780, y: 0, z: 0}
+    m_Position: {x: 760, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102770889019857974}
     m_Position: {x: 480, y: -240, z: 0}
