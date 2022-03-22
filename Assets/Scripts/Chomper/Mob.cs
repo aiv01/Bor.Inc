@@ -40,9 +40,15 @@ public class Mob : BaseController
         //}
     }
 
+    override public void TakeDamage(float damage) {
+        if (damage > 0) {
+            animator.SetTrigger("Hit");
+            animator.SetFloat("VerticalHitDot", 1);
+        }
+        base.TakeDamage(damage);
+    }
 
-    
-    
 
-    
+
+
 }

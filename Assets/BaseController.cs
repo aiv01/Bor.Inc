@@ -34,7 +34,7 @@ public class BaseController : MonoBehaviour {
     {
         navMesh.destination = targetPos;
     }
-    public void TakeDamage(float damage) {
+    virtual public void TakeDamage(float damage) {
         currentHp -= damage;
         if (currentHp <= 0) Die();
     }
