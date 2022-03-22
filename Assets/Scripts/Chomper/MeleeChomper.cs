@@ -1,39 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MeleeChomper : Mob
 {
-    [SerializeField] Transform target;
+    [SerializeField] Transform ellen;
     bool pursuit;
     bool retreat;
     override public void Update() {
-        targetPos = target.position;
-        if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
-        if((-transform.position + targetPos).sqrMagnitude <= viewDistance * viewDistance) {
+        if((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance) {
             animator.SetTrigger("Spotted");
             animator.SetBool("InPursuit", true);
             pursuit = true;
-            navMesh.destination = targetPos;
-            
+            targetPos = ellen.position;
+
         } else if(pursuit){
             pursuit = false;
             animator.SetBool("InPursuit", false);
-            navMesh.destination = spawnPos;
+            targetPos = spawnPos;
             retreat = true;
         }
-        if((-transform.position + targetPos).sqrMagnitude <= attackDistance * attackDistance) {
+        if((-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance) {
             animator.SetTrigger("Attack");
         }
         if(retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase) {
             animator.SetBool("NearBase", true);
-            navMesh.destination = transform.position;
+            targetPos = transform.position;
             retreat = false;
         } else if ((-transform.position + spawnPos).sqrMagnitude > distanceFromBase * distanceFromBase) {
             animator.SetBool("NearBase", false);
         }
 
+        if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
         base.Update();
     }
 

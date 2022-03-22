@@ -19,6 +19,7 @@ public class Mob : BaseController
         base.Start();
         animator.SetBool("NearBase", true);
         spawnPos = transform.position;
+        targetPos = spawnPos;
     }
 
     override public void Update() {
