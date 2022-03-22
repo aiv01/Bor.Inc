@@ -27,10 +27,13 @@ public class AttackArea : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.gameObject.tag == "Enemy")
         {
-            other.GetComponent<Mob>().TakeDamage(1 * damageMult, new Mod[0]);
+            BaseController bc = other.GetComponent<BaseController>();
+            bc.TakeDamage(1 * damageMult);
+            modSlots.Attack(AtachTo.staff, bc);
+
+            
         }
     }
 

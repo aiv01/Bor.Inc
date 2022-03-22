@@ -35,7 +35,7 @@ public class BaseController : MonoBehaviour {
         navMesh.destination = targetPos;
     }
 
-    public void TakeDamage(float damage, Mod[] mods) {
+    public void TakeDamage(float damage) {
         //if (damage > 0) {
         //    animator.SetTrigger("Hit");
         //    animator.SetFloat("VerticalHitDot", 1);
