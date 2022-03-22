@@ -16,3 +16,4 @@ MonoBehaviour:
   attachedTo: {fileID: 0}
   poisonTime: 5
   hitsNeeded: 3
+  speed: 0.2
