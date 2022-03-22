@@ -38,6 +38,10 @@ public class BaseController : MonoBehaviour {
         currentHp -= damage;
         if (currentHp <= 0) Die();
     }
+    virtual public void TakePassiveDamage(float damage) {
+        currentHp -= damage;
+        if (currentHp <= 0) Die();
+    }
 
     private void Die() {
         animator.SetTrigger("Death");
