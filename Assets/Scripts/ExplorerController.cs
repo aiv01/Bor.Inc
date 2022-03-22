@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.AI;
 
-public class ExplorerController : MonoBehaviour {
-    [SerializeField] float speed;
+public class ExplorerController : BaseController {
+   
     private float stateTime;
     private float timerRandomIdle;
     private float currentRT;
@@ -20,38 +19,32 @@ public class ExplorerController : MonoBehaviour {
     [SerializeField] private float gravity;
     [SerializeField] private Transform bulletPos;
     private Animator anim;
-    protected NavMeshAgent navMesh;
+    
     [HideInInspector] public float damageMult;
 
-    void Start() {
-        //cc = GetComponent<CharacterController>();
+    public override void Start() {
+        base.Start();
+        isGrounded = true;
         anim = GetComponent<Animator>();
-        navMesh = GetComponent<NavMeshAgent>();
-        navMesh.destination = transform.position;
+        
+        
         timerRandomIdle = 10f;
     }
 
     // Update is called once per frame
-    void Update() {
+    override public void Update() {
+        base.Update();
         Movement();
     }
 
     void Movement() {
         RaycastHit hit = new RaycastHit();
-        isGrounded = Physics.Raycast(transform.position + offset, -transform.up, out hit, 1f, groundMask);
-        if (isGrounded && velocity.y < 0) {
-            velocity.y = -2f;
-            //anim.SetBool("Grounded", true);
-        }
         InputMove();
 
         if (moveDirection.sqrMagnitude > 0) {
             transform.LookAt(transform.position + moveDirection, Vector3.up);
             InputDetected();
         }
-        //cc.Move(moveDirection.normalized * speed * Time.deltaTime);
-        velocity.y += gravity * Time.deltaTime;
-        //cc.Move(velocity * Time.deltaTime);
         stateTime += Time.deltaTime;
         if (moveDirection == Vector3.zero) {
             Idle();
@@ -64,28 +57,19 @@ public class ExplorerController : MonoBehaviour {
             RaycastHit raycastHit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out raycastHit, 50)) {
-                if (Input.GetMouseButtonDown(0) && (raycastHit.point - transform.position).sqrMagnitude < 5 
+                if (Input.GetMouseButtonDown(0) && (raycastHit.point - transform.position).sqrMagnitude <= attackDistance 
                 //|| (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
                 ){
                     Attack();
                     transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
-                } else
-                if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && (raycastHit.point - transform.position).sqrMagnitude > 5) {
+                } else if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && (raycastHit.point - transform.position).sqrMagnitude > attackDistance) {
                     //if(raycastHit.transform.gameObject.layer == groundMask) {
                     
-                        navMesh.destination = raycastHit.point;
-                    //else {
-                    //    Attack();
-                    //    transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
-                    //}
-                    
+                        targetPos = raycastHit.point;
                 }
                
             }
-            
             InputDetected();
-            //Attack();
-
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -104,7 +88,7 @@ public class ExplorerController : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-        if(moveDirection.sqrMagnitude > 0) navMesh.destination = transform.position + moveDirection;
+        if(moveDirection.sqrMagnitude > 0) targetPos = transform.position + moveDirection;
     }
 
     void Idle() {
@@ -114,7 +98,7 @@ public class ExplorerController : MonoBehaviour {
 
     void Attack() {
 
-        navMesh.destination = transform.position;
+        targetPos = transform.position;
         anim.SetTrigger("MeleeAttack");
         anim.SetFloat("StateTime", stateTime);
         stateTime = 0;

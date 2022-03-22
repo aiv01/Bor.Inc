@@ -5,15 +5,17 @@ using UnityEngine.AI;
 
 public class MeleeChomper : Mob
 {
+    [SerializeField] Transform target;
     bool pursuit;
     bool retreat;
     override public void Update() {
-        if (!target) return;
-        if((-transform.position + target.position).sqrMagnitude <= viewDistance * viewDistance) {
+        targetPos = target.position;
+        if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
+        if((-transform.position + targetPos).sqrMagnitude <= viewDistance * viewDistance) {
             animator.SetTrigger("Spotted");
             animator.SetBool("InPursuit", true);
             pursuit = true;
-            navMesh.destination = target.position;
+            navMesh.destination = targetPos;
             
         } else if(pursuit){
             pursuit = false;
@@ -21,7 +23,7 @@ public class MeleeChomper : Mob
             navMesh.destination = spawnPos;
             retreat = true;
         }
-        if((-transform.position + target.position).sqrMagnitude <= attackDistance * attackDistance) {
+        if((-transform.position + targetPos).sqrMagnitude <= attackDistance * attackDistance) {
             animator.SetTrigger("Attack");
         }
         if(retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase) {
