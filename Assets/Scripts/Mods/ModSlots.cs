@@ -11,7 +11,10 @@ public class ModSlots : MonoBehaviour
         foreach (Mod mod in mods)
         {
             if (mod != null)
+            {
                 mod.attachedTo = this;
+                mod.Activate();
+            } 
         }
     }
     public void Update() {
