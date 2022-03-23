@@ -13731,7 +13731,7 @@ PrefabInstance:
     - target: {fileID: 209095064, guid: 14744e97a5894bc4f8632bd66322bce0, type: 3}
       propertyPath: mods.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 46a9d8fa906766f4a83b7b7047cf84a9, type: 2}
     - target: {fileID: 209095068, guid: 14744e97a5894bc4f8632bd66322bce0, type: 3}
       propertyPath: MaxHp
       value: 1000
@@ -13815,7 +13815,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mod.Array.data[0]
@@ -13829,6 +13829,10 @@ PrefabInstance:
       propertyPath: mods.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 46a9d8fa906766f4a83b7b7047cf84a9, type: 2}
+    - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7462ed88fc485b44488c2c6426b192bd, type: 2}
     - target: {fileID: 8120268519390743159, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.0000012968364

@@ -15,3 +15,4 @@ MonoBehaviour:
   atachTo: 2
   attachedTo: {fileID: 0}
   speedMult: 1.8
+  particlesPrefab: {fileID: 6343056980081922867, guid: 61b9991a42583b54bb5bde00faca8890, type: 3}
