@@ -8,10 +8,11 @@ public class Swiftness : Mod
     [SerializeField] float speedMult = 1;
     float oldSpeed;
     public override void Activate() {
-        oldSpeed = attachedTo.GetComponent<NavMeshAgent>().speed;
-        attachedTo.GetComponent<NavMeshAgent>().speed = oldSpeed * speedMult;
+        oldSpeed = attachedTo.GetComponent<BaseController>().speed;
+        attachedTo.GetComponent<BaseController>().speed = oldSpeed * speedMult;
     }
     public override void Disable() {
         attachedTo.GetComponent<NavMeshAgent>().speed = oldSpeed;
+        attachedTo.GetComponent<BaseController>().speed = oldSpeed;
     }
 }
