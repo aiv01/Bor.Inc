@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [System.Serializable]
 public struct Platform {
@@ -35,6 +36,7 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] UnityEngine.UI.RawImage image;
 
     [SerializeField] int gridMultiplier = 4;
+    NavMeshSurface navMeshSurface;
     int[,] grid;
     [HideInInspector] public int[,] Grid {
         set {
@@ -46,10 +48,12 @@ public class PlatformSpawner : MonoBehaviour
             }
             SpawnPlatforms();
             transform.position = new Vector3(-grid.GetLength(0) * 0.5f, 0,-grid.GetLength(1) * 0.5f);
+            navMeshSurface.BuildNavMesh();
             //Draw();
         }
     }
     private void Awake() {
+        navMeshSurface = GetComponent<NavMeshSurface>();
         OrderPlatformsWithArea();
     }
     private void OrderPlatformsWithArea() {
