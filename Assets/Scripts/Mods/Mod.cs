@@ -23,4 +23,7 @@ public class Mod : ScriptableObject
     virtual public void Activate() {
 
     }
+    virtual public void Disable() {
+
+    }
 }

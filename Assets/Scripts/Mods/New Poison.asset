@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atachTo: 2
   attachedTo: {fileID: 0}
-  poisonTime: 5
+  poisonTime: 10
   hitsNeeded: 3
   speed: 0.2
+  particlesPrefab: {fileID: 5573162490725803688, guid: 084724dce080ff043b5bb79c12227c05, type: 3}

@@ -13,6 +13,7 @@ public class ModSlots : MonoBehaviour
                 mod.DoCicle();
         }
         foreach (Mod mod in modsToRemove) {
+            mod.Disable();
             mods.Remove(mod);
         }
         modsToRemove.Clear();
@@ -29,19 +30,17 @@ public class ModSlots : MonoBehaviour
                 mods[i] = newMod;
                 mods[i].attachedTo = this;
                 mods[i].Activate();
-                break;
+                return;
             }
             else if(mods[i] == newMod) {
                 mods[i].Reactivate();
-                break;
-            }
-            else if(i == mods.Count - 1){
-                newMod.Activate();
-                newMod.attachedTo = this;
-                mods.Add(newMod);
-                break;
+                return;
             }
         }
+        newMod.Activate();
+                newMod.attachedTo = this;
+                mods.Add(newMod);
+                return;
     }
     private void RemoveMod(Mod toRemove) {
         mods.Remove(toRemove);
