@@ -14,7 +14,7 @@ public class Mod : ScriptableObject
     virtual public void DoCicle() {
         
     }
-    virtual public void DoAttack(BaseController hit) {
+    virtual public void DoAttack(BaseController hit, float damage = 0) {
 
     }
     virtual public void Reactivate() {

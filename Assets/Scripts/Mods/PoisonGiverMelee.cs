@@ -6,7 +6,7 @@ using UnityEngine;
 public class PoisonGiverMelee : Mod
 {
     [SerializeField] Mod poisonMod;
-    public override void DoAttack(BaseController hit) {
+    public override void DoAttack(BaseController hit, float damage) {
         hit.GetComponent<ModSlots>().AddMod(poisonMod);
     }
 }

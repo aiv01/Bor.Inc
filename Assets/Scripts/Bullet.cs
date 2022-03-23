@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
             this.gameObject.SetActive(false);
             BaseController bc = other.GetComponent<BaseController>();
             bc.TakeDamage(0.3f, controller);
-            modSlots.Attack(AtachTo.gun, bc);
+            modSlots.Attack(AtachTo.gun, bc, 0.3f);
             currentTimer = 0;
         }
     }

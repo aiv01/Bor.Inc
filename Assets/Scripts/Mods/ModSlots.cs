@@ -6,7 +6,14 @@ public class ModSlots : MonoBehaviour
 {
     [SerializeField] private List<Mod> mods = new List<Mod>();
     [HideInInspector] public List<Mod> modsToRemove = new List<Mod>();
-
+    public void Awake()
+    {
+        foreach (Mod mod in mods)
+        {
+            if (mod != null)
+                mod.attachedTo = this;
+        }
+    }
     public void Update() {
         foreach (Mod mod in mods) {
             if(mod != null)
@@ -18,10 +25,10 @@ public class ModSlots : MonoBehaviour
         }
         modsToRemove.Clear();
     }
-    public void Attack(AtachTo type, BaseController hit) {
+    public void Attack(AtachTo type, BaseController hit, float damage = 0) {
         foreach (Mod mod in mods) {
             if(mod != null && mod.atachTo == type)
-                mod.DoAttack(hit);
+                mod.DoAttack(hit, damage);
         }
     }
     public void AddMod(Mod newMod) {

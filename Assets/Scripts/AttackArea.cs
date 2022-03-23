@@ -34,7 +34,7 @@ public class AttackArea : MonoBehaviour
         {
             BaseController bc = other.GetComponent<BaseController>();
             bc.TakeDamage(1 * damageMult,controller);
-            modSlots.Attack(AtachTo.staff, bc);
+            modSlots.Attack(AtachTo.staff, bc, 1* damageMult);
 
             
         }
