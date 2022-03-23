@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AttackDamageMultiplierBehaviour : StateMachineBehaviour
+public class AnimationEndNavMeshStopped : StateMachineBehaviour
 {
-    [SerializeField] float damageMult;
+    [SerializeField] bool stopAnimation;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        animator.GetComponent<ExplorerController>().damageMult = damageMult;
-        animator.GetComponent<NavMeshAgent>().isStopped = true;
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,8 +20,7 @@ public class AttackDamageMultiplierBehaviour : StateMachineBehaviour
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        animator.GetComponent<NavMeshAgent>().isStopped = false;
-
+        animator.GetComponent<NavMeshAgent>().isStopped = stopAnimation;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

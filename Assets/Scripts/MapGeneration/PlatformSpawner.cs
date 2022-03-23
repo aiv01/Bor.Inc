@@ -48,12 +48,13 @@ public class PlatformSpawner : MonoBehaviour
             }
             SpawnPlatforms();
             transform.position = new Vector3(-grid.GetLength(0) * 0.5f, 0,-grid.GetLength(1) * 0.5f);
-            navMeshSurface.BuildNavMesh();
+            foreach (var item in GetComponents<NavMeshSurface>()) {
+                item.BuildNavMesh();
+            }
             //Draw();
         }
     }
     private void Awake() {
-        navMeshSurface = GetComponent<NavMeshSurface>();
         OrderPlatformsWithArea();
     }
     private void OrderPlatformsWithArea() {

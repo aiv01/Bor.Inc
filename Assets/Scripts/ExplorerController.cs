@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Rewired;
 
 public class ExplorerController : BaseController {
    
@@ -21,12 +22,13 @@ public class ExplorerController : BaseController {
     
     [HideInInspector] public float damageMult;
 
+
+
     public override void Start() {
         base.Start();
         isGrounded = true;
         anim = GetComponent<Animator>();
-        
-        
+
         timerRandomIdle = 10f;
         timerShootAnim = 1;
     }
@@ -39,7 +41,6 @@ public class ExplorerController : BaseController {
 
     void Movement() {
         RaycastHit hit = new RaycastHit();
-        InputMove();
 
         if (moveDirection.sqrMagnitude > 0) {
             transform.LookAt(transform.position + moveDirection, Vector3.up);
@@ -53,30 +54,7 @@ public class ExplorerController : BaseController {
             Locomotion();
         }
         anim.SetFloat("ForwardSpeed", navMesh.velocity.magnitude);
-        if (Input.GetMouseButton(0)) {
-            RaycastHit raycastHit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out raycastHit, 50)) {
-                if (Input.GetMouseButtonDown(0) && (raycastHit.point - transform.position).sqrMagnitude <= attackDistance 
-                //|| (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
-                ){
-                    Attack();
-                    transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
-                } else if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && (raycastHit.point - transform.position).sqrMagnitude > attackDistance) {
-                    //if(raycastHit.transform.gameObject.layer == groundMask) {
-                    
-                        targetPos = raycastHit.point;
-                }
-               
-            }
-            InputDetected();
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            InputDetected();
-            Fire();
-
-        }
+        
         currentRT += Time.deltaTime;
         if (currentRT >= timerRandomIdle) {
             anim.SetBool("InputDetected", false);
@@ -90,29 +68,84 @@ public class ExplorerController : BaseController {
         }
     }
 
+    #region Input
+    public void InputMove(float horizontal, float vertical) {
+        if (navMesh.isStopped) {
+            moveDirection = Vector3.zero;
+            Vector3 d = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
+            if (d.sqrMagnitude > 0) 
+                transform.rotation = Quaternion.LookRotation(d, Vector3.up);
+        } else {
+            moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
+            if(moveDirection.sqrMagnitude > 0) targetPos = transform.position + moveDirection;
 
-    void InputMove() {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-        if(moveDirection.sqrMagnitude > 0) targetPos = transform.position + moveDirection;
+        }
+        
     }
-
     void Idle() {
         anim.SetInteger("RandomIdle", Random.Range(0, 3));
         anim.SetFloat("ForwardSpeed", 0);
     }
+    public void ClickPressed() {
+        RaycastHit raycastHit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out raycastHit, 50)) {
+                if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && (raycastHit.point - transform.position).sqrMagnitude > attackDistance * attackDistance) {
+                //if(raycastHit.transform.gameObject.layer == groundMask) {
 
-    void Attack() {
+                targetPos = raycastHit.point;
+            }
+        }
+        InputDetected();
+    }
+    public void Click() {
+        RaycastHit raycastHit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out raycastHit, 50)) {
+            if ((raycastHit.point - transform.position).sqrMagnitude <= attackDistance * attackDistance
+                || (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
+                        && (raycastHit.point - transform.position).sqrMagnitude <= attackDistance * attackDistance
+                ) {
+                Attack();
+                transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
+            }
+        }
+    }
+    public void RightClick() {
+        RaycastHit mouseHit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out mouseHit, 50);
+        transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z), Vector3.up);
+        anim.SetTrigger("ShootAttack");
+        InputDetected();
+
+        Fire();
+    }
+    public void Shoot() {
+        navMesh.isStopped = true;
+        InputDetected();
+        Fire();
+    }
+    public void Attack() {
 
         targetPos = transform.position;
         anim.SetTrigger("MeleeAttack");
         anim.SetFloat("StateTime", stateTime);
         stateTime = 0;
     }
+    void Fire() {
 
+        anim.SetTrigger("ShootAttack");
+    }
+    void InputDetected() {
+        anim.SetBool("InputDetected", true);
+        currentRT = 0;
+    }
+
+    #endregion
     override public void TakeDamage(float damage, BaseController attacker)
     {
+        navMesh.isStopped = false;
         Vector3 forwardPlayer = transform.forward;
         Vector3 positionFromPlayer = (attacker.transform.position - transform.position);
         Vector2 pippo = new Vector2(positionFromPlayer.x, positionFromPlayer.z).normalized;
@@ -124,24 +157,12 @@ public class ExplorerController : BaseController {
         base.TakeDamage(damage, attacker);
     }
 
-    void Fire()
-    {
-        RaycastHit mouseHit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out mouseHit, 50);
-        transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z), Vector3.up);
-        anim.SetTrigger("ShootAttack");
-    }
 
-    void InputDetected() {
-        anim.SetBool("InputDetected", true);
-        currentRT = 0;
-    }
 
     void Locomotion() {
         anim.SetFloat("ForwardSpeed", speed);
     }
-
+    #region AnimationEvents
     public void MeleeAttackStart(int throwing = 0) {
         //meleeWeapon.BeginAttack(throwing != 0);
         //m_InAttack = true;
@@ -155,9 +176,10 @@ public class ExplorerController : BaseController {
         weaponArea.AttackEnd();
         
     }
-
+    
     public void ShootStart()
     {
+        navMesh.isStopped = true;
         currentTimerShootAnim = 0;
         GameObject bullet = BulletMgr.instance.GetBullet();
         if (bullet != null)
@@ -168,4 +190,8 @@ public class ExplorerController : BaseController {
             bullet.GetComponent<Bullet>().Shoot(this, "Enemy");
         }
     }
+    public void ShootEnd() {
+        navMesh.isStopped = false;
+    }
+    #endregion
 }
