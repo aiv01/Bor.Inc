@@ -7,7 +7,5 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EllenBetterAnimation
-  m_Controller: {fileID: 9100000, guid: b7c146d79b5d0df4bbddbb87906b0bc6, type: 2}
-  m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 3aeb280aa07caa148891a47a136fcee4, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 7f26e37a25d73d64c906d0a57b07bf06, type: 2}
+  m_Controller: {fileID: 9100000, guid: 39147a9a10e64224cbaf5039031af5e2, type: 2}
+  m_Clips: []
