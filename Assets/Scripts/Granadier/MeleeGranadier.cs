@@ -10,16 +10,44 @@ public class MeleeGranadier : Mob
     [SerializeField] AttackArea attackArea;
     [SerializeField] float detecAngle;
     [SerializeField] float detecDistance;
+    public float DetecAngle
+    {
+        get { return detecAngle; }
+    }
+    public Vector3 TargetPos
+    {
+        get { return targetPos; }
+        set { }
+    }
+    public float AttackDistance
+    {
+        get { return attackDistance; }
+
+    }
     override public void Update()
     {
-        float angle = Vector3.Angle(targetPos, transform.forward);
+        float angle = Vector3.Angle(targetPos-transform.position, transform.forward);
         float distance = targetPos.magnitude;
-        if ((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance)
+        if ((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance)// molto alta
         {
-            animator.SetBool("InPursuit", true);
-            pursuit = true;
-            targetPos = ellen.position;
-
+            if(angle < detecAngle && distance < detecDistance)
+            {
+                animator.SetBool("InPursuit", true);
+                pursuit = true;
+                targetPos = ellen.position;
+                if ((-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance)
+                {
+                    animator.SetTrigger("MeleeAttack");
+                }
+            }
+            else
+            {
+                animator.SetTrigger("Rotate");
+            }
+            //fai cono visivo
+            //se non sei nel cono visivo ruota
+            //se sei nel cono visivo avvicinati;
+            // se sei nel cono e vicino nell attack distance attacca;
         }
         else if (pursuit)
         {
@@ -28,10 +56,16 @@ public class MeleeGranadier : Mob
             targetPos = spawnPos;
             retreat = true;
         }
-        if ((-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance)
-        {
-            animator.SetTrigger("MeleeAttack");
-        }
+        BackToBase();
+        if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
+        base.Update();
+    }
+
+
+
+
+    void BackToBase()
+    {
         if (retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase)
         {
             animator.SetBool("InPursuit", false);
@@ -42,15 +76,11 @@ public class MeleeGranadier : Mob
         {
             animator.SetBool("InPursuit", true);
         }
-        
-        if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
-        base.Update();
     }
 
     public void StartAttack()
     {
         attackArea.AttackStart();
-        //navMesh.isStopped = true;
     }
     public void EndAttack()
     {
