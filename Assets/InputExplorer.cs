@@ -16,7 +16,7 @@ public class InputExplorer : MonoBehaviour
             explorer.ClickPressed();
         }
         if (player.GetButtonDown("LeftClick")) {
-            explorer.Click();
+            explorer.ClickDown();
         }
         if (player.GetButtonDown("RightClick")) {
             explorer.RightClick();
