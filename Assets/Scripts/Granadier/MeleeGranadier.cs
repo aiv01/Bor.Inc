@@ -8,8 +8,7 @@ public class MeleeGranadier : Mob
     bool pursuit;
     bool retreat;
     [SerializeField] AttackArea attackArea;
-    override public void Update()
-    {
+    override public void Update() {
         if ((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance)
         {
             animator.SetBool("InPursuit", true);

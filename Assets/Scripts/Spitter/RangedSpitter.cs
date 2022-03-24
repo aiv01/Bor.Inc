@@ -7,29 +7,36 @@ public class RangedSpitter : Mob {
     bool pursuit;
     bool retreat;
     override public void Update() {
-        targetPos = target.position;
-        if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
-        if ((-transform.position + targetPos).sqrMagnitude <= viewDistance * viewDistance) {
-            animator.SetTrigger("Spotted");
-            animator.SetBool("InPursuit", true);
-            pursuit = true;
-            navMesh.destination = targetPos;
+        //if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
+        if ((-transform.position + target.position).sqrMagnitude <= viewDistance * viewDistance) {
+            
+            targetPos = target.position;
+            animator.SetBool("HaveTarget", true);
+            //navMesh.destination = targetPos;
 
-        } else if (pursuit) {
-            pursuit = false;
-            animator.SetBool("InPursuit", false);
-            navMesh.destination = spawnPos;
+        } else {
+            animator.SetBool("HaveTarget", false);
+            targetPos = spawnPos;
             retreat = true;
         }
-        if ((-transform.position + targetPos).sqrMagnitude <= attackDistance * attackDistance) {
+        if ((-transform.position + target.position).sqrMagnitude <= attackDistance * attackDistance) {
             animator.SetTrigger("Attack");
+            animator.SetBool("Fleeing", false);
+            transform.LookAt(target);
+            if (!navMesh.isStopped) navMesh.isStopped = true;
+        } else {
+            animator.SetBool("Fleeing", true);
+            targetPos = target.position;
+            if (navMesh.isStopped)
+                navMesh.isStopped = false;
         }
         if (retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase) {
-            animator.SetBool("NearBase", true);
-            navMesh.destination = transform.position;
+            animator.SetBool("Fleeing", false);
+            targetPos = target.position;
             retreat = false;
-        } else if ((-transform.position + spawnPos).sqrMagnitude > distanceFromBase * distanceFromBase) {
-            animator.SetBool("NearBase", false);
+        } else if (retreat && (-transform.position + spawnPos).sqrMagnitude > distanceFromBase * distanceFromBase) {
+            animator.SetBool("Fleeing", true);
+            targetPos = spawnPos;
         }
 
         base.Update();

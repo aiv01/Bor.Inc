@@ -14,7 +14,6 @@ public class ExplorerController : BaseController {
     private Vector3 moveDirection;
     //private CharacterController cc;
     [SerializeField] AttackArea weaponArea;
-    [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask attackableMask;
     [SerializeField] private Transform bulletPos;
@@ -26,7 +25,6 @@ public class ExplorerController : BaseController {
 
     public override void Start() {
         base.Start();
-        isGrounded = true;
         anim = GetComponent<Animator>();
 
         timerRandomIdle = 10f;
@@ -40,8 +38,6 @@ public class ExplorerController : BaseController {
     }
 
     void Movement() {
-        RaycastHit hit = new RaycastHit();
-
         if (moveDirection.sqrMagnitude > 0) {
             transform.LookAt(transform.position + moveDirection, Vector3.up);
             InputDetected();
@@ -98,7 +94,7 @@ public class ExplorerController : BaseController {
         }
         InputDetected();
     }
-    public void Click() {
+    public void ClickDown() {
         RaycastHit raycastHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out raycastHit, 50)) {

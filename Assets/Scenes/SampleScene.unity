@@ -184,7 +184,7 @@ MonoBehaviour:
   currentHp: 0
   attackDistance: 5
   damage: 0
-  viewDistance: 8
+  viewDistance: 10
   distanceFromBase: 2
   target: {fileID: 1558492865}
 --- !u!114 &119902704
@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 3a3cea986292c2445a02c973a48c7e8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 3a3cea986292c2445a02c973a48c7e8b, type: 3}
       propertyPath: m_TagString

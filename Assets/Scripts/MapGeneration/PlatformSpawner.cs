@@ -116,8 +116,8 @@ public class PlatformSpawner : MonoBehaviour
                             if (exit) break;
                         }
                         if (!exit) {
-                            for (int u = i; u < i + p.size.x; u++) {
-                                for (int v = j; v < j + p.size.y; v++) {//setta tutti i punti toccati dalla piattafroma a 0
+                            for (int u = i; i < grid.GetLength(0) && u < i + p.size.x; u++) {
+                                for (int v = j; j < grid.GetLength(1) && v < j + p.size.y; v++) {//setta tutti i punti toccati dalla piattafroma a 0
                                     grid[u, v] = 0;
                                 }
                             }
