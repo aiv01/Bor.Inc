@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class boh : StateMachineBehaviour
+public class AnimationNavMeshStoppedBehaviour : StateMachineBehaviour
 {
     [System.Serializable] enum When { StateEnter, StateExit}
     [SerializeField] When when = When.StateExit;

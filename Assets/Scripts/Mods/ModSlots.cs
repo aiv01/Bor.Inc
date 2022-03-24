@@ -50,8 +50,8 @@ public class ModSlots : MonoBehaviour
             }
         }
         mods.Add(newMod);
-        newMod.attachedTo = this;
         newMod.Activate();
+        newMod.attachedTo = this;
         return;
     }
     private void RemoveMod(Mod toRemove) {
