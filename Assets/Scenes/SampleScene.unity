@@ -1779,7 +1779,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871718360}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.613243, y: 4.516037, z: 3.8086922}
@@ -1854,14 +1854,12 @@ MonoBehaviour:
   speed: 2
   MaxHp: 100
   currentHp: 0
-  attackDistance: 4
+  attackDistance: 2
   damage: 0
-  viewDistance: 13
+  viewDistance: 7
   distanceFromBase: 2
   ellen: {fileID: 1558492865}
   attackArea: {fileID: 1726974107}
-  detecAngle: 45
-  detecDistance: 13
 --- !u!114 &871718368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14846,19 +14844,15 @@ PrefabInstance:
     - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 46a9d8fa906766f4a83b7b7047cf84a9, type: 2}
+      objectReference: {fileID: 11400000, guid: 05b1c6e250346e0429c96f0b1787a839, type: 2}
     - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: ebe51eb8048eaa246bda39b898091a0d, type: 2}
+      objectReference: {fileID: 11400000, guid: 46a9d8fa906766f4a83b7b7047cf84a9, type: 2}
     - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: ebe51eb8048eaa246bda39b898091a0d, type: 2}
-    - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
-      propertyPath: mods.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: ebe51eb8048eaa246bda39b898091a0d, type: 2}
+      objectReference: {fileID: 11400000, guid: 7462ed88fc485b44488c2c6426b192bd, type: 2}
     - target: {fileID: 8120268519390743159, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.0000012968364
