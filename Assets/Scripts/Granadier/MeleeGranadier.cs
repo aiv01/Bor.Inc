@@ -8,8 +8,12 @@ public class MeleeGranadier : Mob
     bool pursuit;
     bool retreat;
     [SerializeField] AttackArea attackArea;
+    [SerializeField] float detecAngle;
+    [SerializeField] float detecDistance;
     override public void Update()
     {
+        float angle = Vector3.Angle(targetPos, transform.forward);
+        float distance = targetPos.magnitude;
         if ((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance)
         {
             animator.SetBool("InPursuit", true);
@@ -30,26 +34,28 @@ public class MeleeGranadier : Mob
         }
         if (retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase)
         {
-            animator.SetBool("InPursuit", true);
+            animator.SetBool("InPursuit", false);
             targetPos = transform.position;
             retreat = false;
         }
         else if ((-transform.position + spawnPos).sqrMagnitude > distanceFromBase * distanceFromBase)
         {
-            animator.SetBool("InPursuit", false);
+            animator.SetBool("InPursuit", true);
         }
-
+        
         if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
         base.Update();
     }
 
-    public void AttackBegin()
+    public void StartAttack()
     {
         attackArea.AttackStart();
+        //navMesh.isStopped = true;
     }
-    public void AttackEnd()
+    public void EndAttack()
     {
         attackArea.AttackEnd();
+ 
     }
 
 }
