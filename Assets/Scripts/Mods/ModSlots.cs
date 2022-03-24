@@ -8,12 +8,13 @@ public class ModSlots : MonoBehaviour
     [HideInInspector] public List<Mod> modsToRemove = new List<Mod>();
     public void Awake()
     {
-        foreach (Mod mod in mods)
-        {
-            if (mod != null)
+        for (int i = 0; i < mods.Count; i++) {
+
+            if (mods[i] != null)
             {
-                mod.attachedTo = this;
-                mod.Activate();
+                mods[i] = Instantiate(mods[i]);
+                mods[i].attachedTo = this;
+                mods[i].Activate();
             } 
         }
     }
@@ -35,6 +36,7 @@ public class ModSlots : MonoBehaviour
         }
     }
     public void AddMod(Mod newMod) {
+        newMod = Instantiate(newMod);
         for (int i = 0; i < mods.Count; i++) {
             if(mods[i] == null) {
                 mods[i] = newMod;
@@ -42,15 +44,15 @@ public class ModSlots : MonoBehaviour
                 mods[i].Activate();
                 return;
             }
-            else if(mods[i] == newMod) {
+            else if(mods[i].name == newMod.name) {
                 mods[i].Reactivate();
                 return;
             }
         }
+        mods.Add(newMod);
         newMod.Activate();
-                newMod.attachedTo = this;
-                mods.Add(newMod);
-                return;
+        newMod.attachedTo = this;
+        return;
     }
     private void RemoveMod(Mod toRemove) {
         mods.Remove(toRemove);
