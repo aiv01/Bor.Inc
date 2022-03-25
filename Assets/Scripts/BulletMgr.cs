@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletMgr : MonoBehaviour
 {
     public static BulletMgr instance;
-    private List<GameObject> nbullets = new List<GameObject>();
-    private int maxBullet = 50;
+    [SerializeField] private List<Bullet> nbullets = new List<Bullet>();
+    [SerializeField] private int maxBullet = 50;
     [SerializeField] private Bullet bulletPref;
 
     private void Awake()
@@ -22,19 +22,22 @@ public class BulletMgr : MonoBehaviour
         {
             GameObject obj = Instantiate(bulletPref.gameObject, transform);
             obj.SetActive(false);
-            nbullets.Add(obj);
+            nbullets.Add(obj.GetComponent<Bullet>());
         }
     }
 
-    public GameObject GetBullet()
+    public Bullet GetBullet()
     {
         for(int i = 0; i< nbullets.Count; i++)
         {
-            if (!nbullets[i].activeInHierarchy)
+            if (!nbullets[i].gameObject.activeInHierarchy)
             {
                 return nbullets[i];
             }
         }
-        return null;
+        GameObject obj = Instantiate(bulletPref.gameObject, transform);
+        obj.SetActive(false);
+        nbullets.Add(obj.GetComponent<Bullet>());
+        return obj.GetComponent<Bullet>();
     }
 }

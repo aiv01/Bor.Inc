@@ -112,7 +112,7 @@ public class ExplorerController : BaseController {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out mouseHit, 50);
         transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z), Vector3.up);
-        anim.SetTrigger("ShootAttack");
+        
         InputDetected();
 
         Fire();
@@ -177,12 +177,12 @@ public class ExplorerController : BaseController {
     {
         navMesh.isStopped = true;
         currentTimerShootAnim = 0;
-        GameObject bullet = BulletMgr.instance.GetBullet();
+        Bullet bullet = BulletMgr.instance.GetBullet();
         if (bullet != null)
         {
             bullet.transform.position = bulletPos.position;//sono fortissimo 
             bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
-            bullet.SetActive(true);
+            bullet.gameObject.SetActive(true);
             bullet.GetComponent<Bullet>().Shoot(this, "Enemy");
         }
     }

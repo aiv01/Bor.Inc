@@ -5,10 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] float bulletDamage = 0.3f;
     float currentSpeed = 0;
     private float timer = 10f;
     private float currentTimer;
-    private string crecker;
+    private string targetTag;
     BaseController controller;
     ModSlots modSlots;
 
@@ -32,9 +33,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Shoot(BaseController shooter, string crecker)
+    public void Shoot(BaseController shooter, string tag)
     {
-        this.crecker = crecker;// se lo cambi ti spacco come un crecker eheh;
+        this.targetTag = tag;
         currentSpeed = speed;
         controller = shooter;
         modSlots = shooter.GetComponent<ModSlots>(); 
@@ -42,12 +43,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == crecker)
+        if(other.gameObject.tag == targetTag)
         {
             this.gameObject.SetActive(false);
             BaseController bc = other.GetComponent<BaseController>();
-            bc.TakeDamage(0.3f, controller);
-            modSlots.Attack(AtachTo.gun, bc, 0.3f);
+            bc.TakeDamage(bulletDamage, controller);
+            modSlots.Attack(AtachTo.gun, bc, bulletDamage);
             currentTimer = 0;
         }
     }

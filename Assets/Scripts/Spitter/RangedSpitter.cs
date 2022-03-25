@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangedSpitter : Mob {
     [SerializeField] Transform target;
+    [SerializeField] Transform bulletPos;
     bool pursuit;
     bool retreat;
     override public void Update() {
@@ -43,10 +44,15 @@ public class RangedSpitter : Mob {
     }
 
 
-    public void AttackBegin() {
-
+    public void Shoot() {
+        Bullet bullet = BulletMgr.instance.GetBullet();
+        if (bullet != null) {
+            bullet.transform.position = bulletPos.position;
+            bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+            bullet.gameObject.SetActive(true);
+            bullet.GetComponent<Bullet>().Shoot(this, "Player");
+        }
     }
     public void AttackEnd() {
-
     }
 }
