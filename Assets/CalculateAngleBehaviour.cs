@@ -7,15 +7,16 @@ public class CalculateAngleBehaviour : StateMachineBehaviour
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.SetBool("Turn", false);
         MeleeGranadier mg = animator.GetComponent<MeleeGranadier>();
-        float angle = Vector3.Angle(mg.TargetPos - animator.transform.position, animator.transform.forward);
-        animator.SetFloat("Angle", angle * 0.0055556f);
-        if(angle < mg.DetecAngle)
+        float angle = Vector3.SignedAngle((mg.Ellen.position - animator.transform.position).normalized, animator.transform.forward, Vector3.up);
+        animator.SetFloat("Angle", -angle * 0.0055556f);
+        if(angle > mg.DetecAngle|| angle < -mg.DetecAngle)
         {
             animator.SetBool("Turn", true);
             return;
         }
-        else if (mg.AttackDistance * mg.AttackDistance > (mg.TargetPos - animator.transform.position).sqrMagnitude)
+        else if ((mg.Ellen.position - animator.transform.position).sqrMagnitude < mg.AttackDistance * mg.AttackDistance)
         {
             animator.SetTrigger("MeleeAttack");
         }

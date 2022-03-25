@@ -25,7 +25,6 @@ public class Slowness : Mod
         if (currentSlownessMult >= 1) currentSlownessMult = 1;
         attachedTo.GetComponent<BaseController>().speed = oldSpeed * (1 - currentSlownessMult);
         attachedTo.GetComponent<NavMeshAgent>().speed = oldSpeed * (1 - currentSlownessMult);
-        Debug.Log((1 - currentSlownessMult));
 
     }
     public override void DoCicle() {
