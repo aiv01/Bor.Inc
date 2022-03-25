@@ -18,9 +18,18 @@ public class ExplorerController : BaseController {
     [SerializeField] private LayerMask attackableMask;
     [SerializeField] private Transform bulletPos;
     private Animator anim;
-    
-    [HideInInspector] public float damageMult;
 
+    [HideInInspector] public float damageMultCombo;
+    [HideInInspector] public float effectDamageMult = 1;
+    public float MaxHp
+    {
+        get { return maxHp; }
+    }
+
+    public float CurrentHp
+    {
+        get { return currentHp; }
+    }
 
 
     public override void Start() {
@@ -162,7 +171,7 @@ public class ExplorerController : BaseController {
     public void MeleeAttackStart(int throwing = 0) {
         //meleeWeapon.BeginAttack(throwing != 0);
         //m_InAttack = true;
-        weaponArea.damageMult = damageMult;
+        weaponArea.damageMult = damageMultCombo * effectDamageMult;
         weaponArea.AttackStart();
     }
 

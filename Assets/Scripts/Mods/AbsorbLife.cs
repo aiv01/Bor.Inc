@@ -6,6 +6,7 @@ using UnityEngine;
 public class AbsorbLife : Mod
 {
     [SerializeField]float absorbedLife;
+    [SerializeField] int percetageCureProbability = 3;
     [SerializeField] ParticleSystem particlesPrefab;
     ParticleSystem particles;
 
@@ -15,8 +16,11 @@ public class AbsorbLife : Mod
     }
     public override void DoAttack(BaseController hit, float damage)
     {
-        attachedTo.GetComponent<BaseController>().TakePassiveDamage(-damage * absorbedLife);
-        particles.Play();
+        if(Random.Range(0, percetageCureProbability) == 0)
+        {
+            attachedTo.GetComponent<BaseController>().TakePassiveDamage(-damage * absorbedLife);
+            particles.Play();
+        }
     }
 
 }

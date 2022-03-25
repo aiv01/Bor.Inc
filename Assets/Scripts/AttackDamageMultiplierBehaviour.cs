@@ -8,7 +8,7 @@ public class AttackDamageMultiplierBehaviour : StateMachineBehaviour
     [SerializeField] float damageMult;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        animator.GetComponent<ExplorerController>().damageMult = damageMult;
+        animator.GetComponent<ExplorerController>().damageMultCombo = damageMult;
         animator.GetComponent<NavMeshAgent>().isStopped = true;
     }
 
