@@ -9,6 +9,7 @@ public class BaseController : MonoBehaviour {
     [SerializeField] protected float currentHp;
     [SerializeField] protected float attackDistance;
 
+    [SerializeField] public Transform bulletPos;
 
     protected ModSlots mods;
     protected NavMeshAgent navMesh;

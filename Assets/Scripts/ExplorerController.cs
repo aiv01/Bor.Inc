@@ -16,7 +16,7 @@ public class ExplorerController : BaseController {
     [SerializeField] AttackArea weaponArea;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask attackableMask;
-    [SerializeField] private Transform bulletPos;
+    
     private Animator anim;
 
     [HideInInspector] public float damageMultCombo;
@@ -184,6 +184,7 @@ public class ExplorerController : BaseController {
     
     public void ShootStart()
     {
+        GetComponent<ModSlots>().StrikeAttack(AtachTo.gun);
         navMesh.isStopped = true;
         currentTimerShootAnim = 0;
         Bullet bullet = BulletMgr.instance.GetBullet();

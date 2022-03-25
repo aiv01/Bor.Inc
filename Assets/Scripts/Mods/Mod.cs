@@ -17,6 +17,8 @@ public class Mod : ScriptableObject
     virtual public void DoAttack(BaseController hit, float damage = 0) {
 
     }
+    virtual public void StrikeAttack() {
+    }
     virtual public void Reactivate() {
 
     }

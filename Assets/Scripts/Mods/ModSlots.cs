@@ -29,6 +29,12 @@ public class ModSlots : MonoBehaviour
         }
         modsToRemove.Clear();
     }
+    public void StrikeAttack(AtachTo type) {
+        foreach (Mod mod in mods) {
+            if (mod != null && mod.atachTo == type)
+                mod.StrikeAttack();
+        }
+    }
     public void Attack(AtachTo type, BaseController hit, float damage = 0) {
         foreach (Mod mod in mods) {
             if(mod != null && mod.atachTo == type)

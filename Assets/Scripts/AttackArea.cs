@@ -23,6 +23,7 @@ public class AttackArea : MonoBehaviour
         
     }
     public void AttackStart() {
+        modSlots.StrikeAttack(AtachTo.staff);
         coll.enabled = true;
     }
     public void AttackEnd() {
