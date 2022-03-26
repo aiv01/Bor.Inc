@@ -24,6 +24,7 @@ public class ExplorerController : BaseController {
     public float MaxHp
     {
         get { return maxHp; }
+        set { maxHp = value; }
     }
 
     public float CurrentHp
