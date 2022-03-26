@@ -18,6 +18,10 @@ public class Mod : ScriptableObject
 
     }
     virtual public void StrikeAttack() {
+
+    }
+    virtual public void OnHit() {
+
     }
     virtual public void Reactivate() {
 

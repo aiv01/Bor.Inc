@@ -60,6 +60,11 @@ public class ModSlots : MonoBehaviour
         newMod.Activate();
         return;
     }
+    public void OnHit() {
+        foreach (Mod mod in mods) {
+            if(mod) mod.OnHit();
+        }
+    }
     private void RemoveMod(Mod toRemove) {
         mods.Remove(toRemove);
     }
