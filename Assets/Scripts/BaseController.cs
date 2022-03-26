@@ -15,7 +15,7 @@ public class BaseController : MonoBehaviour {
     protected NavMeshAgent navMesh;
     protected Vector3 targetPos;
     protected Animator animator;
-
+    public float CurrentHp => currentHp;
     virtual public void Start()
     {
         currentHp = maxHp;
@@ -37,6 +37,7 @@ public class BaseController : MonoBehaviour {
     }
     virtual public void TakeDamage(float damage, BaseController attacker) {
         currentHp -= damage;
+        GetComponent<ModSlots>().OnHit();
         if (currentHp <= 0) Die();
     }
     virtual public void TakePassiveDamage(float damage) {

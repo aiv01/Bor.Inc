@@ -27,10 +27,7 @@ public class ExplorerController : BaseController {
         set { maxHp = value; }
     }
 
-    public float CurrentHp
-    {
-        get { return currentHp; }
-    }
+    
 
 
     public override void Start() {

@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxHp: 0
+  maxHp: 4
   currentHp: 0
   attackDistance: 5
   bulletPos: {fileID: 162392331}
@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxHp: 0
+  maxHp: 30
   currentHp: 0
   attackDistance: 4
   bulletPos: {fileID: 0}
@@ -14971,6 +14971,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1558492865}
     - target: {fileID: 209095068, guid: 14744e97a5894bc4f8632bd66322bce0, type: 3}
+      propertyPath: maxHp
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 209095068, guid: 14744e97a5894bc4f8632bd66322bce0, type: 3}
       propertyPath: attackArea
       value: 
       objectReference: {fileID: 512231170}
@@ -15070,7 +15074,7 @@ PrefabInstance:
     - target: {fileID: 3300302112730478129, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: dc237d4c18f067f4687f53eb7a009f74, type: 2}
+      objectReference: {fileID: 11400000, guid: aaf31d5c18f58044cbd647a29e1bed95, type: 2}
     - target: {fileID: 8120268519390743159, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.0000012968364
@@ -15213,7 +15217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8120268519526649194, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8120268519526649194, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: bulletPos
