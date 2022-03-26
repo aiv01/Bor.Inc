@@ -14731,6 +14731,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 188589905205462722, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: plantMult
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6263636408963559666, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
       propertyPath: m_Name
       value: MapCreator 1
