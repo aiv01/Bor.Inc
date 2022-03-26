@@ -6,12 +6,17 @@ using UnityEngine;
 
 public class LifeChange : Mod
 {
-    [SerializeField] float newMaxHp;
+    [SerializeField] float addMaxHp;
     float oldMaxHp;
     public override void Activate()
     {
         oldMaxHp = attachedTo.GetComponent<ExplorerController>().MaxHp;
-        attachedTo.GetComponent<ExplorerController>().MaxHp = newMaxHp;
+        attachedTo.GetComponent<ExplorerController>().MaxHp += addMaxHp;
+    }
+
+    public override void Disable()
+    {
+        attachedTo.GetComponent<ExplorerController>().MaxHp -= addMaxHp;
     }
 
 }
