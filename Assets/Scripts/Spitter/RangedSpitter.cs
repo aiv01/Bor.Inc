@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedSpitter : Mob {
-    [SerializeField] Transform target;
     [SerializeField] BulletMgr bulletMgr;
     bool pursuit;
     bool retreat;
+    public void Awake() {
+        bulletMgr = GameObject.Find("BulletMgr (Sludge)").GetComponent<BulletMgr>();
+    }
     override public void Update() {
         //if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
-        if ((-transform.position + target.position).sqrMagnitude <= viewDistance * viewDistance) {
+        if ((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance) {
             
-            targetPos = target.position;
+            targetPos = ellen.position;
             animator.SetBool("HaveTarget", true);
             //navMesh.destination = targetPos;
 
@@ -20,20 +22,20 @@ public class RangedSpitter : Mob {
             targetPos = spawnPos;
             retreat = true;
         }
-        if ((-transform.position + target.position).sqrMagnitude <= attackDistance * attackDistance) {
+        if ((-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance) {
             animator.SetTrigger("Attack");
             animator.SetBool("Fleeing", false);
-            transform.LookAt(target);
+            transform.LookAt(ellen);
             if (!navMesh.isStopped) navMesh.isStopped = true;
         } else {
             animator.SetBool("Fleeing", true);
-            targetPos = target.position;
+            targetPos = ellen.position;
             if (navMesh.isStopped)
                 navMesh.isStopped = false;
         }
         if (retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase) {
             animator.SetBool("Fleeing", false);
-            targetPos = target.position;
+            targetPos = ellen.position;
             retreat = false;
         } else if (retreat && (-transform.position + spawnPos).sqrMagnitude > distanceFromBase * distanceFromBase) {
             animator.SetBool("Fleeing", true);

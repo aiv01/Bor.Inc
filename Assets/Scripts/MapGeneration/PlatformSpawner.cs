@@ -54,6 +54,7 @@ public class PlatformSpawner : MonoBehaviour
             }
             plantSpawner = GetComponent<PlantSpawner>();
             plantSpawner.PlacePlants();
+            GetComponent<EnemySpawn>().SpawnEnemy();
         }
     }
     private void Awake() {

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MeleeGranadier : Mob
 {
-    [SerializeField] Transform ellen;
-
     bool pursuit;
     bool retreat;
     [SerializeField] AttackArea attackArea;
