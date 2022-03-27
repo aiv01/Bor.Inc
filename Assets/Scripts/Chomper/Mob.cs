@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class Mob : BaseController
 {
-    
+    [SerializeField] protected Transform ellen;
+
     [SerializeField] protected float damage;
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float distanceFromBase;
     protected Vector3 spawnPos;
-
-
-    //public int statusHit;
 
     public override void Start() {
         base.Start();
         animator.SetBool("NearBase", true);
         spawnPos = transform.position;
         targetPos = spawnPos;
+        if (!ellen) ellen = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     override public void Update() {

@@ -16,7 +16,7 @@ public struct Platform {
         }
     }
 }
-
+[RequireComponent(typeof(PlantSpawner), typeof(EnemySpawn), typeof(CullingGroupOps))]
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] List<Platform> platforms;
@@ -38,6 +38,7 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] int gridMultiplier = 4;
     NavMeshSurface navMeshSurface;
     int[,] grid;
+    PlantSpawner plantSpawner;
     [HideInInspector] public int[,] Grid {
         set {
             grid = new int[value.GetLength(0) * gridMultiplier, value.GetLength(1) * gridMultiplier];
@@ -51,7 +52,11 @@ public class PlatformSpawner : MonoBehaviour
             foreach (var item in GetComponents<NavMeshSurface>()) {
                 item.BuildNavMesh();
             }
-            //Draw();
+            plantSpawner = GetComponent<PlantSpawner>();
+            List<Transform> toCull = new List<Transform>();
+            toCull.AddRange(plantSpawner.PlacePlants());
+            toCull.AddRange(GetComponent<EnemySpawn>().SpawnEnemy());
+            GetComponent<CullingGroupOps>().SetUp(toCull.ToArray());
         }
     }
     private void Awake() {
@@ -116,8 +121,8 @@ public class PlatformSpawner : MonoBehaviour
                             if (exit) break;
                         }
                         if (!exit) {
-                            for (int u = i; i < grid.GetLength(0) && u < i + p.size.x; u++) {
-                                for (int v = j; j < grid.GetLength(1) && v < j + p.size.y; v++) {//setta tutti i punti toccati dalla piattafroma a 0
+                            for (int u = i; u < grid.GetLength(0) && u < i + p.size.x; u++) {
+                                for (int v = j; v < grid.GetLength(1) && v < j + p.size.y; v++) {//setta tutti i punti toccati dalla piattafroma a 0
                                     grid[u, v] = 0;
                                 }
                             }

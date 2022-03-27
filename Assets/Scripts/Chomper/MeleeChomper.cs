@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MeleeChomper : Mob
 {
-    [SerializeField] Transform ellen;
     bool pursuit;
     bool retreat;
     [SerializeField]AttackArea attackArea;
