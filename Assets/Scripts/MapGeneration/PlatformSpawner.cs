@@ -16,7 +16,7 @@ public struct Platform {
         }
     }
 }
-
+[RequireComponent(typeof(PlantSpawner), typeof(EnemySpawn), typeof(CullingGroupOps))]
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] List<Platform> platforms;
@@ -53,8 +53,10 @@ public class PlatformSpawner : MonoBehaviour
                 item.BuildNavMesh();
             }
             plantSpawner = GetComponent<PlantSpawner>();
-            plantSpawner.PlacePlants();
-            GetComponent<EnemySpawn>().SpawnEnemy();
+            List<Transform> toCull = new List<Transform>();
+            toCull.AddRange(plantSpawner.PlacePlants());
+            toCull.AddRange(GetComponent<EnemySpawn>().SpawnEnemy());
+            GetComponent<CullingGroupOps>().SetUp(toCull.ToArray());
         }
     }
     private void Awake() {

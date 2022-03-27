@@ -17,7 +17,8 @@ public class EnemySpawn : MonoBehaviour
 
     [SerializeField] LayerMask ground;
     GameObject folder;
-    public void SpawnEnemy() {
+    List<Transform> mobList = new List<Transform>();
+    public Transform[] SpawnEnemy() {
         folder = new GameObject("Enemies");
         folder.transform.parent = transform;
         
@@ -47,6 +48,7 @@ public class EnemySpawn : MonoBehaviour
                 break;
         }
         folder.transform.localPosition = Vector3.zero;
+        return mobList.ToArray();
     }
 
     private void DoCicle(Mob prefab, int n) {
@@ -59,10 +61,10 @@ public class EnemySpawn : MonoBehaviour
 
             } while (!Physics.Raycast(pos, -transform.up, out raycastHit, 25f, ground) ||
             Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.x / -transform.position.x * 2) ||
-            Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.z / -transform.position.x * 2)
+            Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.z / -transform.position.z * 2)
             );
             mob.transform.position = raycastHit.point;
-
+            mobList.Add(mob.transform);
         }
     }
 }

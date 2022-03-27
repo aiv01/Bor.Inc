@@ -9,13 +9,13 @@ public class PlantSpawner : MonoBehaviour
     [SerializeField] LayerMask ground;
     Ray ray;
     [SerializeField] float plantMult = 5;
-
+    List<Transform> plantList = new List<Transform>();
     void Start() {
 
         
 
     }
-    public void PlacePlants() {
+    public Transform[] PlacePlants() {
         GameObject folder = new GameObject("Plants");
         folder.transform.parent = transform;
         RaycastHit raycastHit;
@@ -29,11 +29,11 @@ public class PlantSpawner : MonoBehaviour
                 
                 } while (!Physics.Raycast(pos, -transform.up, out raycastHit, 25f, ground));
                 plant.position = raycastHit.point;
-
+                plantList.Add(plant);
             }
         }
         folder.transform.localPosition = Vector3.zero;
-        
+        return plantList.ToArray();
     }
 
     // Update is called once per frame
