@@ -160,8 +160,6 @@ public class ExplorerController : BaseController {
         base.TakeDamage(damage, attacker);
     }
 
-
-
     void Locomotion() {
         anim.SetFloat("ForwardSpeed", speed);
     }

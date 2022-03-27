@@ -13045,6 +13045,186 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: ChomperPrefab
+      value: 
+      objectReference: {fileID: 2909851141798656228, guid: f8c8020d6a0a62d4588c166f77ba6156, type: 3}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: SpitterPrefab
+      value: 
+      objectReference: {fileID: 8888678434532280142, guid: d918aaa9bb2fafd47a04ebc8175bc272, type: 3}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: ground.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: GranadierPrefab
+      value: 
+      objectReference: {fileID: 4795967440992312981, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nChompersPerLevel.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nChompersPerLevel.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nChompersPerLevel.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nSpittersPerLevel.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nSpittersPerLevel.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nSpittersPerLevel.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nGranadiersPerLevel.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: nGranadiersPerLevel.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[0].time
+      value: 1.1641532e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].time
+      value: 0.20098306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].time
+      value: 0.49933863
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].time
+      value: 0.8003361
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[4].time
+      value: 0.99867725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[0].value
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].value
+      value: 0.90089107
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].value
+      value: 0.00094256445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].value
+      value: 0.9029887
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[4].value
+      value: 1.0023562
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].inSlope
+      value: -1.4998552
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].inSlope
+      value: 1.8476834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].outSlope
+      value: -1.4998552
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].outSlope
+      value: 1.8476834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[4].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].outWeight
+      value: 0.1525671
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].outWeight
+      value: 0.17470247
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[4].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[0].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[2].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139308234287596076, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
+      propertyPath: spawnPosProbability.m_Curve.Array.data[4].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
     - target: {fileID: 6263636408963559666, guid: 6ad9711e450098645beaa613ab09b145, type: 3}
       propertyPath: m_Name
       value: MapCreator 1
@@ -13312,6 +13492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenadier
       objectReference: {fileID: 0}
+    - target: {fileID: 4795967440992213054, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4795967440992312981, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
       propertyPath: ellen
       value: 
@@ -13376,6 +13560,10 @@ PrefabInstance:
     - target: {fileID: 6643453478081810966, guid: f8c8020d6a0a62d4588c166f77ba6156, type: 3}
       propertyPath: m_Name
       value: Chomper
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643453478081810966, guid: f8c8020d6a0a62d4588c166f77ba6156, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c8020d6a0a62d4588c166f77ba6156, type: 3}
@@ -13515,6 +13703,10 @@ PrefabInstance:
     - target: {fileID: 8888678434818515515, guid: d918aaa9bb2fafd47a04ebc8175bc272, type: 3}
       propertyPath: m_Name
       value: Spitter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888678434818515515, guid: d918aaa9bb2fafd47a04ebc8175bc272, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8888678434819014171, guid: d918aaa9bb2fafd47a04ebc8175bc272, type: 3}
       propertyPath: m_RootOrder
