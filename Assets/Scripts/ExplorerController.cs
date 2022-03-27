@@ -80,7 +80,7 @@ public class ExplorerController : BaseController {
                 transform.rotation = Quaternion.LookRotation(d, Vector3.up);
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-            if(moveDirection.sqrMagnitude > 0) targetPos = transform.position + moveDirection;
+            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection;
 
         }
         

@@ -13,7 +13,7 @@ public class BaseController : MonoBehaviour {
 
     protected ModSlots mods;
     protected NavMeshAgent navMesh;
-    protected Vector3 targetPos;
+    public Vector3 targetPos;
     protected Animator animator;
     public float CurrentHp => currentHp;
     virtual public void Start()

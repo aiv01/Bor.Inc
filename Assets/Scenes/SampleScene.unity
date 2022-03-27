@@ -13622,6 +13622,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7462ed88fc485b44488c2c6426b192bd, type: 2}
+    - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: dc237d4c18f067f4687f53eb7a009f74, type: 2}
+    - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 05b1c6e250346e0429c96f0b1787a839, type: 2}
+    - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 349fd741b038c9f46ad18f35c6000c35, type: 2}
     - target: {fileID: 7392960476556205770, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: m_Name
       value: Ellen

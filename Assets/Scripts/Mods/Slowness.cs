@@ -10,6 +10,7 @@ public class Slowness : Mod
     [SerializeField] ParticleSystem particlesPrefab;
     ParticleSystem particles;
     [SerializeField] float blockedTime = 5;
+    [SerializeField] float defrostSpeed = 0.3f;
 
     float currentBlockedTime;
     float oldSpeed;
@@ -33,7 +34,16 @@ public class Slowness : Mod
             if (currentBlockedTime <= 0) {
                 attachedTo.modsToRemove.Add(this);
             }
+            return;
+        } else {
+            currentSlownessMult -= Time.deltaTime * defrostSpeed;
+            attachedTo.GetComponent<BaseController>().speed = oldSpeed * (1 - currentSlownessMult);
+            attachedTo.GetComponent<NavMeshAgent>().speed = oldSpeed * (1 - currentSlownessMult);
+            if (currentSlownessMult <= 0) {
+                attachedTo.modsToRemove.Add(this);
+            }
         }
+
     }
     public override void Disable() {
         attachedTo.GetComponent<NavMeshAgent>().speed = oldSpeed;
