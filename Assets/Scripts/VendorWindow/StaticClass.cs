@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class StaticClass
 {
-   public static List<Mod> modFind = new List<Mod>(); 
+   public static List<Bundle> modFind = new List<Bundle>(); 
 }
