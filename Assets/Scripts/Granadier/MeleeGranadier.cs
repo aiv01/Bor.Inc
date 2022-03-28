@@ -56,7 +56,12 @@ public class MeleeGranadier : Mob
         base.Update();
     }
 
-
+    override public void TakeDamage(float damage, BaseController attacker) {
+        if (damage > 0 && Random.Range(0, 20) == 0) {
+            animator.SetTrigger("Hit");
+        }
+        base.TakeDamage(damage, attacker);
+    }
 
 
     void BackToBase()
