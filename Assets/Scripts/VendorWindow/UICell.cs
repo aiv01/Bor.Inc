@@ -11,7 +11,13 @@ public class UICell : MonoBehaviour, IDropHandler
         Debug.LogFormat("Drop on cell {0}", this.gameObject.name);
 
         var go = eventData.pointerDrag;
-        ExecuteEvents.Execute<IDropOnValidPositionHandler>(go, eventData, (target, datiAggiuntivi) => target.OnDropOnValidPosition(datiAggiuntivi,transform));
+        ExecuteEvents.Execute<IDropOnValidPositionHandler>(go, eventData, (target, datiAggiuntivi) => target.OnDropOnValidPosition(datiAggiuntivi,this));
     }
+
+    public virtual void RestoreOnPosition() 
+    {
+        transform.SetParent(this.transform);
+    }
+
 
 }

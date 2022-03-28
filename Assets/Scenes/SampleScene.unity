@@ -13700,7 +13700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[0]
@@ -13709,15 +13709,15 @@ PrefabInstance:
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: dc237d4c18f067f4687f53eb7a009f74, type: 2}
+      objectReference: {fileID: 11400000, guid: 405a23c44fbb127438c4e472d4415c15, type: 2}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 05b1c6e250346e0429c96f0b1787a839, type: 2}
+      objectReference: {fileID: 11400000, guid: 46a9d8fa906766f4a83b7b7047cf84a9, type: 2}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 349fd741b038c9f46ad18f35c6000c35, type: 2}
+      objectReference: {fileID: 11400000, guid: 46a9d8fa906766f4a83b7b7047cf84a9, type: 2}
     - target: {fileID: 7392960476556205770, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: m_Name
       value: Ellen

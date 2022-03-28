@@ -9,6 +9,7 @@ public class Vendor : MonoBehaviour
     private Player player;
     [SerializeField] GameObject window;
     [SerializeField] Text tx;
+    bool entered = false;
     void Start()
     {
         player = ReInput.players.GetPlayer(0);
@@ -17,8 +18,7 @@ public class Vendor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetButtonDown("OpenVendor"))
-        {
+        if (entered && player.GetButtonDown("OpenVendor")) {
             tx.gameObject.SetActive(false);
             window.SetActive(true);
         }
@@ -28,6 +28,7 @@ public class Vendor : MonoBehaviour
         if(other.tag == "Player")
         {
             tx.gameObject.SetActive(true);
+            entered = true;
         }
     }
 
@@ -36,6 +37,7 @@ public class Vendor : MonoBehaviour
         if(other.tag == "Player")
         {
             tx.gameObject.SetActive(false);
+            entered = false;
         }
     }
 }

@@ -10,13 +10,14 @@ public class UIItem : MonoBehaviour,IDropOnValidPositionHandler, IBeginDragHandl
     Transform originalParent;
 
     Vector3 offset;
-
-    Vector3 lastposition;
-    Transform lastParent;
+    UICell lastParent;
     bool dropOnValidPosition = false;
+    public Text debug;
 
     private void Awake()
     {
+        
+        debug.text = GetInstanceID().ToString();
         gr = GetComponent<Graphic>();
         originalParent = transform.parent;
     }
@@ -26,8 +27,7 @@ public class UIItem : MonoBehaviour,IDropOnValidPositionHandler, IBeginDragHandl
         gr.raycastTarget = false;
         transform.SetParent(originalParent);
         transform.SetAsLastSibling();
-        lastParent = transform.parent;
-        lastposition = transform.position;
+        lastParent = transform.parent.GetComponent<UICell>();
         dropOnValidPosition = false;
     }
 
@@ -43,8 +43,8 @@ public class UIItem : MonoBehaviour,IDropOnValidPositionHandler, IBeginDragHandl
         gr.raycastTarget = true;
         if (!dropOnValidPosition)
         {
-            transform.SetParent(lastParent);
-            transform.position = lastposition;
+            lastParent.RestoreOnPosition();
+ 
         }
     }
 
@@ -58,10 +58,10 @@ public class UIItem : MonoBehaviour,IDropOnValidPositionHandler, IBeginDragHandl
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    public void OnDropOnValidPosition(BaseEventData eventData,Transform parent)
+    public void OnDropOnValidPosition(BaseEventData eventData,UICell parent)
     {
         dropOnValidPosition = true;
-        transform.SetParent(parent);
-        transform.position = parent.position;
+        lastParent = parent;
+        parent.RestoreOnPosition();
     }
 }

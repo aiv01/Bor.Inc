@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2656423, y: 1.8378592, z: 0.904354}
-  m_Center: {x: -0.022502482, y: 0.9007144, z: 0.592177}
+  m_Size: {x: 1.2656423, y: 1.6933637, z: 1.042609}
+  m_Center: {x: -0.022502482, y: 0.82846665, z: 0.31310737}
 --- !u!114 &9216768744564615585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +89,58 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0927727, y: 1.0639795, z: 1.4904442}
   m_Center: {x: 0.014121652, y: 0.55790883, z: -0.078962326}
+--- !u!114 &2116032428036801728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344581443110656285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301b25ccad9f4174bb48dfa4a41f2f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  maxHp: 8
+  currentHp: 0
+  attackDistance: 2
+  bulletPos: {fileID: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  ellen: {fileID: 0}
+  damage: 0
+  viewDistance: 7
+  distanceFromBase: 2
+  attackArea: {fileID: 9216768744564615585}
+--- !u!114 &2116032428036801729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344581443110656285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a971a1743e5ec4b858d674ba5a3a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2116032428036801732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344581443110656285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1566285600bf44c4d85b1cf678d636ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mods:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  modsToRemove: []
 --- !u!195 &2116032428036801739
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -111,57 +163,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2116032428036801732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344581443110656285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1566285600bf44c4d85b1cf678d636ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mods:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  modsToRemove: []
---- !u!114 &2116032428036801728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344581443110656285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 301b25ccad9f4174bb48dfa4a41f2f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  maxHp: 8
-  currentHp: 0
-  attackDistance: 2
-  bulletPos: {fileID: 0}
-  damage: 0
-  viewDistance: 7
-  distanceFromBase: 2
-  ellen: {fileID: 0}
-  attackArea: {fileID: 9216768744564615585}
---- !u!114 &2116032428036801729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344581443110656285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a971a1743e5ec4b858d674ba5a3a68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4344581443110625215
 PrefabInstance:
   m_ObjectHideFlags: 0

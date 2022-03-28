@@ -5,5 +5,5 @@ using UnityEngine.EventSystems;
 
 public interface IDropOnValidPositionHandler : IEventSystemHandler
 {
-    void OnDropOnValidPosition(BaseEventData eventData, Transform parent);
+    void OnDropOnValidPosition(BaseEventData eventData, UICell parent);
 }
