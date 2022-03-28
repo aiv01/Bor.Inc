@@ -39,6 +39,7 @@ public class PlatformSpawner : MonoBehaviour
     NavMeshSurface navMeshSurface;
     int[,] grid;
     PlantSpawner plantSpawner;
+    List<Transform> activatedPlatforms = new List<Transform>();
     [HideInInspector] public int[,] Grid {
         set {
             grid = new int[value.GetLength(0) * gridMultiplier, value.GetLength(1) * gridMultiplier];
@@ -56,6 +57,7 @@ public class PlatformSpawner : MonoBehaviour
             List<Transform> toCull = new List<Transform>();
             toCull.AddRange(plantSpawner.PlacePlants());
             toCull.AddRange(GetComponent<EnemySpawn>().SpawnEnemy());
+            toCull.AddRange(activatedPlatforms);
             GetComponent<CullingGroupOps>().SetUp(toCull.ToArray());
         }
     }
@@ -126,7 +128,7 @@ public class PlatformSpawner : MonoBehaviour
                                     grid[u, v] = 0;
                                 }
                             }
-                            Instantiate(p.platform, new Vector3(i + (p.size.x) * 0.5f, p.height, j + (p.size.y) * 0.5f), p.rot, folder.transform);
+                            activatedPlatforms.Add(Instantiate(p.platform, new Vector3(i + (p.size.x) * 0.5f, p.height, j + (p.size.y) * 0.5f), p.rot, folder.transform));
                         }
                     }
                 }

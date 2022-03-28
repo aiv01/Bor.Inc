@@ -16,6 +16,6 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, target.transform.position + offset.normalized * scaler, speed);
-        transform.LookAt(target.transform);
+        transform.LookAt(target.transform, Vector3.forward + Vector3.right);
     }
 }

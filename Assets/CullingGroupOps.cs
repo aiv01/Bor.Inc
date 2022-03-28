@@ -74,10 +74,18 @@ public class CullingGroupOps : MonoBehaviour
         //Debug.Log("Sphere["+ ev.index+"] ("+targets[ev.index].gameObject.name + ") is now inside DistanceBand: " + ev.currentDistance);
         switch (cullType) {
             case _cullingType.ActivateGO:
+                if (ev.currentDistance < 5 && targets[ev.index].gameObject.layer == 3) {
+                    SetLayerRecursively(targets[ev.index].gameObject, 6);
+                }
+                //if (targets[ev.index].gameObject.layer == 6) break;
+                //if (ev.currentDistance < 4 && targets[ev.index].gameObject.layer == 6) break;
+
                 Mob m = targets[ev.index].GetComponent<Mob>();
                 if (m && m.CurrentHp <= 0) break;
-                targets[ev.index].gameObject.SetActive(ev.currentDistance < 4);
+                targets[ev.index].gameObject.SetActive(ev.currentDistance < 4 || targets[ev.index].gameObject.layer == 6 || targets[ev.index].gameObject.layer == 3);
                 break;
+
+
             case _cullingType.EnableAnimator:
             targets[ev.index].gameObject.GetComponent<Animator>().enabled = (ev.currentDistance < 2);
                 break;
@@ -91,4 +99,19 @@ public class CullingGroupOps : MonoBehaviour
         }
 
     }
+    void SetLayerRecursively(GameObject obj, int newLayer) {
+        if (null == obj) {
+            return;
+        }
+
+        obj.layer = newLayer;
+
+        foreach (Transform child in obj.transform) {
+            if (null == child) {
+                continue;
+            }
+            SetLayerRecursively(child.gameObject, newLayer);
+        }
+    }
+
 }
