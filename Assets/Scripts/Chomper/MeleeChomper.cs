@@ -34,7 +34,13 @@ public class MeleeChomper : Mob
         if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
         base.Update();
     }
-
+    override public void TakeDamage(float damage, BaseController attacker) {
+        if (damage > 0) {
+            animator.SetTrigger("Hit");
+            animator.SetFloat("VerticalHitDot", 1);
+        }
+        base.TakeDamage(damage, attacker);
+    }
 
     public void AttackBegin() {
         attackArea.AttackStart();
