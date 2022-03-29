@@ -74,7 +74,7 @@ public class CullingGroupOps : MonoBehaviour
         //Debug.Log("Sphere["+ ev.index+"] ("+targets[ev.index].gameObject.name + ") is now inside DistanceBand: " + ev.currentDistance);
         switch (cullType) {
             case _cullingType.ActivateGO:
-                if (ev.currentDistance < 5 && targets[ev.index].gameObject.layer == 3) {
+                if (ev.currentDistance < 4 && targets[ev.index].gameObject.layer == 3) {
                     SetLayerRecursively(targets[ev.index].gameObject, 6);
                 }
                 //if (targets[ev.index].gameObject.layer == 6) break;
