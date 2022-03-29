@@ -21,38 +21,6 @@ public class MeleeGranadier : Mob
     public Vector3 SpawnPos => spawnPos;
     override public void Update()
     {
-        //float angle = Vector3.Angle(targetPos-transform.position, transform.forward);
-        //float distance = targetPos.magnitude;
-        //if ((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance)// molto alta
-        //{
-        //    if(angle < detecAngle && distance < detecDistance)
-        //    {
-        //        animator.SetBool("InPursuit", true);
-        //        pursuit = true;
-        //        targetPos = ellen.position;
-        //        if ((-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance)
-        //        {
-        //            animator.SetTrigger("MeleeAttack");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        animator.SetTrigger("Rotate");
-        //    }
-        //    //fai cono visivo
-        //    //se non sei nel cono visivo ruota
-        //    //se sei nel cono visivo avvicinati;
-        //    // se sei nel cono e vicino nell attack distance attacca;
-        //}
-        //else if (pursuit)
-        //{
-        //    pursuit = false;
-        //    animator.SetBool("InPursuit", false);
-        //    targetPos = spawnPos;
-        //    retreat = true;
-        //}
-        //BackToBase();
-        //if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;
         base.Update();
     }
 
