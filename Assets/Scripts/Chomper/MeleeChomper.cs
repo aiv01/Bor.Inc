@@ -48,4 +48,10 @@ public class MeleeChomper : Mob
     public void AttackEnd() {
         attackArea.AttackEnd();
     }
+    protected override void Die() {
+        GetComponent<DistanceDissolveTarget>().dissolve = true;
+        animator.enabled = false;
+        navMesh.enabled = false;
+        this.enabled = false;
+    }
 }
