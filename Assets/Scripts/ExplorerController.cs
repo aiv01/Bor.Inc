@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Rewired;
 
 public class ExplorerController : BaseController {
    
@@ -190,10 +186,18 @@ public class ExplorerController : BaseController {
             bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
             bullet.gameObject.SetActive(true);
             bullet.GetComponent<Bullet>().Shoot(this, "Enemy");
+            
         }
     }
     public void ShootEnd() {
         navMesh.isStopped = false;
+    }
+
+
+
+    private AudioClip GetRandomClip(AudioClip [] array)
+    {
+        return array[Random.Range(0, array.Length)];
     }
     #endregion
 }
