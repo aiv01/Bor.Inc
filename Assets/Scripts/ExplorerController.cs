@@ -42,7 +42,7 @@ public class ExplorerController : BaseController {
 
     void Movement() {
         if (moveDirection.sqrMagnitude > 0) {
-            transform.LookAt(transform.position + moveDirection, Vector3.up);
+            //transform.LookAt(transform.position + moveDirection, Vector3.up);
             InputDetected();
         }
         stateTime += Time.deltaTime;
@@ -68,12 +68,25 @@ public class ExplorerController : BaseController {
     }
 
     #region Input
-    public void InputMove(float horizontal, float vertical) {
+    public void InputControllerMove(float horizontal, float vertical) {
         if (navMesh.isStopped) {
             moveDirection = Vector3.zero;
             Vector3 d = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
             if (d.sqrMagnitude > 0) 
                 transform.rotation = Quaternion.LookRotation(d, Vector3.up);
+        } else {
+            moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
+            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection;
+
+        }
+        
+    }
+    public void InputKeyboardMove(float horizontal, float vertical) {
+        if (navMesh.isStopped) {
+            moveDirection = Vector3.zero;
+            //Vector3 d = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
+            //if (d.sqrMagnitude > 0) 
+            //    transform.rotation = Quaternion.LookRotation(d, Vector3.up);
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
             if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection;
@@ -107,6 +120,10 @@ public class ExplorerController : BaseController {
                 ) {
                 Attack();
                 transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
+            }else if ((raycastHit.point - transform.position).sqrMagnitude > attackDistance * attackDistance
+                 && (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
+                ) {
+                targetPos = raycastHit.point;
             }
         }
     }
@@ -167,7 +184,6 @@ public class ExplorerController : BaseController {
 
     public void MeleeAttackEnd() {
         weaponArea.AttackEnd();
-        
     }
     
     public void ShootStart()
