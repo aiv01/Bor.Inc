@@ -8,18 +8,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Chomper_Body_Mat
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f606e35e160f06c439cf02cc4b801870, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_ac1dfc950ea24aef92a42c01a6154b71:
+        m_Texture: {fileID: 2800000, guid: a131a3e31f0c4794fbd8d1fd0d942b6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AO:
         m_Texture: {fileID: 2800000, guid: 8b8f71b26727fd347aa7a9584bad7892, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -195,6 +198,11 @@ Material:
     m_Floats:
     - BACKFACENORMALMODE: 1
     - EFFECT_EXTRA_TEX: 1
+    - Vector1_2b4a7e1dea5f420fa37e617e872ee8a6: 200
+    - Vector1_43987e49b68247d690ff762d0dfce94b: 1
+    - Vector1_9842805fa9ed4814901ee8f9524861d3: -2.1
+    - Vector1_a1179c8ba57f45e08e86e41368672675: 0
+    - Vector1_d4bce671b8ea4a868b83aaacd8150e3b: 0.17
     - _AlphaClip: 1
     - _AlphaClipThreshold: 0.1
     - _Amount: 0
@@ -220,6 +228,7 @@ Material:
     - _Glossiness: 1
     - _GlossinessSource: 0
     - _GlossyReflections: 1
+    - _Height: -0.72
     - _HeightTransition: 0
     - _HueVariationKwToggle: 1
     - _MaxDiff: 0.107
@@ -234,6 +243,7 @@ Material:
     - _NormalMapKwToggle: 1
     - _NumLayersCount: 1
     - _OcclusionStrength: 1
+    - _Offset: 2
     - _OldHueVarBehavior: 0
     - _Opacity: 1
     - _Parallax: 0.02
@@ -273,6 +283,8 @@ Material:
     - _YMin: -1
     - _ZWrite: 1
     m_Colors:
+    - Color_15d367157a6545649367fbf9d8129fa8: {r: 0.3193101, g: 2.9536185, b: 7.6235285, a: 0}
+    - Color_9e07bfffb59c4177a4bdc31512a09f8b: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BoundingBox: {r: 1, g: 2.1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -286,6 +298,7 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.2}
+    - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecCol: {r: 1, g: 1, b: 1, a: 0}
