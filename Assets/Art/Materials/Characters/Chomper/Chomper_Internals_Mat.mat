@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Chomper_Internals_Mat
-  m_Shader: {fileID: 4800000, guid: 0f4122b9a743b744abe2fb6a0a88868b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f606e35e160f06c439cf02cc4b801870, type: 3}
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +19,22 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_008abbae2b7146b0a63aca87d4ce9da2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_23ce47f4ba2b44df847e972ef6e9a4f4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_51957efcb9d441ee8cedea4b05f7a77f:
+        m_Texture: {fileID: 2800000, guid: 937c2229d98699c4f9ac979b18b24a85, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ac1dfc950ea24aef92a42c01a6154b71:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AO:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -136,6 +152,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_2b4a7e1dea5f420fa37e617e872ee8a6: 100
+    - Vector1_43987e49b68247d690ff762d0dfce94b: 3
+    - Vector1_64ca5cbef02c4224b20a9e82c615180d: 0.5
+    - Vector1_a1179c8ba57f45e08e86e41368672675: -30
     - _AlphaClip: 0
     - _Bias: 0
     - _Blend: 0
@@ -213,6 +233,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_15d367157a6545649367fbf9d8129fa8: {r: 0, g: 1, b: 0.33532953, a: 0}
+    - Color_776a1de1336942e093735ccc735fde2f: {r: 0, g: 0, b: 0, a: 0}
+    - Color_9e07bfffb59c4177a4bdc31512a09f8b: {r: 0.2784314, g: 0.07058824, b: 0.07058824, a: 0.9019608}
     - _BaseColor: {r: 0.2784314, g: 0.07058824, b: 0.07058824, a: 0.9019608}
     - _Color: {r: 0.2794118, g: 0.06985295, b: 0.06985295, a: 0.903}
     - _Color2: {r: 0.72794116, g: 0.72794116, b: 0.72794116, a: 1}
@@ -224,6 +247,7 @@ Material:
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _ParallaxToBaseRatio: {r: 1, g: 1, b: 0, a: 0}
+    - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 0.29411763, g: 0.7371198, b: 1, a: 0}
     - _SnowAccumulation: {r: 0, g: 1, b: 0, a: 0}
     - _SnowDetailTiling: {r: 4, g: 4, b: 0, a: 0}

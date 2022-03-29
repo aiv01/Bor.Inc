@@ -44,7 +44,12 @@ public class RangedSpitter : Mob {
 
         base.Update();
     }
-
+    protected override void Die() {
+        GetComponent<DistanceDissolveTarget>().dissolve = true;
+        animator.enabled = false;
+        navMesh.enabled = false;
+        this.enabled = false;
+    }
     override public void TakeDamage(float damage, BaseController attacker) {
         if (damage > 0) {
             animator.SetTrigger("Hit");
