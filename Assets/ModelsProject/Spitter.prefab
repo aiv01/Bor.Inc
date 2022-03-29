@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8888678434532280145}
   - component: {fileID: 8888678434532280147}
   - component: {fileID: 8888678434532280149}
+  - component: {fileID: 8291128915547944244}
   m_Layer: 7
   m_Name: Spitter
   m_TagString: Enemy
@@ -135,10 +136,11 @@ MonoBehaviour:
   currentHp: 0
   attackDistance: 5
   bulletPos: {fileID: 8888678434624028586}
+  targetPos: {x: 0, y: 0, z: 0}
+  ellen: {fileID: 0}
   damage: 0
   viewDistance: 10
   distanceFromBase: 2
-  target: {fileID: 0}
   bulletMgr: {fileID: 0}
 --- !u!114 &8888678434532280145
 MonoBehaviour:
@@ -191,6 +193,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   modsToRemove: []
+--- !u!114 &8291128915547944244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888678434818515515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340c2504a575d4a47b0244d3bf98cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolve: 0
+  disolveSpeed: 0.7
 --- !u!1 &8888678434818515955
 GameObject:
   m_ObjectHideFlags: 0

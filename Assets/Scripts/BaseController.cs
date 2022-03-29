@@ -27,7 +27,7 @@ public class BaseController : MonoBehaviour {
         mods = GetComponent<ModSlots>();
 
         animator = GetComponent<Animator>();
-        animator.SetBool("Grounded", true);
+        //animator.SetBool("Grounded", true);
     }
 
     // Update is called once per frame
@@ -46,9 +46,8 @@ public class BaseController : MonoBehaviour {
         if(currentHp > maxHp) { currentHp = maxHp; }
     }
 
-    private void Die() {
-        animator.SetTrigger("Death");
-        navMesh.enabled = false;
+    virtual protected void Die() {
+        //animator.SetTrigger("Death");
         //ragdol.SetActive(true);
         gameObject.SetActive(false);
         //gameObject.SetActive(false);

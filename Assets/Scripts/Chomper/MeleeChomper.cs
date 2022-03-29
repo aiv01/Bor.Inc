@@ -41,7 +41,12 @@ public class MeleeChomper : Mob
         }
         base.TakeDamage(damage, attacker);
     }
-
+    protected override void Die() {
+        GetComponent<DistanceDissolveTarget>().dissolve = true;
+        animator.enabled = false;
+        navMesh.enabled = false;
+        this.enabled = false;
+    }
     public void AttackBegin() {
         attackArea.AttackStart();
     }

@@ -2067,6 +2067,7 @@ GameObject:
   - component: {fileID: 6031237750769503090}
   - component: {fileID: 2909851141798656228}
   - component: {fileID: 1832873360563178014}
+  - component: {fileID: 5007156658373061876}
   m_Layer: 7
   m_Name: Chomper
   m_TagString: Enemy
@@ -2195,10 +2196,11 @@ MonoBehaviour:
   currentHp: 0
   attackDistance: 2
   bulletPos: {fileID: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  ellen: {fileID: 0}
   damage: 0
   viewDistance: 7
   distanceFromBase: 2
-  ellen: {fileID: 0}
   attackArea: {fileID: 6031237751002908136}
 --- !u!114 &1832873360563178014
 MonoBehaviour:
@@ -2212,6 +2214,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a971a1743e5ec4b858d674ba5a3a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5007156658373061876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643453478081810966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340c2504a575d4a47b0244d3bf98cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolve: 0
+  disolveSpeed: 0.6
 --- !u!1 &6784089712597085537
 GameObject:
   m_ObjectHideFlags: 0
