@@ -36,6 +36,12 @@ public class AudioMgr : MonoBehaviour
         audioSorc.PlayOneShot(clip);
     }
 
+    private void Shoot()
+    {
+        AudioClip clip = GetRandomClip(shootClip);
+        audioSorc.PlayOneShot(clip);
+    }
+
     private void HurtEvent()
     {
         AudioClip hurt = GetRandomClip(hurtClips);
