@@ -46,7 +46,7 @@ public class MeleeGranadier : Mob
         }
     }
 
-    public void StartAttack()
+    public void MeleeAttackStart()
     {
         attackArea.AttackStart();
     }

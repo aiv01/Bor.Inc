@@ -42,7 +42,7 @@ public class MeleeChomper : Mob
         base.TakeDamage(damage, attacker);
     }
 
-    public void AttackBegin() {
+    public void MeleeAttackStart(){
         attackArea.AttackStart();
     }
     public void AttackEnd() {

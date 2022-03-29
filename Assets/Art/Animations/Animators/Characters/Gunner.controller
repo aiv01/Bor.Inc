@@ -488,7 +488,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c139235e3a6bb2b41abfdcc1c54bad61, type: 3}
+    m_Motion: {fileID: 7400000, guid: d0cb24e57f95cbb4f942106c9d6001b7, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -945,7 +945,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 25553dac765c5394a880b0b84ec0fde7, type: 3}
+  m_Motion: {fileID: 7400000, guid: 89b4554ae0139364ca04fe0ba768eff5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

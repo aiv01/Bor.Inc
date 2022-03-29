@@ -161,15 +161,11 @@ public class ExplorerController : BaseController {
     }
     #region AnimationEvents
     public void MeleeAttackStart(int throwing = 0) {
-        //meleeWeapon.BeginAttack(throwing != 0);
-        //m_InAttack = true;
         weaponArea.damageMult = damageMultCombo * effectDamageMult;
         weaponArea.AttackStart();
     }
 
     public void MeleeAttackEnd() {
-        //meleeWeapon.EndAttack();
-        //m_InAttack = false;
         weaponArea.AttackEnd();
         
     }
@@ -191,13 +187,6 @@ public class ExplorerController : BaseController {
     }
     public void ShootEnd() {
         navMesh.isStopped = false;
-    }
-
-
-
-    private AudioClip GetRandomClip(AudioClip [] array)
-    {
-        return array[Random.Range(0, array.Length)];
     }
     #endregion
 }

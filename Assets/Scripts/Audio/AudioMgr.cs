@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(AudioSource))]
 public class AudioMgr : MonoBehaviour
 {
     [SerializeField] private AudioClip[] clips;
