@@ -5150,6 +5150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ellen
       objectReference: {fileID: 0}
+    - target: {fileID: 8626015768921187436, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
 --- !u!224 &1178694098 stripped
