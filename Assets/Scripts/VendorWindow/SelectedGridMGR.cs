@@ -6,22 +6,53 @@ using Rewired;
 
 public class SelectedGridMGR : MonoBehaviour {
     private Player player;
-    Image[] cells;
+    GridCell[] cells;
     [SerializeField] Color selectedColor;
     [SerializeField] Color notSelectedColor;
-    Image selectedCell;
+    [SerializeField] int nSelectedMods = 3;
+    [SerializeField] VenderMgr venderMgr;
+    GridCell selectedCell;
+    int index = 0;
 
     void Awake() {
 
-        GridCell[] c = GetComponentsInChildren<GridCell>(); //TODO chiedi un modo migliore
-        List<Image> clist = new List<Image>();
-        for (int i = 0; i < c.Length; i++) {
-            clist.Add(c[i].GetComponent<Image>());
-        }
-        cells = clist.ToArray();
-        cells[0].color = selectedColor;
-        selectedCell = cells[0];
         player = ReInput.players.GetPlayer(0);
+        cells = GetComponentsInChildren<GridCell>();
+        foreach (GridCell item in cells) {
+            item.Selected = false;
+        }
+        cells[0].Selected = true;
+        selectedCell = cells[0];
 
+    }
+    private void Update() {
+        int oldIndex = index;
+        if (player.GetButtonDown("RT")) {
+            index++;
+            CorrectPos();
+        }
+        if (player.GetButtonDown("LT")) {
+            index--;
+            CorrectPos();
+        }
+        if (index != oldIndex) {
+            selectedCell = cells[index];
+            foreach (GridCell item in cells) {
+                item.Selected = false;
+            }
+            selectedCell.Selected = true;
+        }
+    }
+    public void CorrectPos() {
+        if (index < 0) index = nSelectedMods - 1;
+        if (index > nSelectedMods - 1) index = 0;
+    }
+    public void PassMod(Bundle bundle) {
+        if(!selectedCell.ConnectedBundle)
+            selectedCell.ConnectedBundle = bundle;
+        else {
+            venderMgr.ReactivateBundle(selectedCell.ConnectedBundle);
+            selectedCell.ConnectedBundle = bundle;
+        }
     }
 }

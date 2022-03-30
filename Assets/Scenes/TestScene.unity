@@ -4631,6 +4631,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellsPerRow: 8
   cellsPerColum: 3
+  noBundle: {fileID: 21300000, guid: b1af90ce03a007349aa9428d646a0939, type: 3}
+  info: {fileID: 11400000, guid: fc4aaa00eab449246a8ac809d584e4b1, type: 2}
+  selectedGridMGR: {fileID: 1900300602}
 --- !u!114 &1022509284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8313,6 +8316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900300600}
   - component: {fileID: 1900300601}
+  - component: {fileID: 1900300602}
   m_Layer: 5
   m_Name: SelectedGrid
   m_TagString: Untagged
@@ -8366,6 +8370,22 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1900300602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900300599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae13bcc4443d174086faad3e8068f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedColor: {r: 1, g: 0.8039216, b: 0, a: 1}
+  notSelectedColor: {r: 1, g: 1, b: 1, a: 1}
+  nSelectedMods: 3
+  venderMgr: {fileID: 1022509283}
 --- !u!1 &1903436848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b476cabc75adebf4e998f44ada8db684, type: 3}
