@@ -12,6 +12,7 @@ public class InputExplorer : MonoBehaviour
     }
     void Update()
     {
+        if (PauseMenu.GameIsPaused) return;
         if (player.GetButton("LeftClick")) {
             explorer.ClickPressed();
         }

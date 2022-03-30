@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class PauseMenu : MonoBehaviour
 {
+    private Player player;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    // Update is called once per frame
+
+    private void Awake()
+    {
+        player = ReInput.players.GetPlayer(0);
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (player.GetButtonDown("Pause"))
         {
             if (GameIsPaused)
             {
@@ -19,6 +25,12 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+        if (GameIsPaused)
+        {
+            if (player.GetButtonDown("MeleeController")) { LoadMenu(); }
+            else if (player.GetButtonDown("OpenVendor")) { QuitGame(); }
+            else if (player.GetButtonDown("Select")) { Resume(); }
         }
     }
 

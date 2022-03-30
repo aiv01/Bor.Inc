@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 6fd1fb8479e6a994f9e4cc7fb79d2ac2
 ModelImporter:
-  serializedVersion: 20101
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       1: 100000
@@ -710,7 +710,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: Ellen_Skeleton/Ellen_Root
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -829,12 +829,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a5674d01884853d4e8f2386a171e14d9,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

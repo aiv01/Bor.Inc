@@ -10,8 +10,21 @@ public class AnimationNavMeshStoppedBehaviour : StateMachineBehaviour
     [SerializeField] bool stopNavMesh;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if(when == When.StateEnter) {
-            animator.GetComponent<NavMeshAgent>().isStopped = stopNavMesh;
+        if(when == When.StateEnter)
+        {
+            EnableNavAgent(animator);
+        }
+    }
+
+    private void EnableNavAgent(Animator animator)
+    {
+        NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
+        agent.updatePosition = !stopNavMesh;
+        agent.updateRotation = !stopNavMesh;
+        if (!stopNavMesh)
+        {
+            agent.nextPosition = animator.transform.position;
+            animator.GetComponent<BaseController>().targetPos = agent.nextPosition;
         }
     }
 
@@ -24,7 +37,8 @@ public class AnimationNavMeshStoppedBehaviour : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (when == When.StateExit) {
-            animator.GetComponent<NavMeshAgent>().isStopped = stopNavMesh;
+            //animator.GetComponent<NavMeshAgent>().isStopped = stopNavMesh;
+            EnableNavAgent(animator);
         }
     }
 
