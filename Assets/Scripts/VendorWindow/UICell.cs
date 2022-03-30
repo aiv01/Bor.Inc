@@ -14,10 +14,10 @@ public class UICell : MonoBehaviour, IDropHandler
         ExecuteEvents.Execute<IDropOnValidPositionHandler>(go, eventData, (target, datiAggiuntivi) => target.OnDropOnValidPosition(datiAggiuntivi,this));
     }
 
-    public virtual void RestoreOnPosition() 
-    {
-        transform.SetParent(this.transform);
-    }
+    //public virtual void RestoreOnPosition() 
+    //{
+    //    transform.SetParent(this.transform);
+    //}
 
 
 }

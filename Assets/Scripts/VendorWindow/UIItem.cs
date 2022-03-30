@@ -43,7 +43,7 @@ public class UIItem : MonoBehaviour,IDropOnValidPositionHandler, IBeginDragHandl
         gr.raycastTarget = true;
         if (!dropOnValidPosition)
         {
-            lastParent.RestoreOnPosition();
+            //lastParent.RestoreOnPosition();
  
         }
     }
@@ -62,6 +62,6 @@ public class UIItem : MonoBehaviour,IDropOnValidPositionHandler, IBeginDragHandl
     {
         dropOnValidPosition = true;
         lastParent = parent;
-        parent.RestoreOnPosition();
+        //parent.RestoreOnPosition();
     }
 }
