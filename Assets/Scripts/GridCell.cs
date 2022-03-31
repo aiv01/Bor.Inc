@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class GridCell : MonoBehaviour
+public class GridCell : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] Image buttonA;
     [SerializeField] public Image modIcon;
     [SerializeField] Color selectedColor;
     [SerializeField] Color notSelectedColor;
+    [SerializeField] Sprite noBundleImage;
     Bundle bundle;
     [HideInInspector] public Bundle ConnectedBundle {
         get { return bundle; }
         set {
             bundle = value;
             if(bundle)
-            modIcon.sprite = bundle.bundleImage;
+                modIcon.sprite = bundle.bundleImage;
+            else
+                modIcon.sprite = noBundleImage;
         }
     }
     private Image circle;
@@ -29,7 +33,7 @@ public class GridCell : MonoBehaviour
             selected = value;
             if(!circle) circle = GetComponent<Image>();
             circle.color = value ? selectedColor : notSelectedColor;
-            buttonA.gameObject.SetActive(value);
+            if(buttonA) buttonA.gameObject.SetActive(value);
         }
     }
     private bool chosen;
@@ -37,7 +41,7 @@ public class GridCell : MonoBehaviour
         get { return chosen; }
         set {
             chosen = value;
-            buttonA.gameObject.SetActive(!value);
+            //if (buttonA) buttonA.gameObject.SetActive(!value);
             Color c = new Color(1, 1, 1, value ? 0.2f : 1);
             modIcon.color = c;
         }
@@ -47,5 +51,18 @@ public class GridCell : MonoBehaviour
         
     }
 
-
+    public void OnPointerClick(PointerEventData eventData) {
+        VenderMgr v = GetComponentInParent<VenderMgr>();
+        if (v) {
+            v.SelectedCell = this;
+            if(eventData.clickCount >= 2) {
+                v.OnChoose();
+            }
+            return;
+        }
+        SelectedGridMGR s = GetComponentInParent<SelectedGridMGR>();
+        if (s) {
+            s.SelectedCell = this;
+        }
+    }
 }

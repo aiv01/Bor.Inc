@@ -12,6 +12,17 @@ public class SelectedGridMGR : MonoBehaviour {
     [SerializeField] int nSelectedMods = 3;
     [SerializeField] VenderMgr venderMgr;
     GridCell selectedCell;
+    public GridCell SelectedCell {
+        get { return selectedCell; }
+        set {
+            foreach (GridCell item in cells) {
+                item.Selected = false;
+            }
+            value.Selected = true;
+            selectedCell = value;
+        }
+    }
+
     int index = 0;
 
     void Awake() {
@@ -48,7 +59,9 @@ public class SelectedGridMGR : MonoBehaviour {
         if (index > nSelectedMods - 1) index = 0;
     }
     public void PassMod(Bundle bundle) {
-        if(!selectedCell.ConnectedBundle)
+        if (!bundle) {
+            selectedCell.ConnectedBundle = bundle;
+        } else if(!selectedCell.ConnectedBundle)
             selectedCell.ConnectedBundle = bundle;
         else {
             venderMgr.ReactivateBundle(selectedCell.ConnectedBundle);
