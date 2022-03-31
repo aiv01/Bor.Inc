@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Bundle", menuName = "Bundle")]
-public class Bundle : Mod
+public class Bundle : ScriptableObject
 {
     [SerializeField] public Sprite bundleImage;
     [SerializeField] List<Mod> mods;
