@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b41f52c538130246af3d6298006eac2, type: 3}
   m_Name: LifeSteal
   m_EditorClassIdentifier: 
-  atachTo: 0
-  attachedTo: {fileID: 0}
   bundleImage: {fileID: 8814152071791133096, guid: ed823a6043d09374e8aec0546b234b31, type: 3}
   mods: []
   description: 

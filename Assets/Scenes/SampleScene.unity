@@ -14892,24 +14892,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 214ecc1daf075514f873036e0b7b62c0, type: 2}
+      objectReference: {fileID: 11400000, guid: cc9fd427bd005024b979a0953a9059c2, type: 2}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 352f4824aa076454e819cd408bda8b28, type: 2}
+      objectReference: {fileID: 11400000, guid: 11ee732552743694cba4c3194db618a7, type: 2}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 352f4824aa076454e819cd408bda8b28, type: 2}
+      objectReference: {fileID: 11400000, guid: 132c9301a4080384491657d9f5cefd59, type: 2}
     - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: mods.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 352f4824aa076454e819cd408bda8b28, type: 2}
+      objectReference: {fileID: 11400000, guid: dba4ae95d66638e4cb7e91aafbb6ca2e, type: 2}
+    - target: {fileID: 7392960476556205750, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
+      propertyPath: mods.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: dba4ae95d66638e4cb7e91aafbb6ca2e, type: 2}
     - target: {fileID: 7392960476556205770, guid: dc5e95b6de7fad147a50020c63bc6dd6, type: 3}
       propertyPath: m_Name
       value: Ellen

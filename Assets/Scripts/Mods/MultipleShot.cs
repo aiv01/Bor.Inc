@@ -13,7 +13,7 @@ public class MultipleShot : Mod
         slice = angle / nBullets;
     }
     public override void StrikeAttack() {
-        for (int i = nBullets / 2; i < nBullets; i++) {
+        for (int i = -(nBullets - 1) / 2; i < (nBullets - 1) / 2 + 1; i++) {
             if (i == 0) continue;
             Bullet bullet = BulletMgr.instance.GetBullet();
             if (bullet != null) {
