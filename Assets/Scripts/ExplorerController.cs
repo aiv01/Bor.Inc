@@ -14,9 +14,8 @@ public class ExplorerController : BaseController {
     [SerializeField] private LayerMask attackableMask;
     
     private Animator anim;
-
+    
     [HideInInspector] public float damageMultCombo;
-    [HideInInspector] public float effectDamageMult = 1;
     public float MaxHp
     {
         get { return maxHp; }
@@ -194,10 +193,10 @@ public class ExplorerController : BaseController {
         Bullet bullet = BulletMgr.instance.GetBullet();
         if (bullet != null)
         {
-            bullet.transform.position = bulletPos.position;//sono fortissimo 
+            bullet.transform.position = bulletPos.position;
             bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
             bullet.gameObject.SetActive(true);
-            bullet.GetComponent<Bullet>().Shoot(this, "Enemy");
+            bullet.GetComponent<Bullet>().Shoot(this, "Enemy", bulletBaseDamage);
             
         }
     }

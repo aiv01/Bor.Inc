@@ -9,11 +9,11 @@ public class ChangeBulk : Mod
     float oldEffectDamageMult;
     public override void Activate()
     {
-        oldEffectDamageMult = attachedTo.GetComponent<ExplorerController>().effectDamageMult;
-        attachedTo.GetComponent<ExplorerController>().effectDamageMult = damageMultDown * oldEffectDamageMult;
+        oldEffectDamageMult = attachedTo.GetComponent<BaseController>().effectDamageMult;
+        attachedTo.GetComponent<BaseController>().effectDamageMult = damageMultDown * oldEffectDamageMult;
     }
     public override void Disable()
     {
-        attachedTo.GetComponent<ExplorerController>().effectDamageMult /= damageMultDown;
+        attachedTo.GetComponent<BaseController>().effectDamageMult /= damageMultDown;
     }
 }

@@ -43,6 +43,7 @@ public class MeleeChomper : Mob
     }
 
     public void MeleeAttackStart(){
+        attackArea.damageMult = effectDamageMult;
         attackArea.AttackStart();
     }
     public void AttackEnd() {

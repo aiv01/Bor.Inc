@@ -11,6 +11,7 @@ public class GridCell : MonoBehaviour, IPointerClickHandler
     [SerializeField] Color selectedColor;
     [SerializeField] Color notSelectedColor;
     [SerializeField] Sprite noBundleImage;
+    [SerializeField] public float bulletBaseDamage = 0.3f;
     Bundle bundle;
     [HideInInspector] public Bundle ConnectedBundle {
         get { return bundle; }

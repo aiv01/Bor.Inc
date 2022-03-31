@@ -48,6 +48,7 @@ public class MeleeGranadier : Mob
 
     public void MeleeAttackStart()
     {
+        attackArea.damageMult = effectDamageMult;
         attackArea.AttackStart();
     }
     public void EndAttack()

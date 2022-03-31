@@ -33,8 +33,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Shoot(BaseController shooter, string tag)
+    public void Shoot(BaseController shooter, string tag, float damage = 0)
     {
+        if (damage != 0) bulletDamage = damage;
         this.targetTag = tag;
         currentSpeed = speed;
         controller = shooter;

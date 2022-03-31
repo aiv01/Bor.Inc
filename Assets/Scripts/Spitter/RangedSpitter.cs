@@ -63,7 +63,7 @@ public class RangedSpitter : Mob {
             bullet.transform.position = bulletPos.position;
             bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
             bullet.gameObject.SetActive(true);
-            bullet.GetComponent<Bullet>().Shoot(this, "Player");
+            bullet.GetComponent<Bullet>().Shoot(this, "Player", bulletBaseDamage);
         }
     }
     public void AttackEnd() {

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1408ae46748e147a490a8b44f8ac2e, type: 3}
   m_Name: New Fire Giver
   m_EditorClassIdentifier: 
-  atachTo: 0
+  atachTo: 1
   attachedTo: {fileID: 0}
-  ShootOfFireMod: {fileID: 11400000, guid: 4c61c408d8011c442bba0c3ad93162e3, type: 2}
+  ShootOfFireMod: {fileID: 11400000, guid: 352f4824aa076454e819cd408bda8b28, type: 2}

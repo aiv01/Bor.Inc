@@ -8,6 +8,8 @@ public class BaseController : MonoBehaviour {
     [SerializeField] protected float maxHp;
     [SerializeField] protected float currentHp;
     [SerializeField] protected float attackDistance;
+    [HideInInspector] public float effectDamageMult = 1;
+    public float bulletBaseDamage = 0;
 
     [SerializeField] public Transform bulletPos;
 
