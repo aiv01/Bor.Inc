@@ -6,4 +6,5 @@ public class ScriptableStaticClass : ScriptableObject
 {
     public List<Bundle> collectedBundles;
     public List<Bundle> inInventory;
+    public int nKeys = 0;
 }
