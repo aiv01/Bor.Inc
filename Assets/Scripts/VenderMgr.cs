@@ -12,6 +12,16 @@ public class VenderMgr : MonoBehaviour
     Vector2 currentPos = Vector2.zero;
     GridCell[] cells;
     GridCell selectedCell;
+    public GridCell SelectedCell {
+        get { return selectedCell; }
+        set {
+            foreach (GridCell item in cells) {
+                item.Selected = false;
+            }
+            value.Selected = true;
+            selectedCell = value;
+        }
+    }
     [SerializeField] ScriptableStaticClass info;
     [SerializeField] SelectedGridMGR selectedGridMGR;
 
@@ -57,9 +67,17 @@ public class VenderMgr : MonoBehaviour
             }
             selectedCell.Selected = true;
         }
-        if (selectedCell.ConnectedBundle && player.GetButtonDown("Select") && !selectedCell.Chosen) {
+        if (selectedCell.ConnectedBundle && player.GetButtonDown("Select")) {
+            OnChoose();
+        }
+    }
+    public void OnChoose() {
+        if (!selectedCell.Chosen) {
             selectedCell.Chosen = true;
             selectedGridMGR.PassMod(selectedCell.ConnectedBundle);
+        } else if (selectedCell.ConnectedBundle == selectedGridMGR.SelectedCell.ConnectedBundle) {
+            selectedCell.Chosen = false;
+            selectedGridMGR.PassMod(null);
         }
     }
     public void CorrectPos(Vector2 pos) {
