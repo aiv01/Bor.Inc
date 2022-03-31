@@ -60,8 +60,8 @@ public class EnemySpawn : MonoBehaviour
                 pos = new Vector3(Random.Range(0, -transform.position.x * 2), 20f, Random.Range(0, -transform.position.z * 2));
 
             } while (!Physics.Raycast(pos, -transform.up, out raycastHit, 25f, ground) ||
-            Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.x / -transform.position.x * 2) ||
-            Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.z / -transform.position.z * 2)
+            Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.x / (-transform.position.x * 2)) ||
+            Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.z / (-transform.position.z * 2))
             );
             mob.transform.position = raycastHit.point;
             mobList.Add(mob.transform);
