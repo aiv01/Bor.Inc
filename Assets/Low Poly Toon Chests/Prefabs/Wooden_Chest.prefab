@@ -240,6 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471650}
   - component: {fileID: 9569300}
+  - component: {fileID: -1018794352740806989}
   m_Layer: 0
   m_Name: Wooden_Chest
   m_TagString: Untagged
@@ -274,7 +275,7 @@ Animator:
   m_GameObject: {fileID: 195420}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 1563fdf2f6b218b48a3b4093285c1a08, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b81a9d2066d8ba441987c036fc3f7d89, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -283,3 +284,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1018794352740806989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee832bfe3c6b584190bf220e09a7d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: fc4aaa00eab449246a8ac809d584e4b1, type: 2}
+  tx: {fileID: 0}
