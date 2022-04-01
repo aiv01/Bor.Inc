@@ -51,6 +51,9 @@ public class MeleeChomper : Mob
     }
     protected override void Die() {
         GetComponent<DistanceDissolveTarget>().dissolve = true;
+        foreach (Collider item in GetComponentsInChildren<Collider>()) {
+            item.enabled = false;
+        }
         animator.enabled = false;
         navMesh.enabled = false;
         this.enabled = false;

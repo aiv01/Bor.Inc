@@ -64,6 +64,7 @@ public class EnemySpawn : MonoBehaviour
             Random.Range(0f, 1f) > spawnPosProbability.Evaluate(pos.z / (-transform.position.z * 2))
             );
             mob.transform.position = raycastHit.point;
+            mob.targetPos = raycastHit.point;
             mobList.Add(mob.transform);
         }
     }
