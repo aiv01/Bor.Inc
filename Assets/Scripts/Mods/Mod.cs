@@ -9,6 +9,7 @@ public enum AtachTo {
 [CreateAssetMenu(fileName = "New Mod", menuName = "Mod/Mod")]
 public class Mod : ScriptableObject
 {
+    public int level;
     public AtachTo atachTo = AtachTo.staff;
     [HideInInspector] public ModSlots attachedTo;
     virtual public void DoCicle() {
