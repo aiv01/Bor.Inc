@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a6d00ed6a48fd4499e5b6344f151e0, type: 3}
-  m_Name: New Teleport 3
+  m_Script: {fileID: 11500000, guid: 02bcdd403b5e39e4a926fdf4c9ee96c9, type: 3}
+  m_Name: Swiftness +1
   m_EditorClassIdentifier: 
   atachTo: 2
   attachedTo: {fileID: 0}
-  teleportChance: 5
-  radius: 10
-  ground:
-    serializedVersion: 2
-    m_Bits: 72
+  speedMult: 1.3
+  particlesPrefab: {fileID: 6343056980081922867, guid: 61b9991a42583b54bb5bde00faca8890, type: 3}
