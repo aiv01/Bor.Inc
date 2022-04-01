@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 548801474b7c8674e9addddea0f103c6, type: 3}
-  m_Name: New Slowness 2
+  m_Name: Slowness +3
   m_EditorClassIdentifier: 
+  level: 3
   atachTo: 0
   attachedTo: {fileID: 0}
-  slownessMult: 0.2
+  slownessMult: 0.8
   particlesPrefab: {fileID: 3950035532314171220, guid: b6bc3620f86c28d47898328c8b60fd40, type: 3}
-  blockedTime: 5
-  defrostSpeed: 0.3
+  blockedTime: 3
+  defrostSpeed: 0.2
