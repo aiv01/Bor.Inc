@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaticClassInstanciator : MonoBehaviour
 {
     [SerializeField]ScriptableStaticClass staticClass;
-    void Start()
+    void Awake()
     {
 
         if (!ScriptableStaticClass.instance) 
