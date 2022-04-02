@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02bcdd403b5e39e4a926fdf4c9ee96c9, type: 3}
-  m_Name: Swiftness +2
+  m_Name: Swiftness +2.5
   m_EditorClassIdentifier: 
+  level: 0
   atachTo: 2
   attachedTo: {fileID: 0}
   speedMult: 2

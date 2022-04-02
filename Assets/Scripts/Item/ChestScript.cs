@@ -9,9 +9,13 @@ public class ChestScript : MonoBehaviour
     Animator anim;
     private Player player;
     [SerializeField] ScriptableStaticClass info;
-    [SerializeField] GameObject tx;
+    GameObject tx;
     bool entered = false;
 
+    private void Awake()
+    {
+        tx = GameObject.Find("OpenTextChest");
+    }
     void Start()
     {
         player = ReInput.players.GetPlayer(0);

@@ -39,6 +39,8 @@ public class PlatformSpawner : MonoBehaviour
     NavMeshSurface navMeshSurface;
     int[,] grid;
     PlantSpawner plantSpawner;
+    KeySpawner keySpawner;
+    ChestSpawner chestSpawner;
     List<Transform> activatedPlatforms = new List<Transform>();
     [HideInInspector] public int[,] Grid {
         set {
@@ -54,8 +56,12 @@ public class PlatformSpawner : MonoBehaviour
                 item.BuildNavMesh();
             }
             plantSpawner = GetComponent<PlantSpawner>();
+            keySpawner = GetComponent<KeySpawner>();
+            chestSpawner = GetComponent<ChestSpawner>();
             List<Transform> toCull = new List<Transform>();
             toCull.AddRange(plantSpawner.PlacePlants());
+            keySpawner.PlaceKeys();
+            chestSpawner.PlaceChests();
             toCull.AddRange(GetComponent<EnemySpawn>().SpawnEnemy());
             toCull.AddRange(activatedPlatforms);
             GetComponent<CullingGroupOps>().SetUp(toCull.ToArray());

@@ -26,3 +26,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c5036dfad761af4d944698c2dfc2bfe, type: 2}
   inInventory: []
   nKeys: 1
+  finishLevel: 0

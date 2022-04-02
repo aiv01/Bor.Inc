@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2a6d00ed6a48fd4499e5b6344f151e0, type: 3}
-  m_Name: Teleport +2
+  m_Name: Teleport +2.5
   m_EditorClassIdentifier: 
+  level: 0
   atachTo: 2
   attachedTo: {fileID: 0}
   teleportChance: 5
