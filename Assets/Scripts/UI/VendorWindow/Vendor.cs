@@ -21,9 +21,10 @@ public class Vendor : MonoBehaviour
         if (entered && player.GetButtonDown("OpenVendor")) {
             tx.gameObject.SetActive(false);
             window.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {

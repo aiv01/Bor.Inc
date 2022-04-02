@@ -7,6 +7,7 @@ public class InputExplorer : MonoBehaviour
 {
     private Player player;
     [SerializeField] private ExplorerController explorer;
+    [SerializeField] bool atBase = false;
     private void Awake() {
         player = ReInput.players.GetPlayer(0);
     }
@@ -16,16 +17,16 @@ public class InputExplorer : MonoBehaviour
         if (player.GetButton("LeftClick")) {
             explorer.ClickPressed();
         }
-        if (player.GetButtonDown("LeftClick")) {
+        if (player.GetButtonDown("LeftClick") && !atBase) {
             explorer.ClickDown();
         }
-        if (player.GetButtonDown("RightClick")) {
+        if (player.GetButtonDown("RightClick") && !atBase) {
             explorer.RightClick();
         }
-        if (player.GetButtonDown("ShootController")) {
+        if (player.GetButtonDown("ShootController") && !atBase) {
             explorer.Shoot();
         }
-        if (player.GetButtonDown("MeleeController")){
+        if (player.GetButtonDown("MeleeController") && !atBase) {
             explorer.Attack();
         }
         if(player.GetAxis("MoveXController") != 0 || player.GetAxis("MoveYController") != 0)

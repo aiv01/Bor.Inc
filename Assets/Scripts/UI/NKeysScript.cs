@@ -9,7 +9,6 @@ public class NKeysScript : MonoBehaviour
     [SerializeField]ScriptableStaticClass info;
     void Start()
     {
-        info.Clear();
     }
 
     // Update is called once per frame

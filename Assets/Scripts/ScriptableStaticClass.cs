@@ -40,4 +40,17 @@ public class ScriptableStaticClass : ScriptableObject
     public int Count() {
         return collectedBundles.Count;
     }
+    public Mod[] GetModsInInventory() {
+        List<Mod> m = new List<Mod>();
+        foreach (Bundle item in inInventory) {
+            m.AddRange(item.mods);
+        }
+        return m.ToArray();
+    }
+    public void AddToInventory(Bundle b) {
+        inInventory.Add(b);
+    }
+    public void ClearInventory() {
+        inInventory.Clear();
+    }
 }

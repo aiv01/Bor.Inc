@@ -69,4 +69,10 @@ public class SelectedGridMGR : MonoBehaviour {
     public Bundle[] GetBundles() {
         return new Bundle[] { cells[0].ConnectedBundle, cells[1].ConnectedBundle, cells[2].ConnectedBundle };
     }
+    public void OnDisable() {
+        ScriptableStaticClass.instance.ClearInventory();
+        foreach (GridCell item in cells) {
+            ScriptableStaticClass.instance.AddToInventory(item.ConnectedBundle);
+        }
+    }
 }
