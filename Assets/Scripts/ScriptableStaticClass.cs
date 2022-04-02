@@ -7,8 +7,12 @@ public class ScriptableStaticClass : ScriptableObject
     [SerializeField] List<Bundle> collectedBundles;
     [SerializeField] List<Bundle> inInventory;
     [SerializeField] List<Bundle> allPossibleBundles;
+    public static ScriptableStaticClass instance;
     public int nKeys = 0;
     public bool foundTreasure;
+    public void CreateInstance() {
+        instance = this;
+    }
     public void Clear() {
         nKeys = 1000;
         foreach (Bundle item in collectedBundles) {
