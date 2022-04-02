@@ -21,7 +21,7 @@ public class ScriptableStaticClass : ScriptableObject
         Bundle b;
         do {
             b = allPossibleBundles[Random.Range(0, allPossibleBundles.Count)];
-        } while (b.wasFound && 3 - b.mods[0].level < Random.Range(0, 3));
+        } while (b.wasFound && (3 - b.mods[0].level) < Random.Range(0, 3));
         collectedBundles.Add(b);
         return b;
     }
