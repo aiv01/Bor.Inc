@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChestSpawner : MonoBehaviour
 {
     [SerializeField] Transform chest;
+    [SerializeField] Transform finalChest;
 
     [SerializeField] LayerMask ground;
     Ray ray;
@@ -28,6 +29,17 @@ public class ChestSpawner : MonoBehaviour
             chestList.Add(chestClone);
 
         }
+        float maxDist = 0;
+        Transform furtherChest = null;
+        foreach (Transform item in chestList) {
+            if(item.position.sqrMagnitude > maxDist) {
+                maxDist = item.position.sqrMagnitude;
+                furtherChest = item;
+            }
+        }
+        chestList.Remove(furtherChest);
+        chestList.Add(Instantiate(finalChest, furtherChest.position, furtherChest.rotation, folder.transform));
+        Destroy(furtherChest.gameObject);
         folder.transform.localPosition = Vector3.zero;
     }
 }

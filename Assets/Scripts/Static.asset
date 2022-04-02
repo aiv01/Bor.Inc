@@ -12,13 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a42220f4219e544cb551155f882f1cb, type: 3}
   m_Name: Static
   m_EditorClassIdentifier: 
-  collectedBundles:
-  - {fileID: 11400000, guid: 537a6d6f0bdc16b49b0ba620b5a45ad5, type: 2}
-  - {fileID: 11400000, guid: e9a9f7d7804f4ef4a8ec62464e4f0283, type: 2}
-  - {fileID: 11400000, guid: 5c780549460bd6146917e6b00984a952, type: 2}
-  - {fileID: 11400000, guid: ac5d0608d1f1ac545bd4fe697d9a21da, type: 2}
-  - {fileID: 11400000, guid: 1956280db0e09bf46848196ed9fc6005, type: 2}
-  - {fileID: 11400000, guid: 8eb36a7eca7311742bc5110e41dd26f7, type: 2}
+  collectedBundles: []
   inInventory: []
   allPossibleBundles:
   - {fileID: 11400000, guid: 82d07e75d5913c64ca4c583dfb8dd2db, type: 2}
@@ -1308,4 +1302,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 451e9e4395e14fc4fb77907391e381a6, type: 2}
   - {fileID: 11400000, guid: 925398d90c591a04b974a556c2df1743, type: 2}
   - {fileID: 11400000, guid: 505b173b60a833d46abb0e648824c157, type: 2}
-  nKeys: 997
+  nKeys: 1000
+  foundTreasure: 1
