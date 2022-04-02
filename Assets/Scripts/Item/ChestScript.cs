@@ -12,8 +12,8 @@ public class ChestScript : MonoBehaviour
     GameObject tx;
     Text itemFind;
     bool entered = false;
-    bool openChest;
-
+    bool opened;
+    bool finalChest = false;
     private void Awake()
     {
         tx = GameObject.Find("OpenTextChest");
@@ -29,14 +29,15 @@ public class ChestScript : MonoBehaviour
     void Update()
     {
         if(info.nKeys >= 1){
-            if (entered && player.GetButtonDown("OpenVendor"))
+            if (!opened && entered && player.GetButtonDown("OpenVendor"))
             {
-                openChest = true;
+                opened = true;
                 tx.SetActive(false);
                 anim.SetBool("Open", true);
                 info.nKeys--;
                 itemFind.gameObject.SetActive(true);
-                itemFind.text = info.FindNewBundle().description;
+                
+                itemFind.text = !finalChest ? info.FindNewBundle().description : "<color=yellow>Treasure recovered, you can now go back to base</color>";
 
             }
         }
@@ -45,7 +46,7 @@ public class ChestScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" &&  openChest == false)
+        if(other.tag == "Player" && !opened)
         {
             tx.SetActive(true);
             entered = true;

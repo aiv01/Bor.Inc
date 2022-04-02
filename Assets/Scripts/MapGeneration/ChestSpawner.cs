@@ -12,20 +12,20 @@ public class ChestSpawner : MonoBehaviour
     List<Transform> chestList = new List<Transform>();
     public void PlaceChests()
     {
-        GameObject folder = new GameObject("Keys");
+        GameObject folder = new GameObject("Chests");
         folder.transform.parent = transform;
         RaycastHit raycastHit;
         Vector3 pos;
         for (int j = 0; j < chestMult; j++)
         {
-            Transform plant = Instantiate(chest, folder.transform);
+            Transform chestClone = Instantiate(chest, folder.transform);
             do
             {
                 pos = new Vector3(Random.Range(0, -transform.position.x * 2), 20f, Random.Range(0, -transform.position.z * 2));
 
             } while (!Physics.Raycast(pos, -transform.up, out raycastHit, 25f, ground));
-            plant.position = raycastHit.point;
-            chestList.Add(plant);
+            chestClone.position = raycastHit.point;
+            chestList.Add(chestClone);
 
         }
         folder.transform.localPosition = Vector3.zero;
