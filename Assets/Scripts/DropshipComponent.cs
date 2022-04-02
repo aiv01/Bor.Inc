@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DropshipComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] ScriptableStaticClass info;
     void Start()
     {
         
@@ -14,5 +15,13 @@ public class DropshipComponent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+
+        }
     }
 }
