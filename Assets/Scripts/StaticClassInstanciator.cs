@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class StaticClassInstanciator : MonoBehaviour
 {
-    ScriptableStaticClass staticClass;
+    [SerializeField]ScriptableStaticClass staticClass;
     void Start()
     {
-        if (!ScriptableStaticClass.instance) staticClass.CreateInstance();
+
+        if (!ScriptableStaticClass.instance) 
+            staticClass.CreateInstance();
     }
 
 }

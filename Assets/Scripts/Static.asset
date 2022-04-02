@@ -1303,4 +1303,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 925398d90c591a04b974a556c2df1743, type: 2}
   - {fileID: 11400000, guid: 505b173b60a833d46abb0e648824c157, type: 2}
   nKeys: 1000
-  foundTreasure: 1
+  foundTreasure: 0
