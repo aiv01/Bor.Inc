@@ -10,11 +10,14 @@ public class ChestScript : MonoBehaviour
     private Player player;
     [SerializeField] ScriptableStaticClass info;
     GameObject tx;
+    Text itemFind;
     bool entered = false;
+    bool openChest;
 
     private void Awake()
     {
         tx = GameObject.Find("OpenTextChest");
+        itemFind = GameObject.Find("ItemFind").GetComponent<Text>();
     }
     void Start()
     {
@@ -28,18 +31,21 @@ public class ChestScript : MonoBehaviour
         if(info.nKeys >= 1){
             if (entered && player.GetButtonDown("OpenVendor"))
             {
+                openChest = true;
                 tx.SetActive(false);
                 anim.SetBool("Open", true);
                 info.nKeys--;
-                //spawn oggetti;
+                itemFind.gameObject.SetActive(true);
+                itemFind.text = info.FindNewBundle().description;
+
             }
         }
     }
         
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" &&  openChest == false)
         {
             tx.SetActive(true);
             entered = true;
