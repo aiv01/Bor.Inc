@@ -9,6 +9,9 @@ public class VenderMgr : MonoBehaviour
     [SerializeField] int cellsPerRow = 8;
     [SerializeField] int cellsPerColum = 3;
     [SerializeField] Sprite noBundle;
+    [SerializeField] Text descriptionText;
+    [SerializeField] Image leftArrow, rightArrow;
+    [HideInInspector] public int currentPage;
     Vector2 currentPos = Vector2.zero;
     GridCell[] cells;
     GridCell selectedCell;
@@ -20,27 +23,46 @@ public class VenderMgr : MonoBehaviour
             }
             value.Selected = true;
             selectedCell = value;
+            descriptionText.text = selectedCell.ConnectedBundle ? selectedCell.ConnectedBundle.description : "";
         }
     }
     [SerializeField] ScriptableStaticClass info;
     [SerializeField] SelectedGridMGR selectedGridMGR;
 
-    void Awake()
+    void Start()
     {
         
         player = ReInput.players.GetPlayer(0);
         cells = GetComponentsInChildren<GridCell>();
-        foreach (GridCell item in cells) {
-            item.Selected = false;
-        }
+        ChangePage(0);
+        
+        
+        
+
+    }
+    public void ChangePage(int pageN) {
         for (int i = 0; i < cells.Length; i++) {
-            if(i < info.collectedBundles.Count)
-                cells[i].ConnectedBundle = info.collectedBundles[i];
-
+            cells[i].ConnectedBundle = null;
+            cells[i].Chosen = false;
         }
-        cells[0].Selected = true;
-        selectedCell = cells[0];
-
+        for (int i = cells.Length * pageN; i < info.collectedBundles.Count && i < cells.Length * (pageN +1) ; i++) {
+            cells[i - cells.Length * pageN].ConnectedBundle = info.collectedBundles[i];
+        }
+        foreach (Bundle item in selectedGridMGR.GetBundles()) {
+            if (item) {
+                for (int i = 0; i < cells.Length; i++) {
+                    if (cells[i].ConnectedBundle == item) {
+                        cells[i].Chosen = true;
+                        break;
+                    }
+                }
+            }
+        }
+        currentPage = pageN;
+        SelectedCell = cells[0];
+        currentPos = Vector2.zero;
+        leftArrow.gameObject.SetActive(pageN > 0);
+        rightArrow.gameObject.SetActive(pageN < info.collectedBundles.Count / cells.Length);
     }
     private void Update() {
         Vector2 oldPos = currentPos;
@@ -61,22 +83,22 @@ public class VenderMgr : MonoBehaviour
             CorrectPos(currentPos);
         }
         if(currentPos != oldPos) {
-            selectedCell = FindConnectedCell();
-            foreach (GridCell item in cells) {
-                item.Selected = false;
-            }
-            selectedCell.Selected = true;
+            SelectedCell = FindConnectedCell();
+            //foreach (GridCell item in cells) {
+            //    item.Selected = false;
+            //}
+            //SelectedCell.Selected = true;
         }
-        if (selectedCell.ConnectedBundle && player.GetButtonDown("Select")) {
+        if (SelectedCell.ConnectedBundle && player.GetButtonDown("Select")) {
             OnChoose();
         }
     }
     public void OnChoose() {
-        if (!selectedCell.Chosen) {
-            selectedCell.Chosen = true;
-            selectedGridMGR.PassMod(selectedCell.ConnectedBundle);
-        } else if (selectedCell.ConnectedBundle == selectedGridMGR.SelectedCell.ConnectedBundle) {
-            selectedCell.Chosen = false;
+        if (!SelectedCell.Chosen) {
+            SelectedCell.Chosen = true;
+            selectedGridMGR.PassMod(SelectedCell.ConnectedBundle);
+        } else if (SelectedCell.ConnectedBundle == selectedGridMGR.SelectedCell.ConnectedBundle) {
+            SelectedCell.Chosen = false;
             selectedGridMGR.PassMod(null);
         }
     }

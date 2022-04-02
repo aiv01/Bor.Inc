@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b41f52c538130246af3d6298006eac2, type: 3}
+  m_Name: 111 ChangeBulk +3
+  m_EditorClassIdentifier: 
+  bundleImage: {fileID: -6257142105958012395, guid: ed823a6043d09374e8aec0546b234b31, type: 3}
+  mods:
+  - {fileID: 11400000, guid: 3da408a954617344bb9f794548febfa2, type: 2}
+  - {fileID: 11400000, guid: 0579ab4aeb961d747810dd8a5399cea2, type: 2}
+  description: ChangeBulk +3 Slowness Giver +1

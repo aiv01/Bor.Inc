@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548801474b7c8674e9addddea0f103c6, type: 3}
   m_Name: Slowness +2
   m_EditorClassIdentifier: 
+  level: 2
   atachTo: 0
   attachedTo: {fileID: 0}
   slownessMult: 0.2

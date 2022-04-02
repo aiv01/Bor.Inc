@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b229fd6d944f4d4f8a0609022e0ed41, type: 3}
-  m_Name: Slowness Giver +3
+  m_Name: Slowness Giver +3.5
   m_EditorClassIdentifier: 
+  level: 3
   atachTo: 0
   attachedTo: {fileID: 0}
   slownessMod: {fileID: 11400000, guid: 4dd5cc1915c4b834a8e90cec4f274744, type: 2}

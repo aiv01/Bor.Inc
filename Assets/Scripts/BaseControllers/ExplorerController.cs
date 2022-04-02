@@ -27,7 +27,6 @@ public class ExplorerController : BaseController {
 
     public override void Start() {
         base.Start();
-        Debug.Log(groundMask.value);
         anim = GetComponent<Animator>();
         targetPos = transform.position;
         timerRandomIdle = 10f;

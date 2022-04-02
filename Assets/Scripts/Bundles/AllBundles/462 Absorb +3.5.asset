@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b41f52c538130246af3d6298006eac2, type: 3}
+  m_Name: 462 Absorb +3.5
+  m_EditorClassIdentifier: 
+  bundleImage: {fileID: 8814152071791133096, guid: ed823a6043d09374e8aec0546b234b31, type: 3}
+  mods:
+  - {fileID: 11400000, guid: 4d917652863bdd644ae1b892fba8ac8d, type: 2}
+  - {fileID: 11400000, guid: 5c7d474e5825b4241a9bfb5b2b95611d, type: 2}
+  description: Absorb +3.5 Poison Giver +1.5

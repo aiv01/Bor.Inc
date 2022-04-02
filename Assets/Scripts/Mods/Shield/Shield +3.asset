@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424bbf84785361b44854d8e91567ef02, type: 3}
   m_Name: Shield +3
   m_EditorClassIdentifier: 
+  level: 3
   atachTo: 2
   attachedTo: {fileID: 0}
   rechargeTime: 15
