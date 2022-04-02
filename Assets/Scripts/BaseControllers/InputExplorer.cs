@@ -32,5 +32,6 @@ public class InputExplorer : MonoBehaviour
             explorer.InputControllerMove(player.GetAxis("MoveXController"), player.GetAxis("MoveYController"));
         else if(player.GetAxis("MoveXKeyboard") != 0 || player.GetAxis("MoveYKeyboard") != 0)
             explorer.InputKeyboardMove(player.GetAxis("MoveXKeyboard"), player.GetAxis("MoveYKeyboard"));
+
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b41f52c538130246af3d6298006eac2, type: 3}
+  m_Name: 273 Fire Giver +3.5
+  m_EditorClassIdentifier: 
+  bundleImage: {fileID: 8525654969935276704, guid: ed823a6043d09374e8aec0546b234b31, type: 3}
+  mods:
+  - {fileID: 11400000, guid: 11ee732552743694cba4c3194db618a7, type: 2}
+  - {fileID: 11400000, guid: 3a336fc972e0381419164bd15de8c009, type: 2}
+  description: Fire Giver +3.5 Swiftness +1.5

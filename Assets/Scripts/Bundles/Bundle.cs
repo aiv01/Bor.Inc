@@ -7,6 +7,6 @@ using UnityEngine.UI;
 public class Bundle : ScriptableObject
 {
     [SerializeField] public Sprite bundleImage;
-    [SerializeField] List<Mod> mods;
-    [SerializeField] string description;
+    [SerializeField] public List<Mod> mods = new List<Mod>();
+    [SerializeField] public string description;
 }

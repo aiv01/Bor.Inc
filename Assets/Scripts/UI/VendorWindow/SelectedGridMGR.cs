@@ -68,4 +68,7 @@ public class SelectedGridMGR : MonoBehaviour {
             selectedCell.ConnectedBundle = bundle;
         }
     }
+    public Bundle[] GetBundles() {
+        return new Bundle[] { cells[0].ConnectedBundle, cells[1].ConnectedBundle, cells[2].ConnectedBundle };
+    }
 }

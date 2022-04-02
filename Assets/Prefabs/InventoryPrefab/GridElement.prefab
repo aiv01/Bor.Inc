@@ -94,7 +94,8 @@ MonoBehaviour:
   modIcon: {fileID: 1836276331886255550}
   selectedColor: {r: 1, g: 0.80503094, b: 0, a: 1}
   notSelectedColor: {r: 1, g: 1, b: 1, a: 1}
-  noBundleImage: {fileID: 0}
+  noBundleImage: {fileID: 21300006, guid: 1c1f5fdffb8c5a944a978e8debb8fdfe, type: 3}
+  bulletBaseDamage: 0.3
 --- !u!1 &1553287482140845506
 GameObject:
   m_ObjectHideFlags: 0
