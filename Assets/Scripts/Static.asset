@@ -95,3 +95,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a0d8b91a105b444e811a4526c95f743, type: 2}
   inInventory: []
   nKeys: 1
+  finishLevel: 0
