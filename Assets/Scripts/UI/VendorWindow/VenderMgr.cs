@@ -45,8 +45,8 @@ public class VenderMgr : MonoBehaviour
             cells[i].ConnectedBundle = null;
             cells[i].Chosen = false;
         }
-        for (int i = cells.Length * pageN; i < info.collectedBundles.Count && i < cells.Length * (pageN +1) ; i++) {
-            cells[i - cells.Length * pageN].ConnectedBundle = info.collectedBundles[i];
+        for (int i = cells.Length * pageN; i < info.Count() && i < cells.Length * (pageN +1) ; i++) {
+            cells[i - cells.Length * pageN].ConnectedBundle = info.GetBundle(i);
         }
         foreach (Bundle item in selectedGridMGR.GetBundles()) {
             if (item) {
@@ -62,7 +62,7 @@ public class VenderMgr : MonoBehaviour
         SelectedCell = cells[0];
         currentPos = Vector2.zero;
         leftArrow.gameObject.SetActive(pageN > 0);
-        rightArrow.gameObject.SetActive(pageN < info.collectedBundles.Count / cells.Length);
+        rightArrow.gameObject.SetActive(pageN < info.Count() / cells.Length);
     }
     private void Update() {
         Vector2 oldPos = currentPos;

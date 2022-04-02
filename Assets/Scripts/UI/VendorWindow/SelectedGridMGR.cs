@@ -7,11 +7,10 @@ using Rewired;
 public class SelectedGridMGR : MonoBehaviour {
     private Player player;
     GridCell[] cells;
-    [SerializeField] Color selectedColor;
-    [SerializeField] Color notSelectedColor;
     [SerializeField] int nSelectedMods = 3;
     [SerializeField] VenderMgr venderMgr;
     GridCell selectedCell;
+    int index = 0;
     public GridCell SelectedCell {
         get { return selectedCell; }
         set {
@@ -23,7 +22,6 @@ public class SelectedGridMGR : MonoBehaviour {
         }
     }
 
-    int index = 0;
 
     void Awake() {
 
