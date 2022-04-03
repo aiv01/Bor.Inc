@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Static
   m_EditorClassIdentifier: 
   collectedBundles: []
-  inInventory: []
+  inInventory:
+  - {fileID: 11400000, guid: 4ce289e9161758042b4bb8c47dd1ff3e, type: 2}
+  - {fileID: 11400000, guid: 5d9e8cc0e4f0c0440ac16d13c86cad63, type: 2}
+  - {fileID: 0}
   allPossibleBundles:
   - {fileID: 11400000, guid: 82d07e75d5913c64ca4c583dfb8dd2db, type: 2}
   - {fileID: 11400000, guid: 963050ae05c2fec4a880cdf79dfe3e2e, type: 2}
@@ -1302,5 +1305,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 451e9e4395e14fc4fb77907391e381a6, type: 2}
   - {fileID: 11400000, guid: 925398d90c591a04b974a556c2df1743, type: 2}
   - {fileID: 11400000, guid: 505b173b60a833d46abb0e648824c157, type: 2}
-  nKeys: 1000
+  nKeys: 1001
   foundTreasure: 1
+  level: 0
+  explorerNumber: 1126
