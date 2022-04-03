@@ -33,6 +33,12 @@ public class ScriptableStaticClass : ScriptableObject
         collectedBundles.Add(b);
         return b;
     }
+    public Bundle[] GetCollectedItems() {
+        return collectedBundles.ToArray();
+    }
+    public Bundle[] GetInInventoryItems() {
+        return inInventory.ToArray();
+    }
     private bool CalculateProbability(int level) {
         return Random.Range(0, 50 * (level - 1) + 1) == 0;
     }
