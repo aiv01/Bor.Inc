@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExplorerController : BaseController {
    
@@ -216,6 +217,7 @@ public class ExplorerController : BaseController {
     private void DeathEvent()
     {
         this.gameObject.SetActive(false);
+        SceneManager.LoadScene("DeadScene");
     }
     #endregion
 }
