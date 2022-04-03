@@ -1154,6 +1154,135 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2009544842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009544843}
+  - component: {fileID: 2009544847}
+  - component: {fileID: 2009544846}
+  - component: {fileID: 2009544845}
+  - component: {fileID: 2009544844}
+  m_Layer: 5
+  m_Name: Ellen Sentences
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2009544843
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009544842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4691492668559186776}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 82.80001}
+  m_SizeDelta: {x: 448.6558, y: 40}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &2009544844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009544842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &2009544845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009544842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c590b4470eacb438aed84c2f08dbcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  timeToNextFrase: 3
+  timeToDespawn: 6
+  speed: 0.05
+  frases:
+  - How did I even get here?
+  - So... Bor.Inc is the company name? It sounds kinda "Boring"
+  - Is Explorer@ really my name? That's so wierd...
+  - Wait... what do you mean with "The boss is always watching"?!?
+  - Who is the Boss?!?
+  - ANSWER ME!       NOW!!!
+  - Who even am I?
+  - Hellooo... Robot voice... Are you still there?
+  - Why should I even continue this mission in an unamed land? What am I even doing
+    it for?
+  - I need to meet the boss... I need answers... There must be an explanation to
+    this situation
+  - Mabe the boss can tell me who I am...
+  - I hate my name... How can Explorer@ even be considered a name?
+  - Maybe I'll be able to find the boss by compleating my missions
+  - Ok, I must finish this missions!
+--- !u!114 &2009544846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009544842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90943396, g: 1, b: 1, a: 0.78431374}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 20
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Ellent Frases
+--- !u!222 &2009544847
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009544842}
+  m_CullTransparentMesh: 1
 --- !u!1 &2112052054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1515,11 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!224 &4691492668559186776 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4691492667817848651, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
+  m_PrefabInstance: {fileID: 4691492668559186773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5712440450441749595
 PrefabInstance:
   m_ObjectHideFlags: 0
