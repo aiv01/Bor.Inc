@@ -25,10 +25,10 @@ public class MeleeGranadier : Mob
     }
 
     override public void TakeDamage(float damage, BaseController attacker) {
-        if (damage > 0 && Random.Range(0, 20) == 0) {
+        base.TakeDamage(damage, attacker);
+        if (damage > 0 && Random.Range(0, 20) == 0 && currentHp > 0) {
             animator.SetTrigger("Hit");
         }
-        base.TakeDamage(damage, attacker);
     }
 
 
@@ -55,6 +55,18 @@ public class MeleeGranadier : Mob
     {
         attackArea.AttackEnd();
  
+    }
+
+    override protected void Die()
+    {
+        GetComponent<Collider>().enabled = false;
+        animator.SetTrigger("Death");
+    }
+
+    private void DeathEvent()
+    {
+        navMesh.enabled = false;
+        this.enabled = false;
     }
 
 }

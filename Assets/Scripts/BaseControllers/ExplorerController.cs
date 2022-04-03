@@ -166,10 +166,13 @@ public class ExplorerController : BaseController {
         Vector2 pippo = new Vector2(positionFromPlayer.x, positionFromPlayer.z).normalized;
         Quaternion anglePlayer = Quaternion.FromToRotation(forwardPlayer, pippo);
         pippo = anglePlayer * Vector3.forward;
-        anim.SetTrigger("Hurt");
-        anim.SetFloat("HurtFromX", pippo.x);
-        anim.SetFloat("HurtFromY", pippo.y);
         base.TakeDamage(damage, attacker);
+        if(currentHp > 0)
+        {
+            anim.SetTrigger("Hurt");
+            anim.SetFloat("HurtFromX", pippo.x);
+            anim.SetFloat("HurtFromY", pippo.y);
+        }
     }
 
     void Locomotion() {
@@ -202,6 +205,17 @@ public class ExplorerController : BaseController {
     }
     public void ShootEnd() {
         navMesh.isStopped = false;
+    }
+
+    override protected void Die()
+    {
+        GetComponent<Collider>().enabled = false;
+        anim.SetTrigger("Death");
+    }
+
+    private void DeathEvent()
+    {
+        this.gameObject.SetActive(false);
     }
     #endregion
 }
