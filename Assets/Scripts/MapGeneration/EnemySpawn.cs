@@ -7,7 +7,6 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] Vector4 nChompersPerLevel;
     [SerializeField] Vector4 nSpittersPerLevel;
     [SerializeField] Vector4 nGranadiersPerLevel;
-    [SerializeField] [Range(1, 4)] int level;
 
     [SerializeField] Mob ChomperPrefab;
     [SerializeField] Mob SpitterPrefab;
@@ -23,7 +22,7 @@ public class EnemySpawn : MonoBehaviour
         folder.transform.parent = transform;
         
 
-        switch (level) {
+        switch (ScriptableStaticClass.instance.level) {
             case 1:
                 DoCicle(ChomperPrefab, (int)nChompersPerLevel.x);
                 DoCicle(SpitterPrefab, (int)nSpittersPerLevel.x);

@@ -23,7 +23,7 @@ public class ScriptableStaticClass : ScriptableObject
         inInventory.Clear();
         collectedBundles.Clear();
         foundTreasure = true;
-        level = 0;
+        level = 1;
         explorerNumber++;
     }
     public Bundle FindNewBundle() {
@@ -33,7 +33,9 @@ public class ScriptableStaticClass : ScriptableObject
             b = allPossibleBundles[Random.Range(0, allPossibleBundles.Count)];
             
         } while (b.wasFound || !CalculateProbability(b.mods[0].level));
+        b.wasFound = true;
         collectedBundles.Add(b);
+        
         return b;
     }
     public Bundle[] GetCollectedItems() {
@@ -62,7 +64,7 @@ public class ScriptableStaticClass : ScriptableObject
     public Mod[] GetModsInInventory() {
         List<Mod> m = new List<Mod>();
         foreach (Bundle item in inInventory) {
-            if(!item)
+            if(item != null)
                 m.AddRange(item.mods);
         }
         return m.ToArray();

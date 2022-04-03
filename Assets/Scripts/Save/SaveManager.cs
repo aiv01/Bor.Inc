@@ -55,7 +55,7 @@ public static class SaveManager
         so.collectedBundles = ScriptableStaticClass.instance.GetCollectedItems();
         so.inInventory = ScriptableStaticClass.instance.GetInInventoryItems();
         so.nKeys = ScriptableStaticClass.instance.nKeys;
-        so.level = ScriptableStaticClass.instance.level + 1;
+        so.level = ScriptableStaticClass.instance.level;
         so.explorerNumber = ScriptableStaticClass.instance.explorerNumber;
         SaveManager.Save(so);
     }

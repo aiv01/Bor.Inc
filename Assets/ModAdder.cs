@@ -5,7 +5,7 @@ using UnityEngine;
 public class ModAdder : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         foreach (Mod item in ScriptableStaticClass.instance.GetModsInInventory()) {
             GetComponent<ModSlots>().AddMod(item);

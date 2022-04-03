@@ -21,6 +21,7 @@ public class DropshipComponent : MonoBehaviour
     {
         if(entered && player.GetButtonDown("OpenVendor"))
         {
+            ScriptableStaticClass.instance.level++;
             SaveManager.SaveStaticClassValues();
             SceneManager.LoadScene(scene);
         }

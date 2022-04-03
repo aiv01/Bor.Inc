@@ -1049,7 +1049,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 72
-  keyMult: 15
+  keyMult: 25
 --- !u!114 &1910780385
 MonoBehaviour:
   m_ObjectHideFlags: 0
