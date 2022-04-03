@@ -6137,6 +6137,10 @@ PrefabInstance:
       propertyPath: goBack
       value: 
       objectReference: {fileID: 1248388146}
+    - target: {fileID: 3117499808091371313, guid: e61621c85794aa040b4c40acc4a85da7, type: 3}
+      propertyPath: inLobby
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9139320136036157965, guid: e61621c85794aa040b4c40acc4a85da7, type: 3}
       propertyPath: m_Name
       value: Dropship 1

@@ -9,6 +9,7 @@ public class DropshipComponent : MonoBehaviour
 {
     [SerializeField]Text goBack;
     [SerializeField] string scene;
+    [SerializeField] bool inLobby = false;
     private Player player;
     bool entered;
     void Start()
@@ -21,7 +22,7 @@ public class DropshipComponent : MonoBehaviour
     {
         if(entered && player.GetButtonDown("OpenVendor"))
         {
-            ScriptableStaticClass.instance.level++;
+            if(!inLobby)ScriptableStaticClass.instance.level++;
             SaveManager.SaveStaticClassValues();
             SceneManager.LoadScene(scene);
         }
