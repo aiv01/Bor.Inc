@@ -11,7 +11,7 @@ public class SaveTest : MonoBehaviour
             SaveManager.Save(so);
         }
         if (Input.GetKeyDown(KeyCode.Return)) {
-            so = SaveManager.Load();
+            SaveManager.LoadSave();
         }
     }
 }

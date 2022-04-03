@@ -21,18 +21,9 @@ public class DropshipComponent : MonoBehaviour
     {
         if(entered && player.GetButtonDown("OpenVendor"))
         {
-            Save();
+            SaveManager.SaveStaticClassValues();
             SceneManager.LoadScene(scene);
         }
-    }
-    private void Save() {
-        SaveObject so = new SaveObject();
-        so.collectedBundles = ScriptableStaticClass.instance.GetCollectedItems();
-        so.inInventory = ScriptableStaticClass.instance.GetInInventoryItems();
-        so.nKeys = ScriptableStaticClass.instance.nKeys;
-        so.level = ScriptableStaticClass.instance.level;
-        so.explorerNumber = ScriptableStaticClass.instance.explorerNumber;
-        SaveManager.Save(so);
     }
     private void OnTriggerEnter(Collider other)
     {

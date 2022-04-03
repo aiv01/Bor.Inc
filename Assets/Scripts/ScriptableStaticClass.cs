@@ -16,12 +16,15 @@ public class ScriptableStaticClass : ScriptableObject
         instance = this;
     }
     public void Clear() {
-        nKeys = 1000;
+        nKeys = 0;
         foreach (Bundle item in collectedBundles) {
             item.wasFound = false;
         }
         inInventory.Clear();
         collectedBundles.Clear();
+        foundTreasure = true;
+        level = 0;
+        explorerNumber++;
     }
     public Bundle FindNewBundle() {
         Bundle b;
@@ -36,8 +39,16 @@ public class ScriptableStaticClass : ScriptableObject
     public Bundle[] GetCollectedItems() {
         return collectedBundles.ToArray();
     }
+    public void SetCollectedItems(Bundle[] bundles) {
+        collectedBundles.Clear();
+        collectedBundles.AddRange(bundles);
+    }
     public Bundle[] GetInInventoryItems() {
         return inInventory.ToArray();
+    }
+    public void SetInInventoryItems(Bundle[] bundles) {
+        inInventory.Clear();
+        inInventory.AddRange(bundles);
     }
     private bool CalculateProbability(int level) {
         return Random.Range(0, 50 * (level - 1) + 1) == 0;
@@ -51,7 +62,8 @@ public class ScriptableStaticClass : ScriptableObject
     public Mod[] GetModsInInventory() {
         List<Mod> m = new List<Mod>();
         foreach (Bundle item in inInventory) {
-            m.AddRange(item.mods);
+            if(!item)
+                m.AddRange(item.mods);
         }
         return m.ToArray();
     }

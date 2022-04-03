@@ -9,9 +9,10 @@ public class EllenSpawner : MonoBehaviour
     [SerializeField] Transform ellen;
     void Start()
     {
-        if (ScriptableStaticClass.instance.level == 0)
+        if (ScriptableStaticClass.instance.level == 1)
             ellen.position = newGameSpawnPoint;
         else ellen.position = spawnPoint;
+        ellen.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

@@ -22,7 +22,7 @@ public static class SaveManager
         string json = JsonUtility.ToJson(so);
         File.WriteAllText(dir + filename, json);
     }
-    public static SaveObject Load() {
+    private static SaveObject Load() {
 
         //if (SaveExists()) {
         //    try {
@@ -49,6 +49,23 @@ public static class SaveManager
             Debug.Log("Save file does not exist");
         }
         return so;
+    }
+    public static void SaveStaticClassValues() {
+        SaveObject so = new SaveObject();
+        so.collectedBundles = ScriptableStaticClass.instance.GetCollectedItems();
+        so.inInventory = ScriptableStaticClass.instance.GetInInventoryItems();
+        so.nKeys = ScriptableStaticClass.instance.nKeys;
+        so.level = ScriptableStaticClass.instance.level + 1;
+        so.explorerNumber = ScriptableStaticClass.instance.explorerNumber;
+        SaveManager.Save(so);
+    }
+    public static void LoadSave() {
+        SaveObject so = SaveManager.Load();
+        ScriptableStaticClass.instance.SetCollectedItems(so.collectedBundles);
+        ScriptableStaticClass.instance.SetInInventoryItems(so.inInventory);
+        ScriptableStaticClass.instance.nKeys = so.nKeys;
+        ScriptableStaticClass.instance.level = so.level;
+        ScriptableStaticClass.instance.explorerNumber = so.explorerNumber;
     }
     private static bool SaveExists() {
         return File.Exists(GetFullPath());
