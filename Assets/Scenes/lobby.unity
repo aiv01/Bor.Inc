@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a6243c7634e5d41a98337d060c06b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitButton: {fileID: 1507157290}
+  exitButton: {fileID: 0}
   window: {fileID: 54890135}
 --- !u!1001 &59474771
 PrefabInstance:
