@@ -82,6 +82,6 @@ public class BossController : BaseController {
 
     private void DeathEvent() {
         this.gameObject.SetActive(false);
-        SceneManager.LoadScene("DeadScene");
+        SceneManager.LoadScene("FinalScene");
     }
 }

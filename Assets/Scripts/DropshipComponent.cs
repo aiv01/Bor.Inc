@@ -24,7 +24,11 @@ public class DropshipComponent : MonoBehaviour
         {
             if(!inLobby)ScriptableStaticClass.instance.level++;
             SaveManager.SaveStaticClassValues();
-            SceneManager.LoadScene(scene);
+            if(ScriptableStaticClass.instance.level == 4 && inLobby)
+            {
+                SceneManager.LoadScene("BossRoom");
+            }
+            else { SceneManager.LoadScene(scene); }
         }
     }
     private void OnTriggerEnter(Collider other)
