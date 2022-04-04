@@ -1082,6 +1082,8 @@ MonoBehaviour:
   - I hate my name... How can Explorer@ even be considered a name?
   - Maybe I'll be able to find the boss by compleating my missions
   - Ok, I must finish this missions!
+  playerColor: {r: 0.9098039, g: 1, b: 1, a: 0.78431374}
+  secondVoiceColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2009544846
 MonoBehaviour:
   m_ObjectHideFlags: 0

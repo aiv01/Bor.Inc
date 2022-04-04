@@ -74,6 +74,9 @@ public class BossController : BaseController {
             anim.SetFloat("HurtFromX", pippo.x);
             anim.SetFloat("HurtFromY", pippo.y);
         }
+        if(currentHp <= 0) {
+            SceneManager.LoadScene("FinalScene");
+        }
     }
     override protected void Die() {
         GetComponent<Collider>().enabled = false;

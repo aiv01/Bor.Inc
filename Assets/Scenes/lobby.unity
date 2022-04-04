@@ -8816,6 +8816,8 @@ MonoBehaviour:
   - Hellooo... Robot voice... Are you still there?
   - YES, I'LL GO, just one more second.
   - I'm coming in a second wait me in the ship
+  playerColor: {r: 0.9098039, g: 1, b: 1, a: 0.78431374}
+  secondVoiceColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1176486165
 MonoBehaviour:
   m_ObjectHideFlags: 0

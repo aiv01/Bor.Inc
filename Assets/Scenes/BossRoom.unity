@@ -3158,7 +3158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  maxHp: 10
+  maxHp: 1
   currentHp: 0
   attackDistance: 3
   effectDamageMult: 1
@@ -3886,7 +3886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7397ac2c56364ca7dd9e5f7808176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStartBattle: 5
+  timeToStartBattle: 120
   boss: {fileID: 1068835454}
 --- !u!1 &817903974
 GameObject:
@@ -4934,7 +4934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.data[0]
@@ -4943,19 +4943,19 @@ PrefabInstance:
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 7d8a49441ec7b7e449cc3fc7795927b1, type: 2}
+      objectReference: {fileID: 11400000, guid: bb717225b43e62e4898f8651928ba1f8, type: 2}
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 4d917652863bdd644ae1b892fba8ac8d, type: 2}
+      objectReference: {fileID: 11400000, guid: 132c9301a4080384491657d9f5cefd59, type: 2}
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 8617a9a9604a0a74183ca7249290f54a, type: 2}
+      objectReference: {fileID: 11400000, guid: 132c9301a4080384491657d9f5cefd59, type: 2}
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: bb717225b43e62e4898f8651928ba1f8, type: 2}
+      objectReference: {fileID: 11400000, guid: 132c9301a4080384491657d9f5cefd59, type: 2}
     - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: mods.Array.data[5]
       value: 
