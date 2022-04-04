@@ -11,7 +11,8 @@ public class EllenSentences : MonoBehaviour
     [SerializeField] float timeToDespawn;
     [SerializeField] float speed;
     [SerializeField] string[] frases;
-
+    [SerializeField] Color playerColor;
+    [SerializeField] Color secondVoiceColor;
     string currentString;
     int stringLength;
     int currentCharIndex = 0;
@@ -21,10 +22,10 @@ public class EllenSentences : MonoBehaviour
     State currentState = State.waiting;
     void Start()
     {
-        if (ScriptableStaticClass.instance.level != level) this.enabled = false;
         text = GetComponent<Text>();
         text.text = "";
         currentTime = timeToNextFrase;
+        if (ScriptableStaticClass.instance.level != level) this.enabled = false;
     }
 
     void Update()
@@ -40,6 +41,13 @@ public class EllenSentences : MonoBehaviour
                 currentCharIndex = 0;
                 text.text = "";
                 stringLength = frases[index].Length;
+                if(frases[index][frases[index].Length-1] == '^') {
+                    text.color = secondVoiceColor;
+                        frases[index] = frases[index].Split('^')[0];
+                        stringLength--;
+                } else {
+                    text.color = playerColor;
+                }
                 break;
 
             case State.typing:
