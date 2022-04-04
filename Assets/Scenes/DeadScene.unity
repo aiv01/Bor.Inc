@@ -312,7 +312,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 816500112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad3384ea79483f49a690cd563e3793f, type: 3}
+  m_Script: {fileID: 11500000, guid: efaf6a8f512c68b48a725d04c72c5b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &859406813
@@ -698,7 +698,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1494948285
 MonoBehaviour:
@@ -1164,7 +1164,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 816500117}
-        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonFinalScene, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1381,7 +1381,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 816500117}
-        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonFinalScene, Assembly-CSharp
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
