@@ -13,6 +13,9 @@ public class BaseController : MonoBehaviour {
 
     [SerializeField] public Transform bulletPos;
 
+    [SerializeField] public BulletMgr bulletMgr;
+
+
     protected ModSlots mods;
     protected NavMeshAgent navMesh;
     public Vector3 targetPos;

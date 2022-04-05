@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedSpitter : Mob {
-    [SerializeField] BulletMgr bulletMgr;
+
     bool pursuit;
     bool retreat;
     public void Awake() {

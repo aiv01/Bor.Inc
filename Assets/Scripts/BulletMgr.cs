@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class BulletMgr : MonoBehaviour
 {
-    public static BulletMgr instance;
     [SerializeField] private List<Bullet> nbullets = new List<Bullet>();
     [SerializeField] private int maxBullet = 50;
     [SerializeField] private Bullet bulletPref;
 
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-    }
     void Start()
     {
         for(int i = 0; i < maxBullet; i++)

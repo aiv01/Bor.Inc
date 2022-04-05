@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ExplorerController : BaseController {
-   
     private float stateTime;
     private float timerRandomIdle;
     private float currentRT;
@@ -101,8 +100,8 @@ public class ExplorerController : BaseController {
     public void ClickPressed() {
         RaycastHit raycastHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out raycastHit, 50)) {
-                if ((groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && (raycastHit.point - transform.position).sqrMagnitude > attackDistance * attackDistance) {
+        if (Physics.Raycast(ray, out raycastHit, 50, groundMask)) {
+                if (/*(groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && */(raycastHit.point - transform.position).sqrMagnitude > attackDistance * attackDistance) {
                 //if(raycastHit.transform.gameObject.layer == groundMask) {
 
                 targetPos = raycastHit.point;
@@ -113,15 +112,15 @@ public class ExplorerController : BaseController {
     public void ClickDown() {
         RaycastHit raycastHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out raycastHit, 50)) {
+        if (Physics.Raycast(ray, out raycastHit, 50,groundMask|attackableMask)) {
             if ((raycastHit.point - transform.position).sqrMagnitude <= attackDistance * attackDistance
-                || (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
+                //|| (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
                         && (raycastHit.point - transform.position).sqrMagnitude <= attackDistance * attackDistance
                 ) {
                 Attack();
                 transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z), Vector3.up);
             }else if ((raycastHit.point - transform.position).sqrMagnitude > attackDistance * attackDistance
-                 && (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
+                 //&& (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
                 ) {
                 targetPos = raycastHit.point;
             }
@@ -194,7 +193,7 @@ public class ExplorerController : BaseController {
         GetComponent<ModSlots>().StrikeAttack(AtachTo.gun);
         navMesh.isStopped = true;
         currentTimerShootAnim = 0;
-        Bullet bullet = BulletMgr.instance.GetBullet();
+        Bullet bullet = bulletMgr.GetBullet();
         if (bullet != null)
         {
             bullet.transform.position = bulletPos.position;
