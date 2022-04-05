@@ -39,6 +39,9 @@ public class MeleeChomper : Mob
             animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1);
         }
+        if((-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase)
+        viewDistance += 3;
+
         base.TakeDamage(damage, attacker);
     }
 
@@ -49,8 +52,10 @@ public class MeleeChomper : Mob
     public void AttackEnd() {
         attackArea.AttackEnd();
     }
+
     protected override void Die() {
-        GetComponent<DistanceDissolveTarget>().dissolve = true;
+        //GetComponent<DistanceDissolveTarget>().dissolve = true;
+        GetComponent<Disintegratable>().Disintegrate(Vector3.up);
         foreach (Collider item in GetComponentsInChildren<Collider>()) {
             item.enabled = false;
         }

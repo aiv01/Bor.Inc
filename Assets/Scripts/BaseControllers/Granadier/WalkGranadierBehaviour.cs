@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WalkGranadierBehaviour : StateMachineBehaviour
 {
@@ -15,12 +16,15 @@ public class WalkGranadierBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         mg = animator.GetComponent<MeleeGranadier>();
         float angle = Vector3.SignedAngle((mg.Ellen.position - animator.transform.position).normalized, animator.transform.forward, Vector3.up);
+
         if ((-animator.transform.position + mg.Ellen.position).sqrMagnitude <= mg.ViewDistance * mg.ViewDistance) {
             if (angle > mg.DetecAngle * 0.5f || angle < -mg.DetecAngle * 0.5f) {
                 mg.TargetPos = animator.transform.position;
             } else {
                 mg.TargetPos = mg.Ellen.position;
             }
+            animator.SetFloat("Speed", (-animator.transform.position + mg.Ellen.position).sqrMagnitude / (mg.ViewDistance * mg.ViewDistance));
+            mg.GetComponent<NavMeshAgent>().speed = mg.speed + (6 * (-animator.transform.position + mg.Ellen.position).sqrMagnitude / (mg.ViewDistance * mg.ViewDistance));
             animator.SetBool("Turn", true);
             return;
         } else {
@@ -33,7 +37,7 @@ public class WalkGranadierBehaviour : StateMachineBehaviour
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-                animator.SetBool("InPursuit", false);
+                //animator.SetBool("InPursuit", false);
 
     }
 

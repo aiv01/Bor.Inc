@@ -31,13 +31,13 @@ public class EllenSentences : MonoBehaviour
     void Update()
     {
         if (index < frases.Length && currentTime > 0) currentTime -= Time.deltaTime;
-        if (currentTime <= 0)
+        if (index < frases.Length && currentTime <= 0)
         switch (currentState) {
             case State.waiting:
                 currentState = State.typing;
                 currentTime = speed;
                 index++;
-                //if (index >= frases.Length) index = 0;
+                    if (index >= frases.Length) return;
                 currentCharIndex = 0;
                 text.text = "";
                 stringLength = frases[index].Length;

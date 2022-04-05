@@ -15,6 +15,7 @@ public class RangedSpitter : Mob {
             
             targetPos = ellen.position;
             animator.SetBool("HaveTarget", true);
+            retreat = false;
             //navMesh.destination = targetPos;
 
         } else {
@@ -22,12 +23,12 @@ public class RangedSpitter : Mob {
             targetPos = spawnPos;
             retreat = true;
         }
-        if ((-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance) {
+        if (!retreat && (-transform.position + ellen.position).sqrMagnitude <= attackDistance * attackDistance) {
             animator.SetTrigger("Attack");
             animator.SetBool("Fleeing", false);
             transform.LookAt(ellen);
             if (!navMesh.isStopped) navMesh.isStopped = true;
-        } else {
+        } else if(!retreat){
             animator.SetBool("Fleeing", true);
             targetPos = ellen.position;
             if (navMesh.isStopped)
@@ -35,7 +36,7 @@ public class RangedSpitter : Mob {
         }
         if (retreat && (-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase) {
             animator.SetBool("Fleeing", false);
-            targetPos = ellen.position;
+            targetPos = transform.position;
             retreat = false;
         } else if (retreat && (-transform.position + spawnPos).sqrMagnitude > distanceFromBase * distanceFromBase) {
             animator.SetBool("Fleeing", true);
@@ -55,6 +56,8 @@ public class RangedSpitter : Mob {
             animator.SetTrigger("Hit");
             animator.SetFloat("VerticalHitDot", 1);
         }
+        if ((-transform.position + spawnPos).sqrMagnitude <= distanceFromBase * distanceFromBase)
+            viewDistance += 3;
         base.TakeDamage(damage, attacker);
     }
     public void Shoot() {

@@ -16,6 +16,7 @@ public class GridCreator : MonoBehaviour
 
     void Start()
     {
+        gridSize = new Vector2Int(gridSize.x / (3 - ScriptableStaticClass.instance.level + 1), gridSize.y / (3 - ScriptableStaticClass.instance.level + 1));
         grid = new int[gridSize.x, gridSize.y];
         for (int i = 0; i < tileSpawners.Count; i++) {
             tileSpawners[i] = gridSize / 2;
