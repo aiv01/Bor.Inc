@@ -6,8 +6,12 @@ public class RangedSpitter : Mob {
 
     bool pursuit;
     bool retreat;
-    public void Awake() {
+    public override void Start() {
+        base.Start();
         bulletMgr = GameObject.Find("BulletMgr (Sludge)").GetComponent<BulletMgr>();
+    }
+    public override void OnEnable() {
+        base.OnEnable();
     }
     override public void Update() {
         //if ((targetPos - transform.position).sqrMagnitude < 0.5f) return;

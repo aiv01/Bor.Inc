@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mob : BaseController
 {
@@ -8,13 +9,18 @@ public class Mob : BaseController
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float distanceFromBase;
     protected Vector3 spawnPos;
-
     public override void Start() {
         base.Start();
+        if (!ellen) ellen = GameObject.FindGameObjectWithTag("Player").transform;
+        navMesh = GetComponent<NavMeshAgent>();
+        if (!animator) animator = GetComponent<Animator>();
+    }
+
+    public virtual void OnEnable() {
+        if(!animator) animator = GetComponent<Animator>();
         animator.SetBool("NearBase", true);
         spawnPos = transform.position;
         targetPos = spawnPos;
-        if (!ellen) ellen = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     override public void Update() {

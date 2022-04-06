@@ -2076,7 +2076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3922865429929688024
 Transform:
   m_ObjectHideFlags: 0
@@ -2197,7 +2197,10 @@ MonoBehaviour:
   maxHp: 8
   currentHp: 0
   attackDistance: 2
+  effectDamageMult: 1
+  bulletBaseDamage: 0
   bulletPos: {fileID: 0}
+  bulletMgr: {fileID: 0}
   targetPos: {x: 0, y: 0, z: 0}
   ellen: {fileID: 0}
   damage: 0

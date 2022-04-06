@@ -16,14 +16,6 @@ public class ExplorerController : BaseController {
     private Animator anim;
     
     [HideInInspector] public float damageMultCombo;
-    public float MaxHp
-    {
-        get { return maxHp; }
-        set { maxHp = value; }
-    }
-
-    
-
 
     public override void Start() {
         base.Start();

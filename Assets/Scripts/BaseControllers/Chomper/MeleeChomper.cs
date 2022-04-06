@@ -7,6 +7,15 @@ public class MeleeChomper : Mob
     bool pursuit;
     bool retreat;
     [SerializeField]AttackArea attackArea;
+    public override void Start() {
+        base.Start();
+        animator = GetComponent<Animator>();
+    }
+    public override void OnEnable() {
+        base.OnEnable();
+        animator.SetBool("InPursuit", false);
+        animator.SetBool("NearBase", true);
+    }
     override public void Update() {
         if((-transform.position + ellen.position).sqrMagnitude <= viewDistance * viewDistance) {
             animator.SetTrigger("Spotted");
@@ -54,8 +63,8 @@ public class MeleeChomper : Mob
     }
 
     protected override void Die() {
-        //GetComponent<DistanceDissolveTarget>().dissolve = true;
-        GetComponent<Disintegratable>().Disintegrate(Vector3.up);
+        GetComponent<DistanceDissolveTarget>().dissolve = true;
+        //GetComponent<Disintegratable>().Disintegrate(Vector3.up);
         foreach (Collider item in GetComponentsInChildren<Collider>()) {
             item.enabled = false;
         }

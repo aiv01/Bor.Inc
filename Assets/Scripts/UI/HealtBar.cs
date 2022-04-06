@@ -17,6 +17,6 @@ public class HealtBar : MonoBehaviour
     private void Update()
     {
         currentHealth = ellen.CurrentHp;
-        healthBar.fillAmount = currentHealth / maxHealth;
+        healthBar.fillAmount = currentHealth / ellen.MaxHp;
     }
 }

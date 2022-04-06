@@ -8,15 +8,20 @@ public class LifeChange : Mod
 {
     [SerializeField] float addMaxHp;
     float oldMaxHp;
+    BaseController bc;
     public override void Activate()
     {
-        oldMaxHp = attachedTo.GetComponent<ExplorerController>().MaxHp;
-        attachedTo.GetComponent<ExplorerController>().MaxHp += addMaxHp;
+        bc = attachedTo.GetComponent<BaseController>();
+        oldMaxHp = bc.MaxHp;
+        bc.MaxHp += addMaxHp;
+        bc.CurrentHp = bc.MaxHp;
+        
     }
 
     public override void Disable()
     {
-        attachedTo.GetComponent<ExplorerController>().MaxHp -= addMaxHp;
+        bc.MaxHp -= addMaxHp;
+        if (bc.CurrentHp > bc.MaxHp) bc.CurrentHp = bc.MaxHp;
     }
 
 }

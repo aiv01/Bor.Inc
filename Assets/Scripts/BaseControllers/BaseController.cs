@@ -20,14 +20,21 @@ public class BaseController : MonoBehaviour {
     protected NavMeshAgent navMesh;
     public Vector3 targetPos;
     protected Animator animator;
-    public float CurrentHp => currentHp;
+    public float MaxHp {
+        get { return maxHp; }
+        set { maxHp = value; }
+    }
+    public float CurrentHp {
+        get { return currentHp; }
+        set { currentHp = value; }
+    }
     virtual public void Start()
     {
         currentHp = maxHp;
         navMesh = GetComponent<NavMeshAgent>();
         navMesh.speed = speed;
 
-        navMesh.destination = transform.position;
+        targetPos = transform.position;
 
         mods = GetComponent<ModSlots>();
 
@@ -38,6 +45,7 @@ public class BaseController : MonoBehaviour {
     // Update is called once per frame
     virtual public void Update()
     {
+        if(navMesh.isActiveAndEnabled && navMesh.isOnNavMesh)
         navMesh.destination = targetPos;
     }
     virtual public void TakeDamage(float damage, BaseController attacker) {

@@ -8,7 +8,7 @@ public class ButtonFinalScene : MonoBehaviour
 {
     private Player player;
 
-    void Awake()
+    void Start()
     {
         player = ReInput.players.GetPlayer(0);
     }
