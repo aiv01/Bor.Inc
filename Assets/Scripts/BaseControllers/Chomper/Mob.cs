@@ -18,7 +18,6 @@ public class Mob : BaseController
 
     public virtual void OnEnable() {
         if(!animator) animator = GetComponent<Animator>();
-        animator.SetBool("NearBase", true);
         spawnPos = transform.position;
         targetPos = spawnPos;
     }

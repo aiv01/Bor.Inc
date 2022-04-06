@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a42220f4219e544cb551155f882f1cb, type: 3}
   m_Name: Static
   m_EditorClassIdentifier: 
-  collectedBundles: []
-  inInventory: []
+  collectedBundles:
+  - {fileID: 11400000, guid: 7a35450507eb6da418863897e96bb765, type: 2}
+  - {fileID: 11400000, guid: 5249644debabd8b4e8fc0054ffc6a5d7, type: 2}
+  - {fileID: 11400000, guid: a56199a7d1630e34da46e36043e7624b, type: 2}
+  - {fileID: 11400000, guid: 114dac929b8bde544b24e3a25659b9e6, type: 2}
+  - {fileID: 11400000, guid: 7aab5eea7f4379146a823ff490a1d153, type: 2}
+  - {fileID: 11400000, guid: c4f0af14784ac6a46800152f4b2d4598, type: 2}
+  inInventory:
+  - {fileID: 11400000, guid: 7a35450507eb6da418863897e96bb765, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   allPossibleBundles:
   - {fileID: 11400000, guid: 82d07e75d5913c64ca4c583dfb8dd2db, type: 2}
   - {fileID: 11400000, guid: 963050ae05c2fec4a880cdf79dfe3e2e, type: 2}
@@ -1303,6 +1312,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 925398d90c591a04b974a556c2df1743, type: 2}
   - {fileID: 11400000, guid: 505b173b60a833d46abb0e648824c157, type: 2}
   nKeys: 0
-  foundTreasure: 1
+  foundTreasure: 0
   level: 1
-  explorerNumber: 1143
+  explorerNumber: 1146

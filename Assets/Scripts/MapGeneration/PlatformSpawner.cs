@@ -55,6 +55,7 @@ public class PlatformSpawner : MonoBehaviour
             foreach (var item in GetComponents<NavMeshSurface>()) {
                 item.BuildNavMesh();
             }
+
             plantSpawner = GetComponent<PlantSpawner>();
             keySpawner = GetComponent<KeySpawner>();
             chestSpawner = GetComponent<ChestSpawner>();
