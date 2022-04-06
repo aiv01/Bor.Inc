@@ -50,6 +50,7 @@ public class RangedSpitter : Mob {
         base.Update();
     }
     protected override void Die() {
+        base.Die();
         GetComponent<DistanceDissolveTarget>().dissolve = true;
         animator.enabled = false;
         navMesh.enabled = false;
