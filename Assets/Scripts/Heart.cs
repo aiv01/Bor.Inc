@@ -5,6 +5,7 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     [SerializeField]float cureValue;
+    [SerializeField]float rotateSpeed;
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(new Vector3(0, rotateSpeed, 0));
     }
 
     private void OnTriggerEnter(Collider other)
