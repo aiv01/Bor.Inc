@@ -31,7 +31,7 @@ public class AttackArea : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == tag)
+        if (other.gameObject.CompareTag(tag))
         {
             BaseController bc = other.GetComponent<BaseController>();
             bc.TakeDamage(1 * damageMult,controller);

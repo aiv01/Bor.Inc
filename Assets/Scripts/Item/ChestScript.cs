@@ -13,6 +13,7 @@ public class ChestScript : MonoBehaviour
     Text itemFind;
     bool entered = false;
     bool opened;
+    private string pTag = "Player";
     public bool finalChest = false;
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class ChestScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && !opened)
+        if(other.CompareTag(pTag) && !opened)
         {
             tx.SetActive(true);
             entered = true;
@@ -54,7 +55,7 @@ public class ChestScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag(pTag))
         {
             tx.SetActive(false);
             entered = false;

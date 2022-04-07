@@ -12,6 +12,7 @@ public class DropshipComponent : MonoBehaviour
     [SerializeField] bool inLobby = false;
     private Player player;
     bool entered;
+    string pTag = "Player";
     void Start()
     {
         player = ReInput.players.GetPlayer(0);
@@ -33,7 +34,7 @@ public class DropshipComponent : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && ScriptableStaticClass.instance.foundTreasure)
+        if(other.gameObject.CompareTag(pTag) && ScriptableStaticClass.instance.foundTreasure)
         {
             goBack.gameObject.SetActive(true);
             entered = true;
@@ -41,7 +42,7 @@ public class DropshipComponent : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag(pTag))
         {
             goBack.gameObject.SetActive(false);
             entered = false;

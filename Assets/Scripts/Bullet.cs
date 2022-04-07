@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == targetTag)
+        if(other.gameObject.CompareTag(targetTag))
         {
             this.gameObject.SetActive(false);
             BaseController bc = other.GetComponent<BaseController>();

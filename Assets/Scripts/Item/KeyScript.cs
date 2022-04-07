@@ -9,18 +9,15 @@ public class KeyScript : MonoBehaviour
     //[SerializeField]AudioClip clip;
     [SerializeField]AudioSource au;
     KeySoundEffect sound;
+    string pTag = "Player";
     void Start()
     {
         sound = FindObjectOfType<KeySoundEffect>();
     }
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag(pTag))
         {
             sound.SoundKey();
             gameObject.SetActive(false);

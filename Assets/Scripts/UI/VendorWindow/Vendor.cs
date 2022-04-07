@@ -10,6 +10,7 @@ public class Vendor : MonoBehaviour
     [SerializeField] GameObject window;
     [SerializeField] Text tx;
     bool entered = false;
+    string pTag = "Player";
     void Start()
     {
         player = ReInput.players.GetPlayer(0);
@@ -26,7 +27,7 @@ public class Vendor : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag(pTag))
         {
             tx.gameObject.SetActive(true);
             entered = true;
@@ -35,7 +36,7 @@ public class Vendor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag(pTag))
         {
             tx.gameObject.SetActive(false);
             entered = false;

@@ -6,7 +6,7 @@ public class Heart : MonoBehaviour
 {
     [SerializeField]float cureValue;
     [SerializeField]float rotateSpeed;
-
+    string pTag = "Player";
     void Start()
     {
         
@@ -20,7 +20,7 @@ public class Heart : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag(pTag))
         {
             if(other.GetComponent<ExplorerController>().CurrentHp + cureValue < other.GetComponent<ExplorerController>().MaxHp)
             {
