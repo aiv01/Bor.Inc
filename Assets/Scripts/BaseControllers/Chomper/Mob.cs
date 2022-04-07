@@ -46,6 +46,7 @@ public class Mob : BaseController
     }
     protected override void Die()
     {
+        GetComponent<Collider>().enabled = false;
         mods.RemoveAll();
         if (Random.Range(0, percetageCureProbability) == 0)
         {
