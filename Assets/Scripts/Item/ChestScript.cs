@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
+using UnityEngine.Audio;
 
 public class ChestScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ChestScript : MonoBehaviour
     [SerializeField] ScriptableStaticClass info;
     GameObject tx;
     Text itemFind;
+    AudioSource au;
     bool entered = false;
     bool opened;
     private string pTag = "Player";
@@ -19,6 +21,7 @@ public class ChestScript : MonoBehaviour
     {
         tx = GameObject.Find("OpenTextChest");
         itemFind = GameObject.Find("ItemFind").GetComponent<Text>();
+        au = GetComponent<AudioSource>();
     }
     void Start()
     {
@@ -35,6 +38,7 @@ public class ChestScript : MonoBehaviour
                 opened = true;
                 tx.SetActive(false);
                 anim.SetBool("Open", true);
+                au.Play();
                 info.nKeys--;
                 itemFind.gameObject.SetActive(true);
                 if (finalChest) info.foundTreasure = true;
