@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cureValue: 2
-  speed: 0.5
+  rotateSpeed: 3
 --- !u!65 &2120085138772249945
 BoxCollider:
   m_ObjectHideFlags: 0
