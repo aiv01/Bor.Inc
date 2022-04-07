@@ -177,6 +177,20 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 1
+--- !u!114 &-6323814188243476712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd61632bdfa32d4d852dfb0071680f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  when: 0
+  stopNavMesh: 1
 --- !u!1109 &-6270635452669775081
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -550,6 +564,20 @@ AnimatorController:
     m_IKPass: 1
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!114 &89140157585260484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd61632bdfa32d4d852dfb0071680f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  when: 1
+  stopNavMesh: 0
 --- !u!114 &114059327434463096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2656,7 +2684,9 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101916932484377224}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 2216655434967731202}
+  - {fileID: 89140157585260484}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2683,7 +2713,9 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101438665284201794}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -6323814188243476712}
+  - {fileID: 5071127123630913712}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -3534,6 +3566,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &2216655434967731202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd61632bdfa32d4d852dfb0071680f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  when: 0
+  stopNavMesh: 1
 --- !u!1109 &2320245030632496895
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -3752,6 +3798,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMult: 1.2
+--- !u!114 &5071127123630913712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd61632bdfa32d4d852dfb0071680f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  when: 1
+  stopNavMesh: 0
 --- !u!1109 &5437221758284477448
 AnimatorTransition:
   m_ObjectHideFlags: 1
