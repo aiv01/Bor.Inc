@@ -68,4 +68,9 @@ public class ModSlots : MonoBehaviour
     private void RemoveMod(Mod toRemove) {
         mods.Remove(toRemove);
     }
+    public void RemoveAll() {
+        foreach (Mod item in mods) {
+            RemoveMod(item);
+        }
+    }
 }

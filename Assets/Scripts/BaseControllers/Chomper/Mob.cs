@@ -47,6 +47,7 @@ public class Mob : BaseController
     }
     protected override void Die()
     {
+        mods.RemoveAll();
         if (Random.Range(0, percetageCureProbability) == 0)
         {
             Heart heart = heartmgr.GetHeart();
