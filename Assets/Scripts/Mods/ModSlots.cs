@@ -24,7 +24,9 @@ public class ModSlots : MonoBehaviour
                 mod.DoCicle();
         }
         foreach (Mod mod in modsToRemove) {
-            mod.Disable();
+            if (mod != null) {
+                mod.Disable();
+            }
             mods.Remove(mod);
         }
         modsToRemove.Clear();
@@ -70,7 +72,7 @@ public class ModSlots : MonoBehaviour
     }
     public void RemoveAll() {
         foreach (Mod item in mods) {
-            RemoveMod(item);
+            modsToRemove.AddRange(mods);
         }
     }
 }

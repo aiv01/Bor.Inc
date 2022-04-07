@@ -810,6 +810,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2521521484243046101, guid: 6d734983a000c86448c28387583ca900, type: 3}
+      propertyPath: maxHeart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4740803261949029239, guid: 6d734983a000c86448c28387583ca900, type: 3}
       propertyPath: m_Name
       value: HeartMgr
