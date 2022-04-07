@@ -6,7 +6,23 @@ public class Heart : MonoBehaviour
 {
     [SerializeField]float cureValue;
     [SerializeField]float rotateSpeed;
+    ParabolicMotion pm;
+    [SerializeField]LayerMask ground;
     string pTag = "Player";
+
+    private void OnEnable()
+    {
+        RaycastHit hit;
+        if (!pm)
+            pm.GetComponent<ParabolicMotion>();
+        Vector3 pos;
+        do
+        {
+             pos = new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f, 3f)) + transform.position;
+
+        } while (!Physics.Raycast(pos, -transform.up, out hit, 25f, ground));
+        pm.TargetPos = pos;
+    }
     void Start()
     {
         

@@ -8,7 +8,7 @@ public class Mob : BaseController
     [SerializeField] protected float damage;
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float distanceFromBase;
-    int percetageCureProbability = 10;
+    int percetageCureProbability = 1;
     HeartMgr heartmgr;
     protected Vector3 spawnPos;
     public override void Start()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2805420684807048474}
   - component: {fileID: 6472741343881532302}
   - component: {fileID: 2120085138772249945}
+  - component: {fileID: 4113671981260619960}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -47,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cureValue: 2
   rotateSpeed: 3
+  ground:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!65 &2120085138772249945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60,6 +64,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5742766, y: 1.8651843, z: 1}
   m_Center: {x: 0.032907546, y: 0.43259215, z: 0}
+--- !u!114 &4113671981260619960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7345364823119949662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8656415ec5ca604b91c97bd309387f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 10
+  vx: 0.5
 --- !u!1001 &1203215271081020500
 PrefabInstance:
   m_ObjectHideFlags: 0
