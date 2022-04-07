@@ -53,6 +53,7 @@ public class Mob : BaseController
             if (heart != null)
             {
                 heart.transform.position = transform.position;
+                heart.trueStart = true;
                 heart.gameObject.SetActive(true);
             }
         }

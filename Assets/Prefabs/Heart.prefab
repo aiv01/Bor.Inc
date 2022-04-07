@@ -51,6 +51,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 72
+  trueStart: 0
 --- !u!65 &2120085138772249945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8656415ec5ca604b91c97bd309387f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 10
-  vx: 0.5
+  gravity: 25
+  vx: 3
 --- !u!1001 &1203215271081020500
 PrefabInstance:
   m_ObjectHideFlags: 0

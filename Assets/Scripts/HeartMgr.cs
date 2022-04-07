@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeartMgr : MonoBehaviour
 {
     [SerializeField] private List<Heart> nHeart = new List<Heart>();
-    [SerializeField] private int maxHeart = 50;
+    private int maxHeart;
     [SerializeField] private Heart heartPref;
 
     void Start()

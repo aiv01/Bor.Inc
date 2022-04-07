@@ -8,20 +8,29 @@ public class Heart : MonoBehaviour
     [SerializeField]float rotateSpeed;
     ParabolicMotion pm;
     [SerializeField]LayerMask ground;
+    [HideInInspector] public bool trueStart = false;
     string pTag = "Player";
 
     private void OnEnable()
     {
-        RaycastHit hit;
-        if (!pm)
-            pm.GetComponent<ParabolicMotion>();
-        Vector3 pos;
-        do
+        if(trueStart)
         {
-             pos = new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f, 3f)) + transform.position;
+            RaycastHit hit;
+            if (!pm)
+                pm = GetComponent<ParabolicMotion>();
+            Vector3 pos;
+            do
+            {
+                pos = new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f, 3f)) + transform.position;
 
-        } while (!Physics.Raycast(pos, -transform.up, out hit, 25f, ground));
-        pm.TargetPos = pos;
+            } while (!Physics.Raycast(pos, -transform.up, out hit, 25f, ground));
+            pm.TargetPos = pos;
+        }
+        
+    }
+    private void OnDisable()
+    {
+        trueStart = false;
     }
     void Start()
     {
