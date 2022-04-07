@@ -20,15 +20,9 @@ public class Mob : BaseController
         heartmgr = GameObject.Find("HeartMgr").GetComponent<HeartMgr>();
     }
 
-<<<<<<< HEAD
     public virtual void OnEnable() {
-        if(!animator) animator = GetComponent<Animator>();
-=======
-    public virtual void OnEnable()
-    {
         if (!animator) animator = GetComponent<Animator>();
         animator.SetBool("NearBase", true);
->>>>>>> f5e7714bbb25aa9c065ae93899a9c40df52cb81f
         spawnPos = transform.position;
         targetPos = spawnPos;
     }
