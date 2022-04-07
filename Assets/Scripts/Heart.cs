@@ -31,6 +31,7 @@ public class Heart : MonoBehaviour
     private void OnDisable()
     {
         trueStart = false;
+        GetComponent<Collider>().enabled = false;
     }
     void Start()
     {
@@ -41,6 +42,10 @@ public class Heart : MonoBehaviour
     void Update()
     {
         transform.Rotate(new Vector3(0, rotateSpeed, 0));
+        if (pm.finishParabolic && !GetComponent<Collider>().enabled)
+        {
+            GetComponent<Collider>().enabled = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
