@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         currentTimer = 0;
     }
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         currentSpeed = 0;
     }

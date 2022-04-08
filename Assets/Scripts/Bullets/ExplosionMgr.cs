@@ -19,16 +19,24 @@ public class ExplosionMgr : MonoBehaviour
         //}
     }
 
-    public Heart GetExplosion(ExplosionType type) {
-        //for (int i = 0; i < nHeart.Count; i++) {
-        //    if (!nHeart[i].gameObject.activeInHierarchy) {
-        //        return nHeart[i];
-        //    }
-        //}
-        //GameObject obj = Instantiate(heartPref.gameObject, transform);
-        //obj.SetActive(false);
-        //nHeart.Add(obj.GetComponent<Heart>());
-        //return obj.GetComponent<Heart>();
-        return null;
+    public ParticleSystem GetExplosion(ExplosionType type) {
+        for (int i = 0; i < nParticles[(int)type].Count; i++) {
+            if (!nParticles[(int)type][i].gameObject.activeInHierarchy) {
+                return nParticles[(int)type][i];
+            }
+        }
+        ScriptableExplosion expl = null;
+        for (int i = 0; i < particlePrefabs.Length; i++) {
+            if(particlePrefabs[i].type == type) {
+                expl = particlePrefabs[i];
+                break;
+            }
+        }
+        if (!expl) return null;
+        ParticleSystem obj = Instantiate(expl.prefab, transform);
+        obj.gameObject.SetActive(false);
+        nParticles[(int)type].Add(obj);
+        return obj;
+        
     }
 }
