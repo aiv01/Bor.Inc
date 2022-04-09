@@ -82,7 +82,7 @@ public class CullingGroupOps : MonoBehaviour
 
                 Mob m = targets[ev.index].GetComponent<Mob>();
                 if (m && m.CurrentHp <= 0) break;
-                targets[ev.index].gameObject.SetActive(ev.currentDistance < 4 || targets[ev.index].gameObject.layer == 6 || targets[ev.index].gameObject.layer == 3);
+                targets[ev.index].gameObject.SetActive(ev.currentDistance < 5 || targets[ev.index].gameObject.layer == 6 || targets[ev.index].gameObject.layer == 3);
                 break;
 
 

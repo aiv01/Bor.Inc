@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4614569932130721424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5860512540819654865}
+  - component: {fileID: 3107442284899377882}
+  - component: {fileID: 46203584780730004}
+  - component: {fileID: 5817385989287433526}
+  m_Layer: 0
+  m_Name: SecondAttackArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5860512540819654865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614569932130721424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.3256712, y: 1.718, z: 0.016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4795967440991912990}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3107442284899377882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614569932130721424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace14aeda749b954cbf9c7af84d2db9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHand: {fileID: 4795967440992213434}
+--- !u!65 &46203584780730004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614569932130721424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 3.9983811, y: 1, z: 1}
+  m_Center: {x: 0.6248877, y: 0, z: 0}
+--- !u!114 &5817385989287433526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614569932130721424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2508ab37537cf324f8d0c62299032e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMult: 1
+  modSlots: {fileID: 4795967440992312983}
+  tag: Player
 --- !u!1 &4795967440992213054
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4795967440991912990
 Transform:
   m_ObjectHideFlags: 0
@@ -39,6 +113,7 @@ Transform:
   - {fileID: 4795967440991913406}
   - {fileID: 4795967440991913404}
   - {fileID: 4795967441881877457}
+  - {fileID: 5860512540819654865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,6 +230,7 @@ MonoBehaviour:
   viewDistance: 10
   distanceFromBase: 2
   attackArea: {fileID: 4795967441881877456}
+  secondAttackArea: {fileID: 5817385989287433526}
   detecAngle: 45
   detecDistance: 10
 --- !u!114 &4795967440992313003

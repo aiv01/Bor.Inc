@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8050770660145463032}
   - component: {fileID: 2521521484243046101}
   m_Layer: 0
-  m_Name: HearthMgr
+  m_Name: HeartMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum bulletType { baseBullet, Sludge, Grenadier, last}
 public class BulletMgr : MonoBehaviour
 {
     [SerializeField] private List<Bullet> nbullets = new List<Bullet>();

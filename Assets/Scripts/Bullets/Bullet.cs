@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     private float timer = 10f;
     private float currentTimer;
     private string targetTag;
+    private string oldTag;
     BaseController controller;
     ModSlots modSlots;
 
@@ -51,6 +52,11 @@ public class Bullet : MonoBehaviour
             bc.TakeDamage(bulletDamage, controller);
             modSlots.Attack(AtachTo.gun, bc, bulletDamage);
             currentTimer = 0;
+        }
+        if(targetTag == "Enemy" && other.gameObject.CompareTag("BulletProof")) {
+            oldTag = targetTag;
+            targetTag = controller.tag;
+            transform.forward *= -1;
         }
     }
 }

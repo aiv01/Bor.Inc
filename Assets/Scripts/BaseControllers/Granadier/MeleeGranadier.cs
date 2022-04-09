@@ -7,6 +7,7 @@ public class MeleeGranadier : Mob
     bool pursuit;
     bool retreat;
     [SerializeField] AttackArea attackArea;
+    [SerializeField] AttackArea secondAttackArea;
     [SerializeField] float detecAngle;
     [SerializeField] float detecDistance;
     public Transform Ellen => ellen;
@@ -51,9 +52,18 @@ public class MeleeGranadier : Mob
         attackArea.damageMult = effectDamageMult;
         attackArea.AttackStart();
     }
+    public void StartAttack()
+    {
+        secondAttackArea.damageMult = effectDamageMult;
+        secondAttackArea.AttackStart();
+    }
+    public void Shoot() {
+
+    }
     public void EndAttack()
     {
         attackArea.AttackEnd();
+        secondAttackArea.AttackEnd();
  
     }
 
