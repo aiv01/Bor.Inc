@@ -12,9 +12,7 @@ public class BaseController : MonoBehaviour {
     public float bulletBaseDamage = 0;
 
     [SerializeField] public Transform bulletPos;
-
-    [SerializeField] public BulletMgr bulletMgr;
-
+    [SerializeField] public BulletType bulletType;
 
     protected ModSlots mods;
     protected NavMeshAgent navMesh;

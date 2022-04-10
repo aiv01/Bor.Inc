@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3730745849372496438}
   - component: {fileID: 7687605596913994205}
   - component: {fileID: 35179206424527446}
+  - component: {fileID: 2294984246496828060}
   m_Layer: 0
   m_Name: GrenadierBullet
   m_TagString: Untagged
@@ -92,7 +93,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700949458893723262}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -109,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8656415ec5ca604b91c97bd309387f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 10
-  vx: 0.5
+  gravity: 100
+  vx: 15
   finishParabolic: 0
 --- !u!96 &35179206424527446
 TrailRenderer:
@@ -219,3 +220,17 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &2294984246496828060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700949458893723262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc0e62359be4084fad1c877caaa14eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  bulletDamage: 1

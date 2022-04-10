@@ -57,8 +57,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 3.9983811, y: 1, z: 1}
-  m_Center: {x: 0.6248877, y: 0, z: 0}
+  m_Size: {x: 2.3430033, y: 1, z: 1}
+  m_Center: {x: -0.20280123, y: 0, z: 0}
 --- !u!114 &5817385989287433526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMult: 1
   modSlots: {fileID: 4795967440992312983}
-  tag: Player
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &4795967440992213054
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +96,7 @@ GameObject:
   - component: {fileID: -8840593637967862816}
   m_Layer: 7
   m_Name: Grenadier
-  m_TagString: Enemy
+  m_TagString: BulletProof
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +225,7 @@ MonoBehaviour:
   effectDamageMult: 1
   bulletBaseDamage: 0
   bulletPos: {fileID: 0}
-  bulletMgr: {fileID: 0}
+  bulletType: 2
   targetPos: {x: 0, y: 0, z: 0}
   ellen: {fileID: 0}
   damage: 1
@@ -1743,4 +1745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMult: 1
   modSlots: {fileID: 4795967440992312983}
-  tag: Player
+  layer:
+    serializedVersion: 2
+    m_Bits: 256

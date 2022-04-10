@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         currentSpeed = 0;
     }
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         currentTimer += Time.deltaTime;
         transform.position += transform.forward * currentSpeed * Time.deltaTime;

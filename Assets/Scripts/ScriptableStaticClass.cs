@@ -17,8 +17,9 @@ public class ScriptableStaticClass : ScriptableObject
     }
     public void Clear() {
         nKeys = 0;
-        foreach (Bundle item in collectedBundles) {
-            item.wasFound = false;
+        foreach (Bundle item in allPossibleBundles) {
+            if(item != null)
+                item.wasFound = false;
         }
         inInventory.Clear();
         collectedBundles.Clear();
@@ -28,7 +29,6 @@ public class ScriptableStaticClass : ScriptableObject
     }
     public Bundle FindNewBundle() {
         Bundle b;
-        int i;
         do {
             b = allPossibleBundles[Random.Range(0, allPossibleBundles.Count)];
             

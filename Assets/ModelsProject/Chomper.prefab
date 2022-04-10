@@ -926,7 +926,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMult: 1
   modSlots: {fileID: 6031237750769503090}
-  tag: Player
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &3600455519184972847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,7 +2202,7 @@ MonoBehaviour:
   effectDamageMult: 1
   bulletBaseDamage: 0
   bulletPos: {fileID: 0}
-  bulletMgr: {fileID: 0}
+  bulletType: 0
   targetPos: {x: 0, y: 0, z: 0}
   ellen: {fileID: 0}
   damage: 0

@@ -58,7 +58,11 @@ public class MeleeGranadier : Mob
         secondAttackArea.AttackStart();
     }
     public void Shoot() {
-
+        Bullet b = BulletMgr.instance.GetBullet(bulletType);
+        b.transform.position = transform.position + Vector3.up;
+        b.gameObject.SetActive(true);
+        b.Shoot(this, "Player", 1);
+        b.GetComponent<ParabolicMotion>().TargetPos = ellen.position;
     }
     public void EndAttack()
     {

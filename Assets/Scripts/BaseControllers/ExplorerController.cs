@@ -185,7 +185,7 @@ public class ExplorerController : BaseController {
         GetComponent<ModSlots>().StrikeAttack(AtachTo.gun);
         navMesh.isStopped = true;
         currentTimerShootAnim = 0;
-        Bullet bullet = bulletMgr.GetBullet();
+        Bullet bullet = BulletMgr.instance.GetBullet(bulletType);
         if (bullet != null)
         {
             bullet.transform.position = bulletPos.position;

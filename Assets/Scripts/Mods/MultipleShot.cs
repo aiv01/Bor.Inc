@@ -15,7 +15,7 @@ public class MultipleShot : Mod
     public override void StrikeAttack() {
         for (int i = -(nBullets - 1) / 2; i < (nBullets - 1) / 2 + 1; i++) {
             if (i == 0) continue;
-            Bullet bullet = bc.bulletMgr.GetBullet();
+            Bullet bullet = BulletMgr.instance.GetBullet(bc.bulletType);
             if (bullet != null) {
                 bullet.transform.position = bc.bulletPos.position;
                 bullet.transform.rotation = Quaternion.LookRotation(attachedTo.transform.forward, Vector3.up) /** Quaternion.AngleAxis(-angle * 0.5f, Vector3.up)*/ * Quaternion.AngleAxis(slice * i, Vector3.up);

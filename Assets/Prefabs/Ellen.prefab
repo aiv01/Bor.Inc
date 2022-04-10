@@ -1707,7 +1707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMult: 0
   modSlots: {fileID: 4647815998251966125}
-  tag: Enemy
+  layer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &4647815997160449539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,6 +1880,7 @@ MonoBehaviour:
   effectDamageMult: 1
   bulletBaseDamage: 0
   bulletPos: {fileID: 0}
+  bulletType: 0
   targetPos: {x: 0, y: 0, z: 0}
   weaponArea: {fileID: 4647815996337913996}
   groundMask:
@@ -1952,6 +1955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explorer: {fileID: 4647815998251966127}
+  atBase: 0
 --- !u!82 &7752207363464718259
 AudioSource:
   m_ObjectHideFlags: 0

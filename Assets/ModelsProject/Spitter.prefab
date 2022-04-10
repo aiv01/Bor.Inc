@@ -140,7 +140,7 @@ MonoBehaviour:
   effectDamageMult: 1
   bulletBaseDamage: 0
   bulletPos: {fileID: 8888678434624028586}
-  bulletMgr: {fileID: 0}
+  bulletType: 1
   targetPos: {x: 0, y: 0, z: 0}
   ellen: {fileID: 0}
   damage: 0

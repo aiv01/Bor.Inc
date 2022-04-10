@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec59107c54d7ef4e93ed446c68e096a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbullets: []
-  maxBullet: 1
-  bulletPref: {fileID: 4822927504511203305, guid: 7b3773f1722e241498bbc57b41dc80e1, type: 3}
+  bulletPrefabs:
+  - {fileID: 11400000, guid: d55a308983cd9d943818bf7587f49554, type: 2}
+  - {fileID: 11400000, guid: 8e257ec95fc61074e8695071c3b27dc0, type: 2}
+  - {fileID: 11400000, guid: e3318ad0621f20c4d9006707a82907b5, type: 2}

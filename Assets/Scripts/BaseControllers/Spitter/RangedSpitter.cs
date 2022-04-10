@@ -8,7 +8,6 @@ public class RangedSpitter : Mob {
     bool retreat;
     public override void Start() {
         base.Start();
-        bulletMgr = GameObject.Find("BulletMgr (Sludge)").GetComponent<BulletMgr>();
     }
     public override void OnEnable() {
         base.OnEnable();
@@ -66,7 +65,7 @@ public class RangedSpitter : Mob {
         base.TakeDamage(damage, attacker);
     }
     public void Shoot() {
-        Bullet bullet = bulletMgr.GetBullet();
+        Bullet bullet = BulletMgr.instance.GetBullet(bulletType);
         if (bullet != null) {
             bullet.transform.position = bulletPos.position;
             bullet.transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
