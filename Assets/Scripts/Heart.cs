@@ -9,6 +9,8 @@ public class Heart : MonoBehaviour
     ParabolicMotion pm;
     [SerializeField]LayerMask ground;
     [HideInInspector] public bool trueStart = false;
+    [SerializeField] AudioSource au;
+    HeartSound sound;
     string pTag = "Player";
 
     private void OnEnable()
@@ -35,7 +37,7 @@ public class Heart : MonoBehaviour
     }
     void Start()
     {
-        
+        sound = FindObjectOfType<HeartSound>();
     }
 
     // Update is called once per frame
@@ -52,7 +54,8 @@ public class Heart : MonoBehaviour
     {
         if(other.gameObject.CompareTag(pTag))
         {
-            if(other.GetComponent<ExplorerController>().CurrentHp + cureValue < other.GetComponent<ExplorerController>().MaxHp)
+            sound.HeartMusic();
+            if (other.GetComponent<ExplorerController>().CurrentHp + cureValue < other.GetComponent<ExplorerController>().MaxHp)
             {
                 other.GetComponent<ExplorerController>().CurrentHp += cureValue;
             }

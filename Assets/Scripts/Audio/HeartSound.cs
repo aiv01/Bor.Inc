@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 [DisallowMultipleComponent]
-public class KeySoundEffect : MonoBehaviour
+public class HeartSound : MonoBehaviour
 {
     AudioSource au;
     void Start()
@@ -15,10 +15,10 @@ public class KeySoundEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void Sound()
+    public void HeartMusic()
     {
         au.Play();
     }

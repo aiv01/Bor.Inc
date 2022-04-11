@@ -19,7 +19,7 @@ public class KeyScript : MonoBehaviour
     {
         if(other.gameObject.CompareTag(pTag))
         {
-            sound.SoundKey();
+            sound.Sound();
             gameObject.SetActive(false);
             info.nKeys++;
             
