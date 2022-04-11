@@ -12,18 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a42220f4219e544cb551155f882f1cb, type: 3}
   m_Name: Static
   m_EditorClassIdentifier: 
-  collectedBundles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  inInventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  collectedBundles: []
+  inInventory: []
   allPossibleBundles:
   - {fileID: 11400000, guid: 82d07e75d5913c64ca4c583dfb8dd2db, type: 2}
   - {fileID: 11400000, guid: 963050ae05c2fec4a880cdf79dfe3e2e, type: 2}
@@ -1314,5 +1304,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 505b173b60a833d46abb0e648824c157, type: 2}
   nKeys: 0
   foundTreasure: 0
-  level: 4
-  explorerNumber: 1147
+  level: 3
+  explorerNumber: 1149

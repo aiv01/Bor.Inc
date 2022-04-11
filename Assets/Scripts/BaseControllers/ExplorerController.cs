@@ -92,7 +92,7 @@ public class ExplorerController : BaseController {
     public void ClickPressed() {
         RaycastHit raycastHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out raycastHit, 50, groundMask)) {
+        if (Physics.Raycast(ray, out raycastHit, 100, groundMask)) {
                 if (/*(groundMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0 && */(raycastHit.point - transform.position).sqrMagnitude > attackDistance * attackDistance) {
                 //if(raycastHit.transform.gameObject.layer == groundMask) {
 
@@ -104,7 +104,7 @@ public class ExplorerController : BaseController {
     public void ClickDown() {
         RaycastHit raycastHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out raycastHit, 50,groundMask|attackableMask)) {
+        if (Physics.Raycast(ray, out raycastHit, 100,groundMask|attackableMask)) {
             if ((raycastHit.point - transform.position).sqrMagnitude <= attackDistance * attackDistance
                 //|| (attackableMask.value & (1 << raycastHit.transform.gameObject.layer)) > 0
                         && (raycastHit.point - transform.position).sqrMagnitude <= attackDistance * attackDistance
@@ -121,7 +121,7 @@ public class ExplorerController : BaseController {
     public void RightClick() {
         RaycastHit mouseHit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out mouseHit, 50);
+        Physics.Raycast(ray, out mouseHit, 100);
         transform.LookAt(new Vector3(mouseHit.point.x, transform.position.y, mouseHit.point.z), Vector3.up);
         
         InputDetected();

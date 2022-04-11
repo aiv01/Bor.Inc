@@ -434,7 +434,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.001
   far clip plane: 1000
   field of view: 5
   orthographic: 1
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1558492862}
   offset: {x: -1, y: 1, z: -1}
-  scaler: 20
+  scaler: 50
   speed: 0.8
 --- !u!114 &963194230
 MonoBehaviour:
@@ -1353,6 +1353,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 404160384603287411, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
   m_PrefabInstance: {fileID: 404160383057975757}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1558492863 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 404160384603287308, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+  m_PrefabInstance: {fileID: 404160383057975757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1558492864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 404160384603287309, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
@@ -2005,6 +2010,14 @@ PrefabInstance:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
+      propertyPath: checkForFrame
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1558492863}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
 --- !u!1001 &8238995983653958344
