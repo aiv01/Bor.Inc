@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+[DisallowMultipleComponent]
 public class KeySoundEffect : MonoBehaviour
 {
     AudioSource au;
@@ -17,7 +18,7 @@ public class KeySoundEffect : MonoBehaviour
         
     }
 
-    public void SoundKey()
+    public void Sound()
     {
         au.Play();
     }

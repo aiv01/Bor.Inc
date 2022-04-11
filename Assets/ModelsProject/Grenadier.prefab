@@ -285,7 +285,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bb64ffb469e84d259ec317225f41e0b, type: 3}
   - {fileID: 8300000, guid: a2ab5002b5c4f4018a57972046db5a36, type: 3}
   - {fileID: 8300000, guid: d7d9352f94f1740e189ad0bd02e02d5e, type: 3}
-  shootClip: []
+  shootClip:
+  - {fileID: 8300000, guid: dae2a4f422ba74eb08cbef1dbd922884, type: 3}
+  - {fileID: 8300000, guid: 401db7b243be8420d9b7cc6e4ccfd2c9, type: 3}
+  - {fileID: 8300000, guid: 60c8890c93a77451c9ca33ec63e1bbf4, type: 3}
+  - {fileID: 8300000, guid: 84929eac1a0f541b79e2d2a104118522, type: 3}
+  - {fileID: 8300000, guid: 7575b748586d14b1e8b792be5304c1e3, type: 3}
+  - {fileID: 8300000, guid: 3d6364aca818245b3b570a23b79ad226, type: 3}
+  - {fileID: 8300000, guid: d9add775350184a7ab41db9c258b7706, type: 3}
+  - {fileID: 8300000, guid: f5d4b5ee2865e4e9b85ec4ab4da82c04, type: 3}
+  - {fileID: 8300000, guid: 8daee948bba2d46d3b44b5bce81698e6, type: 3}
+  - {fileID: 8300000, guid: c49b6198a3a2b4596bf93f0a37561793, type: 3}
 --- !u!82 &-8840593637967862816
 AudioSource:
   m_ObjectHideFlags: 0
