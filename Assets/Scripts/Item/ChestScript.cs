@@ -55,7 +55,7 @@ public class ChestScript : MonoBehaviour
     {
         if(other.CompareTag(pTag) && !opened)
         {
-            if (info.nKeys > 1)
+            if (info.nKeys >= 1)
                 tx.SetActive(true);
             else needKey.gameObject.SetActive(true);
             entered = true;
