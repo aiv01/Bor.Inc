@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 [RequireComponent(typeof(Text))]
 public class EllenSentences : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class EllenSentences : MonoBehaviour
     [SerializeField] float timeToNextFrase;
     [SerializeField] float timeToDespawn;
     [SerializeField] float speed;
-    [SerializeField] string[] frases;
+    [SerializeField] string fileName;
+    private string path;
+    string[] frases;
     [SerializeField] Color playerColor;
     [SerializeField] Color secondVoiceColor;
     string currentString;
@@ -22,6 +25,8 @@ public class EllenSentences : MonoBehaviour
     State currentState = State.waiting;
     void Start()
     {
+        path = Application.streamingAssetsPath + "/EllentFrases/" + fileName + ".txt";
+        frases = File.ReadAllLines(path);
         text = GetComponent<Text>();
         text.text = "";
         currentTime = timeToNextFrase;

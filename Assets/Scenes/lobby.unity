@@ -8923,17 +8923,7 @@ MonoBehaviour:
   timeToNextFrase: 8
   timeToDespawn: 6
   speed: 0.05
-  frases:
-  - What is this place?
-  - Head to the dropship? Where are we going?
-  - Are you reall or Just a programmed voice?
-  - No answer? Really?
-  - Who am I?
-  - I know, I know... Head to the dropship, you said that three times already...
-  - You better give me answers once I get on that ship!
-  - Hellooo... Robot voice... Are you still there?
-  - YES, I'LL GO, just one more second.
-  - I'm coming in a second wait me in the ship
+  fileName: LobbyLV1
   playerColor: {r: 0.9098039, g: 1, b: 1, a: 0.78431374}
   secondVoiceColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1176486165
