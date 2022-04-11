@@ -11,6 +11,7 @@ public class ChestScript : MonoBehaviour
     private Player player;
     [SerializeField] ScriptableStaticClass info;
     GameObject tx;
+    Text needKey;
     Text itemFind;
     AudioSource au;
     bool entered = false;
@@ -20,6 +21,7 @@ public class ChestScript : MonoBehaviour
     private void Awake()
     {
         tx = GameObject.Find("OpenTextChest");
+        needKey = GameObject.Find("Needkey").GetComponent<Text>();
         itemFind = GameObject.Find("ItemFind").GetComponent<Text>();
         au = GetComponent<AudioSource>();
     }
@@ -53,7 +55,9 @@ public class ChestScript : MonoBehaviour
     {
         if(other.CompareTag(pTag) && !opened)
         {
-            tx.SetActive(true);
+            if (info.nKeys > 1)
+                tx.SetActive(true);
+            else needKey.gameObject.SetActive(true);
             entered = true;
         }
     }
@@ -62,6 +66,7 @@ public class ChestScript : MonoBehaviour
         if (other.CompareTag(pTag))
         {
             tx.SetActive(false);
+            needKey.gameObject.SetActive(false);
             entered = false;
         }
     }
