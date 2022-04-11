@@ -6,7 +6,9 @@ public class EllenBaseBullet : Bullet
 {
     ExplosionMgr exp;
     protected override void OnDisable() {
-        if (!exp) exp = GameObject.FindObjectOfType<ExplosionMgr>();
+        if (!exp) 
+        exp = GameObject.FindObjectOfType<ExplosionMgr>();
+        if (!exp) { Debug.LogWarning("Missing Explosion Manager"); return; }
         ParticleSystem ps = exp.GetExplosion(ExplosionType.baseBulletExplosion);
         ps.transform.position = transform.position;
         ParticleSystem[] arr = ps.GetComponentsInChildren<ParticleSystem>(true);

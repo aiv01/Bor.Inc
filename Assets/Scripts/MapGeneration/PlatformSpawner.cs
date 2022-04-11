@@ -16,7 +16,7 @@ public struct Platform {
         }
     }
 }
-[RequireComponent(typeof(PlantSpawner), typeof(EnemySpawn), typeof(CullingGroupOps))]
+[RequireComponent(typeof(PlantSpawner), typeof(EnemySpawn), typeof(CullingFromPlayer))]
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] List<Platform> platforms;
@@ -65,7 +65,7 @@ public class PlatformSpawner : MonoBehaviour
             chestSpawner.PlaceChests();
             toCull.AddRange(GetComponent<EnemySpawn>().SpawnEnemy());
             toCull.AddRange(activatedPlatforms);
-            GetComponent<CullingGroupOps>().SetUp(toCull.ToArray());
+            GetComponent<CullingFromPlayer>().SetUp(toCull);
         }
     }
     private void Awake() {

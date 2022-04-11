@@ -165,26 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec59107c54d7ef4e93ed446c68e096a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &499245442 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6563920396178579254, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
-  m_PrefabInstance: {fileID: 4691492668559186773}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &499245444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499245442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +434,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.001
   far clip plane: 1000
   field of view: 5
   orthographic: 1
@@ -502,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1558492862}
   offset: {x: -1, y: 1, z: -1}
-  scaler: 20
+  scaler: 50
   speed: 0.8
 --- !u!114 &963194230
 MonoBehaviour:
@@ -1373,6 +1353,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 404160384603287411, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
   m_PrefabInstance: {fileID: 404160383057975757}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1558492863 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 404160384603287308, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+  m_PrefabInstance: {fileID: 404160383057975757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1558492864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 404160384603287309, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
@@ -1600,23 +1585,7 @@ MonoBehaviour:
   timeToNextFrase: 3
   timeToDespawn: 6
   speed: 0.05
-  frases:
-  - How did I even get here?
-  - So... Bor.Inc is the company name? It sounds kinda "Boring"
-  - Is Explorer@ really my name? That's so wierd...
-  - Wait... what do you mean with "The boss is always watching"?!?
-  - Who is the Boss?!?
-  - ANSWER ME!       NOW!!!
-  - Who even am I?
-  - Hellooo... Robot voice... Are you still there?
-  - Why should I even continue this mission in an unamed land? What am I even doing
-    it for?
-  - I need to meet the boss... I need answers... There must be an explanation to
-    this situation
-  - Mabe the boss can tell me who I am...
-  - I hate my name... How can Explorer@ even be considered a name?
-  - Maybe I'll be able to find the boss by compleating my missions
-  - Ok, I must finish this missions!
+  fileName: ExplorationLV1
   playerColor: {r: 0.9098039, g: 1, b: 1, a: 0.78431374}
   secondVoiceColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2009544846
@@ -2041,6 +2010,14 @@ PrefabInstance:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
+      propertyPath: checkForFrame
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1558492863}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
 --- !u!1001 &8238995983653958344
