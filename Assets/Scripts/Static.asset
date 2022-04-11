@@ -13,29 +13,17 @@ MonoBehaviour:
   m_Name: Static
   m_EditorClassIdentifier: 
   collectedBundles:
-  - {fileID: 3, guid: f9009696695cef048b18b6f52dac8347, type: 3}
-  - {fileID: 3, guid: 90a971a1743e5ec4b858d674ba5a3a68, type: 3}
-  - {fileID: 3, guid: 96e5657eed3f9654e9e3891916af4474, type: 3}
-  - {fileID: 3, guid: b0010c4e600bd6c499d17423e35f5f9b, type: 3}
-  - {fileID: 3, guid: 20b72a43426545e42a95e9767e7918d8, type: 3}
-  - {fileID: 3, guid: 92b739f5c97224d4ca930e274082e01f, type: 3}
-  - {fileID: 11400000, guid: f4210c5d201593343b46af48bd2ccaef, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: ee3b3c40d952e9440afe84a1c2dabe76, type: 2}
-  - {fileID: 11400000, guid: c3fd8fb7763e5dc48982dd823d187e43, type: 2}
-  - {fileID: 11400000, guid: 9e5f12b01727a5640a344f6e93657dbf, type: 2}
-  - {fileID: 11400000, guid: a0aaed559f1e7a04e9a9b2c1a8564a6a, type: 2}
-  - {fileID: 11400000, guid: fb06d238b9182b542970e11a875fa874, type: 2}
-  - {fileID: 11400000, guid: bc54e429b0f2260448e43d7dfc7e9e78, type: 2}
-  - {fileID: 11400000, guid: b66b90132cd85ed459e4da817298b6d6, type: 2}
-  - {fileID: 11400000, guid: 6cdcefe1c08ec29499480d2f9708e2e6, type: 2}
   - {fileID: 0}
-  - {fileID: 3, guid: 8d98180756a064348b69a2abe2d5d672, type: 3}
-  - {fileID: 11400000, guid: c4f0af14784ac6a46800152f4b2d4598, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   inInventory:
-  - {fileID: 11400000, guid: a0aaed559f1e7a04e9a9b2c1a8564a6a, type: 2}
-  - {fileID: 11400000, guid: 9e5f12b01727a5640a344f6e93657dbf, type: 2}
-  - {fileID: 3, guid: 90a971a1743e5ec4b858d674ba5a3a68, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   allPossibleBundles:
   - {fileID: 11400000, guid: 82d07e75d5913c64ca4c583dfb8dd2db, type: 2}
   - {fileID: 11400000, guid: 963050ae05c2fec4a880cdf79dfe3e2e, type: 2}
@@ -1324,7 +1312,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 451e9e4395e14fc4fb77907391e381a6, type: 2}
   - {fileID: 11400000, guid: 925398d90c591a04b974a556c2df1743, type: 2}
   - {fileID: 11400000, guid: 505b173b60a833d46abb0e648824c157, type: 2}
-  nKeys: 4
-  foundTreasure: 1
-  level: 3
-  explorerNumber: 1146
+  nKeys: 0
+  foundTreasure: 0
+  level: 2
+  explorerNumber: 1147
