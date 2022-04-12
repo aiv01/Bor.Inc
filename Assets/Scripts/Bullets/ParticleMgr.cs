@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ExplosionType { baseBulletExplosion, poisonExplosion, granedierExplosion, last}
-public class ExplosionMgr : MonoBehaviour
+public enum ParticleType { baseBulletExplosion, poisonExplosion, granedierExplosion, dustWalk, dustShockWave, last}
+public class ParticleMgr : MonoBehaviour
 {
-    private List<ParticleSystem>[] nParticles = new List<ParticleSystem>[(int)ExplosionType.last];
+    private List<ParticleSystem>[] nParticles = new List<ParticleSystem>[(int)ParticleType.last];
     [SerializeField] private ScriptableExplosion[] particlePrefabs;
-
+    [HideInInspector] public static ParticleMgr instance;
     void Start() {
+        instance = this;
         for (int i = 0; i < nParticles.Length; i++) {
             nParticles[i] = new List<ParticleSystem>();
         }
@@ -19,7 +20,7 @@ public class ExplosionMgr : MonoBehaviour
         //}
     }
 
-    public ParticleSystem GetExplosion(ExplosionType type) {
+    public ParticleSystem GetExplosion(ParticleType type) {
         for (int i = 0; i < nParticles[(int)type].Count; i++) {
             if (!nParticles[(int)type][i].gameObject.activeInHierarchy) {
                 return nParticles[(int)type][i];

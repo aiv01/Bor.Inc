@@ -63,4 +63,16 @@ public class BaseController : MonoBehaviour {
         gameObject.SetActive(false);
         //gameObject.SetActive(false);
     }
+    public void Step() {
+        ParticleSystem p = ParticleMgr.instance.GetExplosion(ParticleType.dustWalk);
+        p.transform.position = transform.position;
+        p.transform.position += Vector3.up * 0.2f + transform.forward * 0.2f;
+
+        p.transform.rotation = transform.rotation;
+        ParticleSystem[] arr = p.GetComponentsInChildren<ParticleSystem>(true);
+        foreach (var item in arr) {
+            item.gameObject.SetActive(true);
+            item.Play();
+        }
+    }
 }

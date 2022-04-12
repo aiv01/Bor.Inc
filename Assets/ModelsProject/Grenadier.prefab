@@ -235,6 +235,7 @@ MonoBehaviour:
   secondAttackArea: {fileID: 5817385989287433526}
   detecAngle: 45
   detecDistance: 10
+  leftHand: {fileID: 4795967440991913076}
 --- !u!114 &4795967440992313003
 MonoBehaviour:
   m_ObjectHideFlags: 0

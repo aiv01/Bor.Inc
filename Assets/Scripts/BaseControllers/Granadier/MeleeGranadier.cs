@@ -10,6 +10,8 @@ public class MeleeGranadier : Mob
     [SerializeField] AttackArea secondAttackArea;
     [SerializeField] float detecAngle;
     [SerializeField] float detecDistance;
+    [SerializeField] Transform leftHand;
+
     public Transform Ellen => ellen;
     public float ViewDistance => viewDistance;
     public float DetecAngle => detecAngle; 
@@ -46,11 +48,21 @@ public class MeleeGranadier : Mob
             animator.SetBool("InPursuit", true);
         }
     }
-
     public void MeleeAttackStart()
     {
         attackArea.damageMult = effectDamageMult;
         attackArea.AttackStart();
+
+        ParticleSystem ps = ParticleMgr.instance.GetExplosion(ParticleType.dustShockWave);
+        if (ps) {
+            //if (!leftHand) leftHand = transform.Find("Grenadier_LeftHand");
+            if (!leftHand) return;
+            ps.transform.SetParent(leftHand);
+            ps.transform.forward = leftHand.transform.right;
+            ps.transform.position = leftHand.transform.position - leftHand.transform.right * 2 + leftHand.transform.forward;
+            ps.gameObject.SetActive(true);
+            ps.Play();
+        }
     }
     public void StartAttack()
     {
@@ -82,5 +94,6 @@ public class MeleeGranadier : Mob
         navMesh.enabled = false;
         this.enabled = false;
     }
+    
 
 }

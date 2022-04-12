@@ -171,12 +171,16 @@ public class ExplorerController : BaseController {
         anim.SetFloat("ForwardSpeed", speed);
     }
     #region AnimationEvents
+    TrailRenderer tr;
     public void MeleeAttackStart(int throwing = 0) {
+        if (!tr) tr = gameObject.GetComponentInChildren<TrailRenderer>(true);
+        tr.gameObject.SetActive(true);
         weaponArea.damageMult = damageMultCombo * effectDamageMult;
         weaponArea.AttackStart();
     }
 
     public void MeleeAttackEnd() {
+        tr.gameObject.SetActive(false);
         weaponArea.AttackEnd();
     }
     
@@ -209,6 +213,18 @@ public class ExplorerController : BaseController {
     {
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("DeadScene");
+    }
+    public void Step() {
+        ParticleSystem p = ParticleMgr.instance.GetExplosion(ParticleType.dustWalk);
+        p.transform.position = transform.position;
+        p.transform.position += Vector3.up * 0.2f + transform.forward * 0.2f;
+
+        p.transform.rotation = transform.rotation;
+        ParticleSystem[] arr = p.GetComponentsInChildren<ParticleSystem>(true);
+        foreach (var item in arr) {
+            item.gameObject.SetActive(true);
+            item.Play();
+        }
     }
     #endregion
 }
