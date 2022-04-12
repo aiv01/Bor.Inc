@@ -38,7 +38,11 @@ public class CullingFromPlayer : MonoBehaviour
     }
 
     private void ShowHide(GameObject target, bool needToBeShowed) {
-        
+        Mob m = target.GetComponent<Mob>();
+        if (m && m.CurrentHp <= 0) {
+            cullingObjects.Remove(target.transform);
+            return;
+        }
         if (target.layer == 3) {
             if (needToBeShowed) {
                 SetLayerRecursively(target, 6);

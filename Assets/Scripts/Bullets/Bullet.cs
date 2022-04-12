@@ -56,7 +56,9 @@ public class Bullet : MonoBehaviour
         if(targetTag == "Enemy" && other.gameObject.CompareTag("BulletProof")) {
             oldTag = targetTag;
             targetTag = controller.tag;
-            transform.forward *= -1;
+            Vector3 normal = transform.position - other.transform.position;
+            normal.y = 0;
+            transform.forward = Vector3.Reflect(transform.forward, normal.normalized);
         }
     }
 }
