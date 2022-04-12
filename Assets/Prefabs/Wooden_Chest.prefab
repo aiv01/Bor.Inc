@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3858267460791088836}
   - component: {fileID: 4474107399575213128}
   - component: {fileID: 7554484697351447386}
+  - component: {fileID: -1554636116988201269}
   m_Layer: 0
   m_Name: Wooden_Chest
   m_TagString: Untagged
@@ -209,6 +210,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!208 &-1554636116988201269
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924635886941995819}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.65, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.5, z: -0.13}
+  m_TimeToStationary: 0.5
 --- !u!1 &4924635886942003007
 GameObject:
   m_ObjectHideFlags: 0
