@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8656415ec5ca604b91c97bd309387f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 100
-  vx: 15
+  gravity: 50
+  vx: 10
   finishParabolic: 0
 --- !u!96 &35179206424527446
 TrailRenderer:
