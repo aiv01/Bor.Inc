@@ -2018,7 +2018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b33dd59805f09cb4f94bc163dcdb2dc9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b33dd59805f09cb4f94bc163dcdb2dc9, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2050,7 +2050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b33dd59805f09cb4f94bc163dcdb2dc9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.33
+      value: -17.73
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b33dd59805f09cb4f94bc163dcdb2dc9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4646,7 +4646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 516400071}
   offset: {x: -1, y: 0.7, z: -1}
-  scaler: 35
+  scaler: 45
   speed: 0.8
 --- !u!1 &599313241
 GameObject:
@@ -15583,7 +15583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: d6bae189a0fe4b948ab13c0103d593c0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d6bae189a0fe4b948ab13c0103d593c0, type: 3}
       propertyPath: m_RootOrder
@@ -15599,7 +15599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d6bae189a0fe4b948ab13c0103d593c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.8
+      value: -18.2
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d6bae189a0fe4b948ab13c0103d593c0, type: 3}
       propertyPath: m_LocalRotation.w
