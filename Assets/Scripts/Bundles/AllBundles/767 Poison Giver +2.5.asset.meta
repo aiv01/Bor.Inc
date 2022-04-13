@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 046b0872c6f403d4884648639d980154
+labels:
+- Bundle
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

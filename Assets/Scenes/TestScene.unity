@@ -2470,6 +2470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chomper
       objectReference: {fileID: 0}
+    - target: {fileID: 6643453478081810966, guid: f8c8020d6a0a62d4588c166f77ba6156, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c8020d6a0a62d4588c166f77ba6156, type: 3}
 --- !u!224 &512466214 stripped
@@ -5216,14 +5220,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionMgr
       objectReference: {fileID: 0}
-    - target: {fileID: 4543430628155698241, guid: b4b6f6012fd0def47ba9fd62c77f5f76, type: 3}
-      propertyPath: particlePrefabs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4543430628155698241, guid: b4b6f6012fd0def47ba9fd62c77f5f76, type: 3}
-      propertyPath: particlePrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: edce45287a912a14cbf43106bc78faa2, type: 2}
     - target: {fileID: 4543430628155698242, guid: b4b6f6012fd0def47ba9fd62c77f5f76, type: 3}
       propertyPath: m_RootOrder
       value: 13
