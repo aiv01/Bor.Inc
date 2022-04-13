@@ -30,7 +30,7 @@ public class CullingFromPlayer : MonoBehaviour
 
             var target = cullingObjects[currentIndex];
 
-            bool needToBeShowed = ((playerTransform.position - target.position).sqrMagnitude < sqrtDistance);
+            bool needToBeShowed = (target.gameObject.layer == 3) ? ((playerTransform.position - target.position).sqrMagnitude < sqrtDistance * 0.3f) : ((playerTransform.position - target.position).sqrMagnitude < sqrtDistance);
 
             ShowHide(target.gameObject, needToBeShowed);
             

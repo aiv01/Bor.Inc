@@ -65,7 +65,7 @@ public class MeleeChomper : Mob
     protected override void Die() {
         base.Die();
         GetComponent<DistanceDissolveTarget>().dissolve = true;
-        //GetComponent<Disintegratable>().Disintegrate(Vector3.up);
+        //GetComponent<Disintegratable>().Disintegrate(transform.position + Vector3.up);
         foreach (Collider item in GetComponentsInChildren<Collider>()) {
             item.enabled = false;
         }

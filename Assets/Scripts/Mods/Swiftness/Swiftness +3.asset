@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02bcdd403b5e39e4a926fdf4c9ee96c9, type: 3}
+  m_Name: Swiftness +3
+  m_EditorClassIdentifier: 
+  level: 3
+  atachTo: 2
+  attachedTo: {fileID: 0}
+  speedMult: 2.1
+  particlesPrefab: {fileID: 6343056980081922867, guid: 61b9991a42583b54bb5bde00faca8890, type: 3}
