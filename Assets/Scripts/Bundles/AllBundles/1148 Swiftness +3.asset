@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bundleImage: {fileID: -6467038868627581649, guid: ed823a6043d09374e8aec0546b234b31, type: 3}
   mods:
-  - {fileID: 11400000, guid: cc9fd427bd005024b979a0953a9059c2, type: 2}
+  - {fileID: 11400000, guid: 06ff9bff78fb1bd419a70254dc2a970c, type: 2}
   - {fileID: 11400000, guid: 0221488e9c1c15242a29b3527d55017b, type: 2}
   description: Swiftness +3 Triple Shot
+  wasFound: 0
