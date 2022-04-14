@@ -29,7 +29,7 @@ public class EllenSentences : MonoBehaviour
         frases = File.ReadAllLines(path);
         text = GetComponent<Text>();
         text.text = "";
-        currentTime = timeToNextFrase;
+        currentTime = 2;
         if (ScriptableStaticClass.instance.level != level) this.enabled = false;
     }
 
