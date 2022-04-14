@@ -85,6 +85,7 @@ public class MeleeGranadier : Mob
 
     override protected void Die()
     {
+        mods.RemoveAll();
         GetComponent<Collider>().enabled = false;
         animator.SetTrigger("Death");
     }

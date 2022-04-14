@@ -67,7 +67,7 @@ public class ExplorerController : BaseController {
                 transform.rotation = Quaternion.LookRotation(d, Vector3.up);
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection;
+            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection * 2;
 
         }
         
@@ -80,7 +80,7 @@ public class ExplorerController : BaseController {
             //    transform.rotation = Quaternion.LookRotation(d, Vector3.up);
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection;
+            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection * 2;
 
         }
         
@@ -205,6 +205,7 @@ public class ExplorerController : BaseController {
 
     override protected void Die()
     {
+        mods.RemoveAll();
         GetComponent<Collider>().enabled = false;
         anim.SetTrigger("Death");
     }
@@ -213,18 +214,6 @@ public class ExplorerController : BaseController {
     {
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("DeadScene");
-    }
-    public void Step() {
-        ParticleSystem p = ParticleMgr.instance.GetExplosion(ParticleType.dustWalk);
-        p.transform.position = transform.position;
-        p.transform.position += Vector3.up * 0.2f + transform.forward * 0.2f;
-
-        p.transform.rotation = transform.rotation;
-        ParticleSystem[] arr = p.GetComponentsInChildren<ParticleSystem>(true);
-        foreach (var item in arr) {
-            item.gameObject.SetActive(true);
-            item.Play();
-        }
     }
     #endregion
 }

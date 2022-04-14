@@ -4026,6 +4026,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 46203584780730004, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6156492
+      objectReference: {fileID: 0}
+    - target: {fileID: 46203584780730004, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3203348
+      objectReference: {fileID: 0}
+    - target: {fileID: 46203584780730004, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5276146
+      objectReference: {fileID: 0}
+    - target: {fileID: 46203584780730004, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_Center.x
+      value: -0.06647825
+      objectReference: {fileID: 0}
+    - target: {fileID: 46203584780730004, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_Center.y
+      value: 0.00412935
+      objectReference: {fileID: 0}
+    - target: {fileID: 46203584780730004, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
+      propertyPath: m_Center.z
+      value: 0.06424141
+      objectReference: {fileID: 0}
     - target: {fileID: 4795967440991912990, guid: cea9c933e6c97ad41a99ab47668b7d6e, type: 3}
       propertyPath: m_RootOrder
       value: 1
