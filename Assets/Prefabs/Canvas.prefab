@@ -1154,7 +1154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -22, y: 27.099976}
+  m_AnchoredPosition: {x: -30.4, y: 43.807}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &2145672692408557202
@@ -1595,6 +1595,7 @@ GameObject:
   - component: {fileID: 4691492668536334422}
   - component: {fileID: 4691492668536334423}
   - component: {fileID: 4691492668536334416}
+  - component: {fileID: 7225529254947220288}
   m_Layer: 5
   m_Name: GobackMessage
   m_TagString: Untagged
@@ -1689,6 +1690,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b739f5c97224d4ca930e274082e01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7225529254947220288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691492668536334421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4691492668777267534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1918,7 @@ GameObject:
   - component: {fileID: 4691492669057657713}
   - component: {fileID: 4691492669057657715}
   - component: {fileID: 4691492669057657712}
+  - component: {fileID: 2556351455564359906}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1970,6 +1987,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Press E or       to open
+--- !u!114 &2556351455564359906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691492669057657718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4691492669169069422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,6 +2090,7 @@ GameObject:
   - component: {fileID: 4691492669175944060}
   - component: {fileID: 4691492669175944061}
   - component: {fileID: 4691492669175944062}
+  - component: {fileID: 7723802598819347319}
   m_Layer: 5
   m_Name: ItemFind
   m_TagString: Untagged
@@ -2151,6 +2184,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToOFF: 5
+--- !u!114 &7723802598819347319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691492669175944051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4691492669479809801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,6 +2210,7 @@ GameObject:
   - component: {fileID: 4691492669479809800}
   - component: {fileID: 4691492669479809802}
   - component: {fileID: 4691492669479809803}
+  - component: {fileID: 535465265877614030}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2185,7 +2234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 82.4, y: 21.4}
+  m_AnchoredPosition: {x: 55.1, y: 23.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4691492669479809802
@@ -2230,6 +2279,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &535465265877614030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691492669479809801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4691492669559781632
 GameObject:
   m_ObjectHideFlags: 0
