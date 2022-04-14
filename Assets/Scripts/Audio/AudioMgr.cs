@@ -51,4 +51,11 @@ public class AudioMgr : MonoBehaviour
     {
         return array[Random.Range(0, array.Length)];
     }
+
+    private void StartAttack()
+    {
+        AudioClip clip = GetRandomClip(attackClips);
+        audioSorc.PlayOneShot(clip);
+    }
+
 }
