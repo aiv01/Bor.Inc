@@ -650,18 +650,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 574443640022225427, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 7227f2c5da08f384abe27bfc6c830098, type: 3}
-    - target: {fileID: 574443640022225427, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 574443640022225427, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1232152713240316238, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.00012207031
@@ -690,13 +678,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Button, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 2391054172464154481, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
+    - target: {fileID: 2439955347135842022, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.7
+      value: 0.00013504
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439955347135842022, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -76.9
       objectReference: {fileID: 0}
     - target: {fileID: 2481720182247902839, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.029999
+      value: -11.029907
       objectReference: {fileID: 0}
     - target: {fileID: 2530196529928713872, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_Pivot.x
@@ -788,7 +780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3048221538473733208, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9.3
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 3655403087994902319, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -860,7 +852,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6661154540925565572, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -11.8
+      value: -0.0000076294
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116182621980250393, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116182621980250393, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68bbf92c54c0601429b3c9f74960c9cb, type: 3}
