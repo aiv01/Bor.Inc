@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameSpawnPoint: {x: 12, y: 3.5, z: 46}
-  spawnPoint: {x: 11, y: 1, z: 7.5}
+  spawnPoint: {x: 5.5, y: 1, z: 30}
   ellen: {fileID: 516400073}
 --- !u!4 &144721276
 Transform:
