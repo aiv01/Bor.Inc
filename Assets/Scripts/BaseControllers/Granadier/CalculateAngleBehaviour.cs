@@ -9,13 +9,18 @@ public class CalculateAngleBehaviour : StateMachineBehaviour
     {
         animator.SetBool("Turn", false);
         MeleeGranadier mg = animator.GetComponent<MeleeGranadier>();
-        float angle = Vector3.SignedAngle((mg.Ellen.position - animator.transform.position).normalized, animator.transform.forward, Vector3.up);
-        animator.SetFloat("Angle", -angle * 0.0055556f);
-        if (angle > 150 || angle < -150) {
+        Vector3 from = animator.transform.forward;
+        Vector3 to = (mg.Ellen.position - animator.transform.position).normalized;
+        float angle = Vector3.SignedAngle(from, to, Vector3.up);
+        int sign = angle > 0 ? 1 : -1;
+        animator.SetFloat("Angle", angle * 0.0055556f);
+        angle = Mathf.Abs(angle);
+        Debug.Log(angle);
+        if (angle > 150) {
             animator.SetTrigger("CloseAreaAttack");
             //animator.SetBool("Turn", true);
             return;
-        }else if(angle > mg.DetecAngle || angle < -mg.DetecAngle)
+        }else if(angle > mg.DetecAngle)
         {
             animator.SetTrigger("Rotate");
             animator.SetBool("Turn", true);
