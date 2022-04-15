@@ -14,7 +14,6 @@ public class CalculateAngleBehaviour : StateMachineBehaviour
         float angle = Vector3.SignedAngle(from, to, Vector3.up);
         animator.SetFloat("Angle", angle * 0.0055556f);
         angle = Mathf.Abs(angle);
-        Debug.Log(angle);
         if (angle > 150) {
             animator.SetTrigger("CloseAreaAttack");
             return;
