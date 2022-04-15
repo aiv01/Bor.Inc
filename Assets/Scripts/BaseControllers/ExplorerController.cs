@@ -134,7 +134,6 @@ public class ExplorerController : BaseController {
         Fire();
     }
     public void Attack() {
-
         targetPos = transform.position;
         anim.SetTrigger("MeleeAttack");
         anim.SetFloat("StateTime", stateTime);

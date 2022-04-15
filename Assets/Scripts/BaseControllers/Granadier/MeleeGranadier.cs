@@ -74,6 +74,11 @@ public class MeleeGranadier : Mob
         secondAttackArea.damageMult = effectDamageMult;
         secondAttackArea.AttackStart();
     }
+    private void StartDust() {
+        ParticleSystem ps = ParticleMgr.instance.GetExplosion(ParticleType.areaShockWave);
+        ps.transform.position = transform.position;
+        ps.gameObject.SetActive(true);
+    }
     public void Shoot() {
         Bullet b = BulletMgr.instance.GetBullet(bulletType);
         b.transform.position = transform.position + Vector3.up;

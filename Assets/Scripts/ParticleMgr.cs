@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ParticleType { baseBulletExplosion, poisonExplosion, granedierExplosion, dustWalk, dustShockWave, last}
+public enum ParticleType { baseBulletExplosion, poisonExplosion, granedierExplosion, dustWalk, dustShockWave, areaShockWave, sparks, last}
 public class ParticleMgr : MonoBehaviour
 {
     private List<ParticleSystem>[] nParticles = new List<ParticleSystem>[(int)ParticleType.last];
