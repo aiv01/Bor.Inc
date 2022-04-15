@@ -22,6 +22,10 @@ public class MeleeGranadier : Mob
     public float AttackDistance => attackDistance;
     public float DistanceFromBase => distanceFromBase;
     public Vector3 SpawnPos => spawnPos;
+    AudioMgr audioMgr;
+    private void Awake() {
+        audioMgr = GetComponent<AudioMgr>();
+    }
     override public void Update()
     {
         base.Update();
@@ -29,6 +33,7 @@ public class MeleeGranadier : Mob
 
     override public void TakeDamage(float damage, BaseController attacker) {
         base.TakeDamage(damage, attacker);
+        audioMgr.HurtEvent();
         if (damage > 0 && Random.Range(0, 20) == 0 && currentHp > 0) {
             animator.SetTrigger("Hit");
         }

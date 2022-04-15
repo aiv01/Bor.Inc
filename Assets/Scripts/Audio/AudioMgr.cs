@@ -42,7 +42,7 @@ public class AudioMgr : MonoBehaviour
         audioSorc.PlayOneShot(clip);
     }
 
-    private void HurtEvent()
+    public void HurtEvent()
     {
         AudioClip hurt = GetRandomClip(hurtClips);
         audioSorc.PlayOneShot(hurt);
