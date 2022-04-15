@@ -25,12 +25,15 @@ public class EllenSentences : MonoBehaviour
     State currentState = State.waiting;
     void Start()
     {
+        if (ScriptableStaticClass.instance.level != level) {
+            this.enabled = false;
+            return;
+        }
         path = Application.streamingAssetsPath + "/EllentFrases/" + fileName + ".txt";
         frases = File.ReadAllLines(path);
         text = GetComponent<Text>();
         text.text = "";
         currentTime = 2;
-        if (ScriptableStaticClass.instance.level != level) this.enabled = false;
     }
 
     void Update()
@@ -46,7 +49,7 @@ public class EllenSentences : MonoBehaviour
                 currentCharIndex = 0;
                 text.text = "";
                 stringLength = frases[index].Length;
-                if(frases[index][frases[index].Length-1] == '^') {
+                if(!string.IsNullOrEmpty(frases[index]) && frases[index][frases[index].Length-1] == '^') {
                     text.color = secondVoiceColor;
                         frases[index] = frases[index].Split('^')[0];
                         stringLength--;
@@ -56,11 +59,11 @@ public class EllenSentences : MonoBehaviour
                 break;
 
             case State.typing:
-                if(frases[index][currentCharIndex] == '@') {
+                if(!string.IsNullOrEmpty(frases[index]) && frases[index][currentCharIndex] == '@') {
                         text.text += ScriptableStaticClass.instance.explorerNumber.ToString();
                         currentCharIndex++;
-                } else
-                text.text += frases[index][currentCharIndex++]/* == '@' ? ScriptableStaticClass.instance.explorerNumber.ToString() : frases[index][currentCharIndex++].ToString()*/;
+                } else if(!string.IsNullOrEmpty(frases[index]))
+                    text.text += frases[index][currentCharIndex++]/* == '@' ? ScriptableStaticClass.instance.explorerNumber.ToString() : frases[index][currentCharIndex++].ToString()*/;
                 currentTime = speed;
                 if (currentCharIndex >= stringLength) {
                     currentState = State.despawning;
