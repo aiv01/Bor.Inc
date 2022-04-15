@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de71706b842e5ad469f7e6db651891ee, type: 3}
-  m_Name: sludgeBullet
+  m_Script: {fileID: 11500000, guid: 5a0114f0ee7dfae438e6fb4c2307b6e1, type: 3}
+  m_Name: SludgeExplosion
   m_EditorClassIdentifier: 
   type: 1
-  prefab: {fileID: 6293710050547216924, guid: 8cb32a93d1eaf7a419da61cda83a55a0, type: 3}
+  prefab: {fileID: 8796886069867106460, guid: 2dd2760beea9a8c4db1d17f752eb9ed9, type: 3}

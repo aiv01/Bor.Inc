@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8662264741060482741}
   - component: {fileID: 8662264741060482740}
   - component: {fileID: 8662264741060482747}
-  - component: {fileID: 8662264741060482746}
+  - component: {fileID: 6293710050547216924}
   m_Layer: 0
   m_Name: SludgeBomb
   m_TagString: Untagged
@@ -97,7 +97,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8662264741060482746
+--- !u!114 &6293710050547216924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8662264741060482745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cc70a14eda57c49aaef42512e25c73, type: 3}
+  m_Script: {fileID: 11500000, guid: c500de6e48dab004dbd6c6b121cf262d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15

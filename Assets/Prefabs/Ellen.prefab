@@ -1710,6 +1710,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  particle: 6
 --- !u!1 &4647815997160449539
 GameObject:
   m_ObjectHideFlags: 0
