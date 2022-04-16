@@ -4512,7 +4512,7 @@ MonoBehaviour:
   target: {fileID: 118298477}
   offset: {x: -1, y: 1, z: -1}
   scaler: 15
-  speed: 0.8
+  speed: 0.3
 --- !u!4 &943601395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 583fd0d3093356c479d651d1e617ac85, type: 3}
