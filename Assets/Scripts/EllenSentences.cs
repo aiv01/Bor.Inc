@@ -25,14 +25,14 @@ public class EllenSentences : MonoBehaviour
     State currentState = State.waiting;
     void Start()
     {
+        text = GetComponent<Text>();
+        text.text = "";
         if (ScriptableStaticClass.instance.level != level) {
             this.enabled = false;
             return;
         }
         path = Application.streamingAssetsPath + "/EllentFrases/" + fileName + ".txt";
         frases = File.ReadAllLines(path);
-        text = GetComponent<Text>();
-        text.text = "";
         currentTime = 2;
     }
 

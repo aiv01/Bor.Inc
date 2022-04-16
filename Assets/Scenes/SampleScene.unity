@@ -1182,6 +1182,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4691492669175944050, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 292.2905
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691492669175944050, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 14.578125
+      objectReference: {fileID: 0}
     - target: {fileID: 4691492669479809800, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 55.5
@@ -1808,11 +1816,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d3fce990dc34b2141a9f364e8dfce5e8, type: 3}
-    m_FontSize: 58
+    m_FontSize: 3
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 20
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2104,14 +2112,6 @@ PrefabInstance:
     - target: {fileID: 5978233645953138962, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
       propertyPath: level
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
-      propertyPath: distance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
-      propertyPath: checkForFrame
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7010246934527657155, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
       propertyPath: playerTransform

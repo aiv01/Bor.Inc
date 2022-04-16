@@ -4765,6 +4765,18 @@ PrefabInstance:
       propertyPath: bulletMgr
       value: 
       objectReference: {fileID: 1113138977}
+    - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+      propertyPath: mods.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+      propertyPath: mods.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8617a9a9604a0a74183ca7249290f54a, type: 2}
+    - target: {fileID: 404160384603287311, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+      propertyPath: mods.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2de1e39b2bd5adf408d5454aa9198c58, type: 2}
     - target: {fileID: 404160384603287411, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: m_Name
       value: Ellen Variant

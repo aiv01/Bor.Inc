@@ -75,7 +75,7 @@ public class BossController : BaseController {
             anim.SetFloat("HurtFromY", pippo.y);
         }
         if(currentHp <= 0) {
-            SceneManager.LoadScene("FinalScene");
+            Die();
         }
     }
     override protected void Die() {

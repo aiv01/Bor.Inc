@@ -59,6 +59,8 @@ public class ExplorerController : BaseController {
     }
 
     #region Input
+    bool moveInputPressedKeyboard = false;
+    bool moveInputPressedController = false;
     public void InputControllerMove(float horizontal, float vertical) {
         if (navMesh.isStopped) {
             moveDirection = Vector3.zero;
@@ -67,7 +69,16 @@ public class ExplorerController : BaseController {
                 transform.rotation = Quaternion.LookRotation(d, Vector3.up);
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection * 2;
+            if (moveDirection.sqrMagnitude > 0.2f) {
+                targetPos = transform.position + moveDirection * 2;
+                moveInputPressedController = true;
+            }
+            else {
+                if (moveInputPressedController) {
+                    moveInputPressedController = false;
+                    targetPos = transform.position + transform.forward;
+                }
+            }
 
         }
         
@@ -80,7 +91,15 @@ public class ExplorerController : BaseController {
             //    transform.rotation = Quaternion.LookRotation(d, Vector3.up);
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
-            if(moveDirection.sqrMagnitude > 0.2f) targetPos = transform.position + moveDirection * 2;
+            if (moveDirection.sqrMagnitude > 0.2f) {
+                targetPos = transform.position + moveDirection * 2;
+                moveInputPressedKeyboard = true;
+            } else {
+                if (moveInputPressedKeyboard) {
+                    moveInputPressedKeyboard = false;
+                    targetPos = transform.position + transform.forward;
+                }
+            }
 
         }
         
