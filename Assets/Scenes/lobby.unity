@@ -4597,7 +4597,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -30
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -4677,8 +4677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 516400071}
   offset: {x: -1, y: 0.7, z: -1}
-  scaler: 45
-  speed: 0.8
+  scaler: 20
+  speed: 1
 --- !u!1 &599313241
 GameObject:
   m_ObjectHideFlags: 0
@@ -8404,6 +8404,10 @@ PrefabInstance:
     - target: {fileID: 4691492668536334421, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691492669175944050, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 21.499146
       objectReference: {fileID: 0}
     - target: {fileID: 4691492669559781632, guid: f1facc6dd54716c42a61bc47f2cf9dea, type: 3}
       propertyPath: m_IsActive

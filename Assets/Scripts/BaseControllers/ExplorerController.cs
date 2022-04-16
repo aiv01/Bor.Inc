@@ -70,15 +70,15 @@ public class ExplorerController : BaseController {
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
             if (moveDirection.sqrMagnitude > 0.2f) {
-                targetPos = transform.position + moveDirection * 2;
+                targetPos = transform.position + moveDirection;
                 moveInputPressedController = true;
             }
-            else {
-                if (moveInputPressedController) {
-                    moveInputPressedController = false;
-                    targetPos = transform.position + transform.forward;
-                }
-            }
+            //else {
+            //    if (moveInputPressedController) {
+            //        moveInputPressedController = false;
+            //        targetPos = transform.position + transform.forward;
+            //    }
+            //}
 
         }
         
@@ -92,14 +92,15 @@ public class ExplorerController : BaseController {
         } else {
             moveDirection = (vertical * (Vector3.forward + Vector3.right).normalized + horizontal * (-Vector3.forward + Vector3.right).normalized).normalized;
             if (moveDirection.sqrMagnitude > 0.2f) {
-                targetPos = transform.position + moveDirection * 2;
+                targetPos = transform.position + moveDirection;
                 moveInputPressedKeyboard = true;
-            } else {
-                if (moveInputPressedKeyboard) {
-                    moveInputPressedKeyboard = false;
-                    targetPos = transform.position + transform.forward;
-                }
             }
+            // else {
+            //    if (moveInputPressedKeyboard) {
+            //        moveInputPressedKeyboard = false;
+            //        targetPos = transform.position + transform.forward;
+            //    }
+            //}
 
         }
         
