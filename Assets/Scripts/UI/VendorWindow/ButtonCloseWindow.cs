@@ -23,6 +23,7 @@ public class ButtonCloseWindow : MonoBehaviour
     public void CloseWindow()
     {
         window.SetActive(false);
+        ScriptableStaticClass.instance.vendorOpen = false;
         Time.timeScale = 1f;
     }
 }

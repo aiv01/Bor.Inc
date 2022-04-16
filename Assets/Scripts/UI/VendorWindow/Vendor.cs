@@ -9,7 +9,7 @@ public class Vendor : MonoBehaviour
     private Player player;
     [SerializeField] GameObject window;
     [SerializeField] Text tx;
-    bool entered = false;
+    public bool entered = false;
     string pTag = "Player";
     void Start()
     {
@@ -19,7 +19,9 @@ public class Vendor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (entered && player.GetButtonDown("OpenVendor")) {
+        if (entered && player.GetButtonDown("OpenVendor") && !ScriptableStaticClass.instance.pauseOn)
+        {
+            ScriptableStaticClass.instance.vendorOpen = true;
             tx.gameObject.SetActive(false);
             window.SetActive(true);
             Time.timeScale = 0f;
@@ -40,6 +42,7 @@ public class Vendor : MonoBehaviour
         {
             tx.gameObject.SetActive(false);
             entered = false;
+            
         }
     }
 }

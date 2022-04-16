@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (player.GetButtonDown("Pause"))
+        if (player.GetButtonDown("Pause") && !ScriptableStaticClass.instance.vendorOpen)
         {
             if (GameIsPaused)
             {
@@ -38,6 +38,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        ScriptableStaticClass.instance.pauseOn = false;
         Time.timeScale = 1f;
         GameIsPaused = false;
 
@@ -46,6 +47,7 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
+        ScriptableStaticClass.instance.pauseOn = true;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

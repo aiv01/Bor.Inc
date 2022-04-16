@@ -10,6 +10,8 @@ public class ScriptableStaticClass : ScriptableObject
     public static ScriptableStaticClass instance;
     public int nKeys = 0;
     public bool foundTreasure;
+    [HideInInspector] public bool vendorOpen;
+    [HideInInspector] public bool pauseOn;
     public int level;
     public int explorerNumber = 1126;
     public void CreateInstance() {
