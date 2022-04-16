@@ -10,6 +10,8 @@ public class AudioMgr : MonoBehaviour
     [SerializeField] private AudioClip[] attackClips;
     [SerializeField] private AudioClip[] hurtClips;
     [SerializeField] private AudioClip[] shootClip;
+    [SerializeField] private AudioClip[] explosionClip;
+
 
     private AudioSource audioSorc;
 
@@ -55,6 +57,12 @@ public class AudioMgr : MonoBehaviour
     private void StartAttack()
     {
         AudioClip clip = GetRandomClip(attackClips);
+        audioSorc.PlayOneShot(clip);
+    }
+
+    public void ExplosionBullet()
+    {
+        AudioClip clip = GetRandomClip(explosionClip);
         audioSorc.PlayOneShot(clip);
     }
 
