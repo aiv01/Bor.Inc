@@ -22,8 +22,8 @@ public class ButtonFinalScene : MonoBehaviour
 
     public void NewGame()
     {
-        ScriptableStaticClass.instance.Clear();
-        SaveManager.SaveStaticClassValues();
+        //ScriptableStaticClass.instance.Clear();
+        //SaveManager.SaveStaticClassValues();
         SceneManager.LoadScene("lobby");
     }
 

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class WindowScaler : MonoBehaviour
 {
-    float refRatio = 16 / 9;
-    float currentRatio = Screen.width / Screen.height;
+    float refRatio = 16f / 9f;
+    float currentRatio = (float)Screen.width / (float)Screen.height;
+    Vector3 baseScale;
+    private void Awake() {
+        baseScale = transform.localScale;
+    }
     private void Update() {
-        transform.localScale = Vector3.one * Mathf.Min(0.4166666f, refRatio / currentRatio);
+        currentRatio = (float)Screen.width / (float)Screen.height;
+        transform.localScale = baseScale * Mathf.Min(1f, refRatio / currentRatio);
     }
 }

@@ -29,9 +29,9 @@ public class InputExplorer : MonoBehaviour
         if (player.GetButtonDown("MeleeController") && !atBase) {
             explorer.Attack();
         }
-        //if(player.GetAxis("MoveXController") != 0 || player.GetAxis("MoveYController") != 0)
+        if (player.GetAxis("MoveXController") != 0 || player.GetAxis("MoveYController") != 0)
             explorer.InputControllerMove(player.GetAxis("MoveXController"), player.GetAxis("MoveYController"));
-        //else if(player.GetAxis("MoveXKeyboard") != 0 || player.GetAxis("MoveYKeyboard") != 0)
+        else if (player.GetAxis("MoveXKeyboard") != 0 || player.GetAxis("MoveYKeyboard") != 0)
             explorer.InputKeyboardMove(player.GetAxis("MoveXKeyboard"), player.GetAxis("MoveYKeyboard"));
 
     }
