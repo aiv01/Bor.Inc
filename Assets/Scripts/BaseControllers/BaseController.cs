@@ -52,6 +52,7 @@ public class BaseController : MonoBehaviour {
         if (currentHp <= 0) Die();
     }
     virtual public void TakePassiveDamage(float damage) {
+        if (currentHp <= 0) return;
         currentHp -= damage;
         if (currentHp <= 0) Die();
         if(currentHp > maxHp) { currentHp = maxHp; }

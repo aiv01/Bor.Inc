@@ -14,40 +14,43 @@ public class AudioMgr : MonoBehaviour
 
 
     private AudioSource audioSorc;
-
-    private void Awake()
-    {
-        audioSorc = GetComponent<AudioSource>();
+    private AudioSource AudioSorc {
+        get {
+            if(!audioSorc) {
+                audioSorc = GetComponent<AudioSource>();
+            }
+            return audioSorc;
+        }
     }
 
     private void Step()
     {
         AudioClip clip = GetRandomClip(clips);
-        audioSorc.PlayOneShot(clip);
+        AudioSorc.PlayOneShot(clip);
     }
 
     private void MeleeAttackStart()
     {
         AudioClip clip = GetRandomClip(attackClips);
-        audioSorc.PlayOneShot(clip);
+        AudioSorc.PlayOneShot(clip);
     }
 
     private void ShootStart()
     {
         AudioClip clip = GetRandomClip(shootClip);
-        audioSorc.PlayOneShot(clip);
+        AudioSorc.PlayOneShot(clip);
     }
 
     private void Shoot()
     {
         AudioClip clip = GetRandomClip(shootClip);
-        audioSorc.PlayOneShot(clip);
+        AudioSorc.PlayOneShot(clip);
     }
 
     public void HurtEvent()
     {
         AudioClip hurt = GetRandomClip(hurtClips);
-        audioSorc.PlayOneShot(hurt);
+        AudioSorc.PlayOneShot(hurt);
     }
     private AudioClip GetRandomClip(AudioClip[] array)
     {
@@ -57,13 +60,13 @@ public class AudioMgr : MonoBehaviour
     private void StartAttack()
     {
         AudioClip clip = GetRandomClip(attackClips);
-        audioSorc.PlayOneShot(clip);
+        AudioSorc.PlayOneShot(clip);
     }
 
     public void ExplosionBullet()
     {
         AudioClip clip = GetRandomClip(explosionClip);
-        audioSorc.PlayOneShot(clip);
+        AudioSorc.PlayOneShot(clip);
     }
 
 }

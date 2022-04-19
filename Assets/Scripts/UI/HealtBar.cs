@@ -8,7 +8,7 @@ public class HealtBar : MonoBehaviour
     [SerializeField] Image healthBar;
     private float currentHealth;
     private float maxHealth;
-    [SerializeField]ExplorerController ellen;
+    [SerializeField]BaseController ellen;
 
     private void Start()
     {

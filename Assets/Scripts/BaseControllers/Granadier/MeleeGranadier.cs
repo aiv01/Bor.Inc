@@ -95,6 +95,8 @@ public class MeleeGranadier : Mob
 
     override protected void Die()
     {
+        
+        EndAttack();
         mods.RemoveAll();
         GetComponent<Collider>().enabled = false;
         animator.SetTrigger("Death");
@@ -102,6 +104,7 @@ public class MeleeGranadier : Mob
 
     private void DeathEvent()
     {
+        if (toBoss) toBoss.hasDied();
         navMesh.enabled = false;
         this.enabled = false;
     }

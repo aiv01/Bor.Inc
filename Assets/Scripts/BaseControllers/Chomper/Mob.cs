@@ -11,6 +11,7 @@ public class Mob : BaseController
     int percetageCureProbability = 10;
     HeartMgr heartmgr;
     protected Vector3 spawnPos;
+    protected ToBossMgr toBoss;
     public override void Start()
     {
         base.Start();
@@ -18,6 +19,7 @@ public class Mob : BaseController
         navMesh = GetComponent<NavMeshAgent>();
         if (!animator) animator = GetComponent<Animator>();
         heartmgr = GameObject.Find("HeartMgr").GetComponent<HeartMgr>();
+        toBoss = GetComponent<ToBossMgr>();
     }
 
     public virtual void OnEnable() {
@@ -47,6 +49,7 @@ public class Mob : BaseController
     protected override void Die()
     {
         GetComponent<Collider>().enabled = false;
+        if (toBoss) toBoss.hasDied();
         mods.RemoveAll();
         if (Random.Range(0, percetageCureProbability) == 0)
         {

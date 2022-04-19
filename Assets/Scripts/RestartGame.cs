@@ -8,6 +8,7 @@ public class RestartGame : MonoBehaviour
     Bundle[] keepBundle = new Bundle[1];
     void Start()
     {
+        if (ScriptableStaticClass.instance.GetCollectedItems().Length == 0) return;
         if (keepItems) keepBundle[0] = ScriptableStaticClass.instance.GetCollectedItems()[Random.Range(0, ScriptableStaticClass.instance.GetCollectedItems().Length)];
         ScriptableStaticClass.instance.Clear();
         if (keepItems) ScriptableStaticClass.instance.SetCollectedItems(keepBundle);

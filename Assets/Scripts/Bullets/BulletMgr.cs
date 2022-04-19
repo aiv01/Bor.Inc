@@ -32,7 +32,7 @@ public class BulletMgr : MonoBehaviour
         }
         if (!bullet) return null;
         Bullet obj = Instantiate(bullet.prefab, transform);
-        obj.gameObject.SetActive(false);
+        //obj.gameObject.SetActive(false);
         nBullets[(int)type].Add(obj);
         return obj;
 

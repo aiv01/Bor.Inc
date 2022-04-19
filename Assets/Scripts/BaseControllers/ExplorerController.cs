@@ -12,7 +12,8 @@ public class ExplorerController : BaseController {
     [SerializeField] AttackArea weaponArea;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask attackableMask;
-    
+
+    float invulnerability = 1;
     private Animator anim;
     
     [HideInInspector] public float damageMultCombo;
@@ -28,6 +29,7 @@ public class ExplorerController : BaseController {
     // Update is called once per frame
     override public void Update() {
         base.Update();
+        if (invulnerability > 0) invulnerability -= Time.deltaTime;
         Movement();
     }
 
@@ -171,6 +173,8 @@ public class ExplorerController : BaseController {
     #endregion
     override public void TakeDamage(float damage, BaseController attacker)
     {
+        if (invulnerability > 0) return;
+        invulnerability = 1;
         navMesh.isStopped = false;
         Vector3 forwardPlayer = transform.forward;
         Vector3 positionFromPlayer = (attacker.transform.position - transform.position);

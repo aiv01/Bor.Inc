@@ -45,6 +45,7 @@ public class ScriptableStaticClass : ScriptableObject
     }
     public void SetCollectedItems(Bundle[] bundles) {
         collectedBundles.Clear();
+        if (bundles.Length == 0) return;
         collectedBundles.AddRange(bundles);
     }
     public Bundle[] GetInInventoryItems() {

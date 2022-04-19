@@ -76,6 +76,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 256
+  particle: 7
 --- !u!1 &4795967440992213054
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +298,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5d4b5ee2865e4e9b85ec4ab4da82c04, type: 3}
   - {fileID: 8300000, guid: 8daee948bba2d46d3b44b5bce81698e6, type: 3}
   - {fileID: 8300000, guid: c49b6198a3a2b4596bf93f0a37561793, type: 3}
+  explosionClip: []
 --- !u!82 &-8840593637967862816
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1708,7 +1710,7 @@ GameObject:
   - component: {fileID: 4795967441881877457}
   - component: {fileID: 4795967441881877463}
   - component: {fileID: 4795967441881877456}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackArea (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,3 +1761,4 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 256
+  particle: 7

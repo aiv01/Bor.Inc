@@ -17,6 +17,7 @@ public class BossController : BaseController {
     [SerializeField] private LayerMask attackableMask;
     private Animator anim;
     [SerializeField] protected Transform ellen;
+    float invulnerability = 1;
     public override void Start() {
         base.Start();
         anim = GetComponent<Animator>();
@@ -26,6 +27,7 @@ public class BossController : BaseController {
     }
     override public void Update() {
         base.Update();
+        if (invulnerability > 0) invulnerability -= Time.deltaTime;
         Movement();
         anim.SetBool("InputDetected", true);
     }
@@ -61,7 +63,22 @@ public class BossController : BaseController {
     void Locomotion() {
         anim.SetFloat("ForwardSpeed", speed);
     }
+    TrailRenderer tr;
+    public void MeleeAttackStart(int throwing = 0) {
+        if (!tr) tr = gameObject.GetComponentInChildren<TrailRenderer>(true);
+        tr.gameObject.SetActive(true);
+        transform.LookAt(ellen);
+        weaponArea.damageMult = effectDamageMult;
+        weaponArea.AttackStart();
+    }
+    public void MeleeAttackEnd() {
+        tr.gameObject.SetActive(false);
+        weaponArea.AttackEnd();
+    }
     override public void TakeDamage(float damage, BaseController attacker) {
+        if (invulnerability > 0) return;
+        invulnerability = 0.5f;
+        if (currentHp <= 0) return;
         navMesh.isStopped = false;
         Vector3 forwardPlayer = transform.forward;
         Vector3 positionFromPlayer = (attacker.transform.position - transform.position);

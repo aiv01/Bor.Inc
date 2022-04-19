@@ -5,7 +5,6 @@ using Rewired;
 using UnityEngine.UI;
 public class ButtonCloseWindow : MonoBehaviour
 {
-    [SerializeField] Button exitButton;
     [SerializeField] GameObject window; 
     private Player player;
 
