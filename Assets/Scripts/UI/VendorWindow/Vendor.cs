@@ -14,6 +14,8 @@ public class Vendor : MonoBehaviour
     void Start()
     {
         player = ReInput.players.GetPlayer(0);
+        ScriptableStaticClass.instance.pauseOn = false;
+        ScriptableStaticClass.instance.vendorOpen = false;
     }
 
     // Update is called once per frame

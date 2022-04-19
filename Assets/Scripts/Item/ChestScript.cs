@@ -42,6 +42,7 @@ public class ChestScript : MonoBehaviour
                 anim.SetBool("Open", true);
                 au.Play();
                 info.nKeys--;
+                itemFind.gameObject.SetActive(false);
                 itemFind.gameObject.SetActive(true);
                 if (finalChest) info.foundTreasure = true;
                 itemFind.text = !finalChest ? info.FindNewBundle().description : "<color=yellow>Treasure recovered, you can now go back to base</color>";
