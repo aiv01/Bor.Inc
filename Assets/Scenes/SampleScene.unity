@@ -1780,6 +1780,7 @@ GameObject:
   - component: {fileID: 2009544845}
   - component: {fileID: 2009544844}
   - component: {fileID: 2009544848}
+  - component: {fileID: 2009544849}
   m_Layer: 5
   m_Name: Ellen Sentences
   m_TagString: Untagged
@@ -1899,6 +1900,25 @@ MonoBehaviour:
   timeToDespawn: 6
   speed: 0.05
   fileName: ExplorationLV2
+  playerColor: {r: 0.9098039, g: 1, b: 1, a: 0.78431374}
+  secondVoiceColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &2009544849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009544842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c590b4470eacb438aed84c2f08dbcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+  timeToNextFrase: 3
+  timeToDespawn: 6
+  speed: 0.05
+  fileName: ExplorationLV3
   playerColor: {r: 0.9098039, g: 1, b: 1, a: 0.78431374}
   secondVoiceColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2107640804 stripped
