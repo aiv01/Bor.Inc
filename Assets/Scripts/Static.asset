@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Static
   m_EditorClassIdentifier: 
   collectedBundles:
-  - {fileID: 11400000, guid: 8e095eea0f181e34897f1ed917c14521, type: 2}
+  - {fileID: 11400000, guid: 11fee52f112a1d347a5214fc867cd553, type: 2}
   inInventory:
-  - {fileID: 11400000, guid: 8e095eea0f181e34897f1ed917c14521, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   allPossibleBundles:
@@ -1310,5 +1310,5 @@ MonoBehaviour:
   foundTreasure: 1
   vendorOpen: 0
   pauseOn: 0
-  level: 4
-  explorerNumber: 1152
+  level: 1
+  explorerNumber: 1164

@@ -12024,6 +12024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Expolorer1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9223061338749214081, guid: ebc23a4febab2af469a904499d65726f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8819517919160288307, guid: ebc23a4febab2af469a904499d65726f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ebc23a4febab2af469a904499d65726f, type: 3}

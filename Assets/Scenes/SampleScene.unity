@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c590b4470eacb438aed84c2f08dbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 3
   timeToNextFrase: 3
   timeToDespawn: 6
   speed: 0.05
