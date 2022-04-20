@@ -65,7 +65,7 @@ public class EnemySpawn : MonoBehaviour
             mob.transform.position = raycastHit.point;
             mob.targetPos = raycastHit.point;
             mobList.Add(mob.transform);
-            mob.gameObject.SetActive(true);
+            //mob.gameObject.SetActive(true);
         }
     }
 }

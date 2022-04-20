@@ -929,6 +929,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 256
+  particle: 7
 --- !u!1 &3600455519184972847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   maxHp: 8
-  currentHp: 0
+  currentHp: 1
   attackDistance: 2
   effectDamageMult: 1
   bulletBaseDamage: 0
@@ -2367,6 +2368,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82aeda075249b4f079a224f18dc3fabb, type: 3}
   - {fileID: 8300000, guid: c17dbba8e12e842f89fe6790df8e14e0, type: 3}
   shootClip: []
+  explosionClip: []
 --- !u!114 &761435318851035316
 MonoBehaviour:
   m_ObjectHideFlags: 0

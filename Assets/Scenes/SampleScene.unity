@@ -154,6 +154,52 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!1 &561393956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561393958}
+  - component: {fileID: 561393957}
+  m_Layer: 0
+  m_Name: EllenSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &561393957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561393956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9279f22f48cbd2346a8188b6f8530329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newGameSpawnPoint: {x: 0, y: 4, z: -3}
+  spawnPoint: {x: 0, y: 4, z: -3}
+  ellen: {fileID: 1558492863}
+--- !u!4 &561393958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561393956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -100.44815, y: 2.9595861, z: 153.76192}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,9 +1976,17 @@ PrefabInstance:
       propertyPath: bulletMgr
       value: 
       objectReference: {fileID: 235738551}
+    - target: {fileID: 404160384603287410, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 404160384603287411, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: m_Name
       value: Ellen
+      objectReference: {fileID: 0}
+    - target: {fileID: 404160384603287411, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5352816202272352042, guid: e6626859fdf66064e93fb0cbacc4ee06, type: 3}
       propertyPath: m_IsActive
@@ -2117,7 +2171,8 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1558492863}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 96474727, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ac5d58144552cbf469b5355dd59509a5, type: 3}
 --- !u!1001 &8238995983653958344
 PrefabInstance:

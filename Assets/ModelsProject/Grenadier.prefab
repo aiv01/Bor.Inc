@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   maxHp: 30
-  currentHp: 0
+  currentHp: 1
   attackDistance: 4
   effectDamageMult: 1
   bulletBaseDamage: 0

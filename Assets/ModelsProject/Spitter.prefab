@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   maxHp: 4
-  currentHp: 0
+  currentHp: 1
   attackDistance: 5
   effectDamageMult: 1
   bulletBaseDamage: 0
@@ -367,6 +367,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eecb7d3158a0c42c7ba366aaf60a3a0c, type: 3}
   - {fileID: 8300000, guid: c7b0262d0fa4e43fd84a71b76cb238cd, type: 3}
   - {fileID: 8300000, guid: 077732bb49dcb4b1186157036c85c9b5, type: 3}
+  explosionClip: []
 --- !u!1 &8888678434818515955
 GameObject:
   m_ObjectHideFlags: 0
