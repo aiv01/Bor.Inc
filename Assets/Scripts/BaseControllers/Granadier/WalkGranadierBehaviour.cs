@@ -15,10 +15,12 @@ public class WalkGranadierBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         mg = animator.GetComponent<MeleeGranadier>();
-        float angle = Vector3.SignedAngle((mg.Ellen.position - animator.transform.position).normalized, animator.transform.forward, Vector3.up);
+        Vector3 from = animator.transform.forward;
+        Vector3 to = (mg.Ellen.position - animator.transform.position).normalized;
+        float angle = Mathf.Abs(Vector3.SignedAngle(from, to, Vector3.up));
 
         if ((-animator.transform.position + mg.Ellen.position).sqrMagnitude <= mg.ViewDistance * mg.ViewDistance) {
-            if (angle > mg.DetecAngle * 0.5f || angle < -mg.DetecAngle * 0.5f) {
+            if (angle > mg.DetecAngle * 0.5f) {
                 mg.TargetPos = animator.transform.position;
             } else {
                 mg.TargetPos = mg.Ellen.position;

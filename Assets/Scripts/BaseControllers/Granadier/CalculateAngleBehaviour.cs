@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CalculateAngleBehaviour : StateMachineBehaviour
 {
-    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("Turn", false);
@@ -12,12 +11,12 @@ public class CalculateAngleBehaviour : StateMachineBehaviour
         Vector3 from = animator.transform.forward;
         Vector3 to = (mg.Ellen.position - animator.transform.position).normalized;
         float angle = Vector3.SignedAngle(from, to, Vector3.up);
-        animator.SetFloat("Angle", angle * 0.0055556f);
+        animator.SetFloat("Angle", angle * 0.0055556f); // * 0.0055556f = /180
         angle = Mathf.Abs(angle);
         if (angle > 150) {
             animator.SetTrigger("CloseAreaAttack");
             return;
-        }else if(angle > mg.DetecAngle)
+        }else if(angle > mg.DetecAngle * 0.5f)
         {
             animator.SetTrigger("Rotate");
             animator.SetBool("Turn", true);
